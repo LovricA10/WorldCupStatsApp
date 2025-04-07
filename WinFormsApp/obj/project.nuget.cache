@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "bJb0z0iCIro=",
+  "success": true,
+  "projectFilePath": "C:\\Users\\lovri\\OneDrive\\Desktop\\WorldCupStatsApp\\WinFormsApp\\WinFormsApp.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\lovri\\.nuget\\packages\\newtonsoft.json\\13.0.3\\newtonsoft.json.13.0.3.nupkg.sha512"
+  ],
+  "logs": []
+}

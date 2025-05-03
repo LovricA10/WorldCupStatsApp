@@ -13,6 +13,14 @@
         },
         "runtime": {
           "WinFormsApp.dll": {}
+        },
+        "resources": {
+          "hr-HR/WinFormsApp.resources.dll": {
+            "locale": "hr-HR"
+          },
+          "hr/WinFormsApp.resources.dll": {
+            "locale": "hr"
+          }
         }
       },
       "Newtonsoft.Json/13.0.3": {

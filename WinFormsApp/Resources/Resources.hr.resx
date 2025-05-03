@@ -117,4 +117,49 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="cards" xml:space="preserve">
+    <value>Kartoni:</value>
+  </data>
+  <data name="cbTeamsLoading" xml:space="preserve">
+    <value>Učitavanje...</value>
+  </data>
+  <data name="CouldNotRetrieveData" xml:space="preserve">
+    <value>Neuspješno dohvaćanje podataka. Molimo pokušajte ponovno!          </value>
+  </data>
+  <data name="dataNotLoaded" xml:space="preserve">
+    <value>Podaci neuspješno učitani</value>
+  </data>
+  <data name="favoritePlayer" xml:space="preserve">
+    <value>Omiljeni igrač</value>
+  </data>
+  <data name="formClosing" xml:space="preserve">
+    <value>Jeste li sigurni da želite ugasiti aplikaciju?</value>
+  </data>
+  <data name="formClosingTitle" xml:space="preserve">
+    <value>Gašenje aplikacije</value>
+  </data>
+  <data name="goals" xml:space="preserve">
+    <value>Golovi:</value>
+  </data>
+  <data name="loadImage" xml:space="preserve">
+    <value>Učitaj sliku</value>
+  </data>
+  <data name="no" xml:space="preserve">
+    <value>Ne</value>
+  </data>
+  <data name="removeFavPlayer" xml:space="preserve">
+    <value>Ukloni igrača</value>
+  </data>
+  <data name="settingsmessBoxBody" xml:space="preserve">
+    <value>Želite li promijeniti jezik i prvenstvo?</value>
+  </data>
+  <data name="settingsmessBoxTitle" xml:space="preserve">
+    <value>Postavke:</value>
+  </data>
+  <data name="unexpectedError" xml:space="preserve">
+    <value>Dogodile se neočekivana iznimka</value>
+  </data>
+  <data name="yes" xml:space="preserve">
+    <value>Da</value>
+  </data>
 </root>

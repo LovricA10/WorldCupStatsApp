@@ -78,6 +78,8 @@
             tabControl.Name = "tabControl";
             tabControl.SelectedIndex = 0;
             tabControl.Tag = "RankCards";
+            tabControl.Selected += tabControl_Selected;
+            tabControl.Deselecting += tabControl_Deselecting;
             // 
             // tabPlayers
             // 
@@ -99,6 +101,8 @@
             resources.ApplyResources(flpFavoritePlayers, "flpFavoritePlayers");
             flpFavoritePlayers.BackColor = Color.FromArgb(192, 255, 192);
             flpFavoritePlayers.Name = "flpFavoritePlayers";
+            flpFavoritePlayers.DragDrop += flpFavoritePlayers_DragDrop;
+            flpFavoritePlayers.DragEnter += flpFavoritePlayers_DragEnter;
             // 
             // tabRankGoals
             // 

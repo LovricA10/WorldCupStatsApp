@@ -12,6 +12,7 @@ using System.Data;
 using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
+using System.Reflection.Emit;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
@@ -86,7 +87,11 @@ namespace WinFormsApp.Forms
                     var selectedTeam = repository.GetCurrentTeam();
                     if (selectedTeam != null)
                     {
-                       await LoadPanelWithPlayersAsync(selectedTeam);
+                        await LoadPanelWithPlayersAsync(selectedTeam);
+
+                        cbTeams.SelectedItem = cbTeams.Items
+                         .OfType<Team>()
+                         .FirstOrDefault(t => t.Country == selectedTeam);
                     }
                 }
                 catch (Exception ex)
@@ -103,7 +108,7 @@ namespace WinFormsApp.Forms
                 }
             }
 
-           await  LoadComboBoxWithTeamsAsync();
+            await LoadComboBoxWithTeamsAsync();
             InitializeCulture();
         }
 
@@ -212,6 +217,7 @@ namespace WinFormsApp.Forms
 
         private async Task LoadPanelWithPlayersAsync(string teamInput)
         {
+            Debug.WriteLine($"Selected team: {teamInput}");
             try
             {
                 // Reset 
@@ -223,7 +229,7 @@ namespace WinFormsApp.Forms
 
                 if (string.IsNullOrEmpty(selectedCountry)) return;
 
-                // Prikaz loading indikatora
+                // show loading indicator
                 var loader = new BusyIndicator();
                 loader.Show(flpAllPlayers);
 
@@ -238,10 +244,20 @@ namespace WinFormsApp.Forms
                 string apiUrl = EndpointBuilder.BuildMatchesEndpoint(gender);
                 var allMatches = await api.GetDataAsync<IList<MatchDetail>>(apiUrl);
 
-                var relevantMatch = allMatches?.FirstOrDefault(m => m.HomeTeamCountry == selectedCountry);
-                var allPlayers = relevantMatch?.HomeTeamStatistics?.StartingEleven?
-                    .Concat(relevantMatch.HomeTeamStatistics.Substitutes)
+                var relevantMatch = allMatches?.FirstOrDefault(m => m.HomeTeamCountry == selectedCountry || m.AwayTeamCountry == selectedCountry);
+                var isHome = relevantMatch?.HomeTeamCountry == selectedCountry;
+                var teamStats = isHome ? relevantMatch?.HomeTeamStatistics : relevantMatch?.AwayTeamStatistics;
+
+                var allPlayers = teamStats?.StartingEleven?
+                    .Concat(teamStats.Substitutes)
                     .ToList();
+
+                if (teamStats == null || allPlayers == null || allPlayers.Count == 0)
+                {
+                    loader.Hide();
+                    MessageBox.Show("No player data available for this team.", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    return;
+                }
 
                 // load players
                 flpAllPlayers.Controls.Clear();
@@ -289,7 +305,7 @@ namespace WinFormsApp.Forms
                     }
                 }
 
-                // Rangiranje utakmica po posjećenosti
+                // Rangiranje matches by attendance
                 var rankedMatches = allMatches?
                     .Where(m => m.HomeTeamCountry == selectedCountry || m.AwayTeamCountry == selectedCountry)
                     .OrderByDescending(m => m.Attendance)
@@ -307,7 +323,7 @@ namespace WinFormsApp.Forms
                     });
                 }
 
-                // Učitavanje označenih favorita
+                // load favorite
                 DisplayFavoritePlayers();
                 loader.Hide();
             }
@@ -441,6 +457,85 @@ namespace WinFormsApp.Forms
                 );
 
             e.Cancel = result == DialogResult.Cancel;
+        }
+
+        private void flpFavoritePlayers_DragDrop(object sender, DragEventArgs e)
+        {
+            if (flpFavoritePlayers.Controls.Count >= 3) return;
+
+            if (e.Data.GetData(typeof(string)) is not string controlKey) return;
+            if (Controls.Find(controlKey, true).FirstOrDefault() is not PlayerUserControl control) return;
+            if (!control.IsHighlighted) return;
+
+            if (control.Parent is Control parent)
+            {
+                parent.Controls.Remove(control);
+            }
+
+            flpFavoritePlayers.Controls.Add(control);
+            control.IsHighlighted = false;
+            control.IsStarDisplayed = true;
+
+            var favoriteNames = flpFavoritePlayers.Controls
+                .OfType<PlayerUserControl>()
+                .Select(c => c.Name);
+
+            repository.SaveFavoritePlayers(favoriteNames);
+        }
+
+        private void flpFavoritePlayers_DragEnter(object sender, DragEventArgs e)
+        {
+            if (flpFavoritePlayers.Controls.Count >= 3) return;
+
+            if (e.Data.GetData(typeof(string)) is string controlKey &&
+                Controls.Find(controlKey, true).FirstOrDefault() is PlayerUserControl control &&
+                control.IsHighlighted)
+            {
+                e.Effect = DragDropEffects.Move;
+            }
+        }
+
+        private void tabControl_Deselecting(object sender, TabControlCancelEventArgs e)
+        {
+            ClearRankingPanels();
+        }
+
+        private void ClearRankingPanels()
+        {
+            flpRankedByGoals.Controls.Clear();
+            flpRankedByYellowCards.Controls.Clear();
+        }
+
+        private void tabControl_Selected(object sender, TabControlEventArgs e)
+        {
+            PopulateRankingPanel(playerGoals, flpRankedByGoals, Resources.Resources.goals);
+            PopulateRankingPanel(playerYellowCards, flpRankedByYellowCards, Resources.Resources.cards);
+        }
+
+        private void PopulateRankingPanel(IDictionary<string, int> playerGoals, FlowLayoutPanel panel, string goals)
+        {
+        playerGoals?
+       .OrderByDescending(entry => entry.Value)
+       .ToList()
+       .ForEach(entry =>
+       {
+           var control = CreatePlayerStatControl(entry.Key, entry.Value, goals);
+           panel.Controls.Add(control);
+           LoadPictureIfPreviouslySelected(control);
+       });
+        }
+
+        private PlayerUserControl CreatePlayerStatControl(string name, int value, string label)
+        {
+            return new PlayerUserControl
+            {
+                NameText = name,
+                NumberText = value.ToString(),
+                ShowPosition = false,
+                ShowCaptain = false,
+                ExtraLabelText = label,
+                Name = name
+            };
         }
     }
 }

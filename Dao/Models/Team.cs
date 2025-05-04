@@ -12,7 +12,7 @@ namespace Dao.Models
         [JsonProperty("country")]
         public string? Country { get; set; }
 
-        [JsonProperty("code")]
+        [JsonProperty("fifa_code")]
         public string? Code { get; set; }
 
         [JsonProperty("goals")]

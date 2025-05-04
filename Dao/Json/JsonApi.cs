@@ -2,6 +2,8 @@
 using System.Threading.Tasks;
 using Newtonsoft.Json;
 using RestSharp;
+using System.Diagnostics;
+using Dao.Models;
 
 namespace Dao.Json
 {
@@ -17,7 +19,8 @@ namespace Dao.Json
             {
                 throw new Exception("Api returned empty content");
             }
-
+            Debug.WriteLine("RAW JSON content from API:");
+            Debug.WriteLine(response.Content);
             T? data = JsonConvert.DeserializeObject<T>(response.Content); // check if is null 
 
             //if (data == null)

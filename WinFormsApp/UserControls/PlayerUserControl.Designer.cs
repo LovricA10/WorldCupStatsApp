@@ -35,6 +35,11 @@
             lbNumber = new Label();
             lbPosition = new Label();
             lbCaptain = new Label();
+            lblName = new Label();
+            lblNumber = new Label();
+            lblPosition = new Label();
+            lblCaptain = new Label();
+            lblStar = new Label();
             ((System.ComponentModel.ISupportInitialize)pbPlayer).BeginInit();
             SuspendLayout();
             // 
@@ -82,10 +87,55 @@
             lbCaptain.TabIndex = 4;
             lbCaptain.Text = "Captain";
             // 
+            // lblName
+            // 
+            lblName.AutoSize = true;
+            lblName.Location = new Point(225, 22);
+            lblName.Name = "lblName";
+            lblName.Size = new Size(0, 20);
+            lblName.TabIndex = 5;
+            // 
+            // lblNumber
+            // 
+            lblNumber.AutoSize = true;
+            lblNumber.Location = new Point(233, 55);
+            lblNumber.Name = "lblNumber";
+            lblNumber.Size = new Size(0, 20);
+            lblNumber.TabIndex = 6;
+            // 
+            // lblPosition
+            // 
+            lblPosition.AutoSize = true;
+            lblPosition.Location = new Point(233, 88);
+            lblPosition.Name = "lblPosition";
+            lblPosition.Size = new Size(0, 20);
+            lblPosition.TabIndex = 7;
+            // 
+            // lblCaptain
+            // 
+            lblCaptain.AutoSize = true;
+            lblCaptain.Location = new Point(228, 122);
+            lblCaptain.Name = "lblCaptain";
+            lblCaptain.Size = new Size(0, 20);
+            lblCaptain.TabIndex = 8;
+            // 
+            // lblStar
+            // 
+            lblStar.AutoSize = true;
+            lblStar.Location = new Point(328, 3);
+            lblStar.Name = "lblStar";
+            lblStar.Size = new Size(0, 20);
+            lblStar.TabIndex = 9;
+            // 
             // PlayerUserControl
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
+            Controls.Add(lblStar);
+            Controls.Add(lblCaptain);
+            Controls.Add(lblPosition);
+            Controls.Add(lblNumber);
+            Controls.Add(lblName);
             Controls.Add(lbCaptain);
             Controls.Add(lbPosition);
             Controls.Add(lbNumber);
@@ -105,5 +155,10 @@
         private Label lbNumber;
         private Label lbPosition;
         private Label lbCaptain;
+        private Label lblName;
+        private Label lblNumber;
+        private Label lblPosition;
+        private Label lblCaptain;
+        private Label lblStar;
     }
 }

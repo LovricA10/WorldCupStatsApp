@@ -133,9 +133,21 @@
         "net8.0-windows7.0": {
           "targetAlias": "net8.0-windows",
           "dependencies": {
+            "Extended.Wpf.Toolkit": {
+              "target": "Package",
+              "version": "[4.7.25104.5739, )"
+            },
+            "LoadingIndicator.WinForms": {
+              "target": "Package",
+              "version": "[1.2.0, )"
+            },
             "Newtonsoft.Json": {
               "target": "Package",
               "version": "[13.0.3, )"
+            },
+            "Syncfusion.Core.WinForms": {
+              "target": "Package",
+              "version": "[29.1.40, )"
             }
           },
           "imports": [

@@ -1,12 +1,25 @@
 {
   "version": 2,
-  "dgSpecHash": "TdKfMtK5kB8=",
+  "dgSpecHash": "d9cOwO/vJXw=",
   "success": true,
   "projectFilePath": "C:\\Users\\lovri\\OneDrive\\Desktop\\WorldCupStatsApp\\WinFormsApp\\WinFormsApp.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\lovri\\.nuget\\packages\\extended.wpf.toolkit\\4.7.25104.5739\\extended.wpf.toolkit.4.7.25104.5739.nupkg.sha512",
+    "C:\\Users\\lovri\\.nuget\\packages\\loadingindicator.winforms\\1.2.0\\loadingindicator.winforms.1.2.0.nupkg.sha512",
+    "C:\\Users\\lovri\\.nuget\\packages\\microsoft.winforms.designer.sdk\\1.6.0\\microsoft.winforms.designer.sdk.1.6.0.nupkg.sha512",
     "C:\\Users\\lovri\\.nuget\\packages\\newtonsoft.json\\13.0.3\\newtonsoft.json.13.0.3.nupkg.sha512",
     "C:\\Users\\lovri\\.nuget\\packages\\restsharp\\112.1.0\\restsharp.112.1.0.nupkg.sha512",
-    "C:\\Users\\lovri\\.nuget\\packages\\restsharp.serializers.newtonsoftjson\\112.1.0\\restsharp.serializers.newtonsoftjson.112.1.0.nupkg.sha512"
+    "C:\\Users\\lovri\\.nuget\\packages\\restsharp.serializers.newtonsoftjson\\112.1.0\\restsharp.serializers.newtonsoftjson.112.1.0.nupkg.sha512",
+    "C:\\Users\\lovri\\.nuget\\packages\\syncfusion.core.winforms\\29.1.40\\syncfusion.core.winforms.29.1.40.nupkg.sha512",
+    "C:\\Users\\lovri\\.nuget\\packages\\syncfusion.licensing\\29.1.40\\syncfusion.licensing.29.1.40.nupkg.sha512",
+    "C:\\Users\\lovri\\.nuget\\packages\\syncfusion.shared.base\\29.1.40\\syncfusion.shared.base.29.1.40.nupkg.sha512",
+    "C:\\Users\\lovri\\.nuget\\packages\\system.codedom\\4.6.0\\system.codedom.4.6.0.nupkg.sha512",
+    "C:\\Users\\lovri\\.nuget\\packages\\system.composition\\6.0.0\\system.composition.6.0.0.nupkg.sha512",
+    "C:\\Users\\lovri\\.nuget\\packages\\system.composition.attributedmodel\\6.0.0\\system.composition.attributedmodel.6.0.0.nupkg.sha512",
+    "C:\\Users\\lovri\\.nuget\\packages\\system.composition.convention\\6.0.0\\system.composition.convention.6.0.0.nupkg.sha512",
+    "C:\\Users\\lovri\\.nuget\\packages\\system.composition.hosting\\6.0.0\\system.composition.hosting.6.0.0.nupkg.sha512",
+    "C:\\Users\\lovri\\.nuget\\packages\\system.composition.runtime\\6.0.0\\system.composition.runtime.6.0.0.nupkg.sha512",
+    "C:\\Users\\lovri\\.nuget\\packages\\system.composition.typedparts\\6.0.0\\system.composition.typedparts.6.0.0.nupkg.sha512"
   ],
   "logs": []
 }

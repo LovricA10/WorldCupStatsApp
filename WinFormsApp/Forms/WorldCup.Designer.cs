@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(WorldCup));
             cbTeams = new ComboBox();
             tabControl = new TabControl();
@@ -41,17 +42,17 @@
             flpRankedByYellowCards = new FlowLayoutPanel();
             btnPrintCard = new Button();
             tabRankAttendance = new TabPage();
-            flpRankByAttendance = new FlowLayoutPanel();
+            flpRankedByAttendance = new FlowLayoutPanel();
             btnPrintAttendance = new Button();
             menuStripWorldCup = new MenuStrip();
             settingsToolStripMenuItem = new ToolStripMenuItem();
-            contextMenuStrip = new MenuStrip();
             ppdGoals = new PrintPreviewDialog();
             pdGoals = new System.Drawing.Printing.PrintDocument();
             pdCards = new System.Drawing.Printing.PrintDocument();
             ppdCards = new PrintPreviewDialog();
             pdAttendance = new System.Drawing.Printing.PrintDocument();
             ppdAttendance = new PrintPreviewDialog();
+            contextMenuStrip = new ContextMenuStrip(components);
             tabControl.SuspendLayout();
             tabPlayers.SuspendLayout();
             tabRankGoals.SuspendLayout();
@@ -65,6 +66,7 @@
             cbTeams.FormattingEnabled = true;
             resources.ApplyResources(cbTeams, "cbTeams");
             cbTeams.Name = "cbTeams";
+            cbTeams.SelectedIndexChanged += cbTeams_SelectedIndexChanged;
             // 
             // tabControl
             // 
@@ -142,18 +144,18 @@
             // 
             // tabRankAttendance
             // 
-            tabRankAttendance.Controls.Add(flpRankByAttendance);
+            tabRankAttendance.Controls.Add(flpRankedByAttendance);
             tabRankAttendance.Controls.Add(btnPrintAttendance);
             resources.ApplyResources(tabRankAttendance, "tabRankAttendance");
             tabRankAttendance.Name = "tabRankAttendance";
             tabRankAttendance.Tag = "RankAttendances";
             tabRankAttendance.UseVisualStyleBackColor = true;
             // 
-            // flpRankByAttendance
+            // flpRankedByAttendance
             // 
-            flpRankByAttendance.BackColor = Color.FromArgb(192, 255, 192);
-            resources.ApplyResources(flpRankByAttendance, "flpRankByAttendance");
-            flpRankByAttendance.Name = "flpRankByAttendance";
+            flpRankedByAttendance.BackColor = Color.FromArgb(192, 255, 192);
+            resources.ApplyResources(flpRankedByAttendance, "flpRankedByAttendance");
+            flpRankedByAttendance.Name = "flpRankedByAttendance";
             // 
             // btnPrintAttendance
             // 
@@ -172,12 +174,7 @@
             // 
             settingsToolStripMenuItem.Name = "settingsToolStripMenuItem";
             resources.ApplyResources(settingsToolStripMenuItem, "settingsToolStripMenuItem");
-            // 
-            // contextMenuStrip
-            // 
-            contextMenuStrip.ImageScalingSize = new Size(20, 20);
-            resources.ApplyResources(contextMenuStrip, "contextMenuStrip");
-            contextMenuStrip.Name = "contextMenuStrip";
+            settingsToolStripMenuItem.Click += settingsToolStripMenuItem_Click;
             // 
             // ppdGoals
             // 
@@ -194,6 +191,12 @@
             resources.ApplyResources(ppdAttendance, "ppdAttendance");
             ppdAttendance.Name = "ppdAttendance";
             // 
+            // contextMenuStrip
+            // 
+            contextMenuStrip.ImageScalingSize = new Size(20, 20);
+            contextMenuStrip.Name = "contextMenuStrip";
+            resources.ApplyResources(contextMenuStrip, "contextMenuStrip");
+            // 
             // WorldCup
             // 
             resources.ApplyResources(this, "$this");
@@ -201,9 +204,9 @@
             Controls.Add(tabControl);
             Controls.Add(cbTeams);
             Controls.Add(menuStripWorldCup);
-            Controls.Add(contextMenuStrip);
-            MainMenuStrip = contextMenuStrip;
             Name = "WorldCup";
+            Activated += WorldCup_Activated;
+            FormClosing += WorldCup_FormClosing;
             tabControl.ResumeLayout(false);
             tabPlayers.ResumeLayout(false);
             tabRankGoals.ResumeLayout(false);
@@ -229,16 +232,16 @@
         private Button btnPrintGoals;
         private FlowLayoutPanel flpRankedByYellowCards;
         private Button btnPrintCard;
-        private FlowLayoutPanel flpRankByAttendance;
+        private FlowLayoutPanel flpRankedByAttendance;
         private Button btnPrintAttendance;
         private MenuStrip menuStripWorldCup;
         private ToolStripMenuItem settingsToolStripMenuItem;
-        private MenuStrip contextMenuStrip;
         private PrintPreviewDialog ppdGoals;
         private System.Drawing.Printing.PrintDocument pdGoals;
         private System.Drawing.Printing.PrintDocument pdCards;
         private PrintPreviewDialog ppdCards;
         private System.Drawing.Printing.PrintDocument pdAttendance;
         private PrintPreviewDialog ppdAttendance;
+        private ContextMenuStrip contextMenuStrip;
     }
 }

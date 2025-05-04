@@ -32,6 +32,10 @@
             lbAttendance = new Label();
             lbHomeTeam = new Label();
             lbAwayTeam = new Label();
+            lblLocation = new Label();
+            lblAttendance = new Label();
+            lblHomeTeam = new Label();
+            lblAwayTeam = new Label();
             SuspendLayout();
             // 
             // lbLocation
@@ -70,10 +74,46 @@
             lbAwayTeam.TabIndex = 3;
             lbAwayTeam.Text = "Away team:";
             // 
+            // lblLocation
+            // 
+            lblLocation.AutoSize = true;
+            lblLocation.Location = new Point(144, 29);
+            lblLocation.Name = "lblLocation";
+            lblLocation.Size = new Size(0, 20);
+            lblLocation.TabIndex = 4;
+            // 
+            // lblAttendance
+            // 
+            lblAttendance.AutoSize = true;
+            lblAttendance.Location = new Point(144, 66);
+            lblAttendance.Name = "lblAttendance";
+            lblAttendance.Size = new Size(0, 20);
+            lblAttendance.TabIndex = 5;
+            // 
+            // lblHomeTeam
+            // 
+            lblHomeTeam.AutoSize = true;
+            lblHomeTeam.Location = new Point(144, 101);
+            lblHomeTeam.Name = "lblHomeTeam";
+            lblHomeTeam.Size = new Size(0, 20);
+            lblHomeTeam.TabIndex = 6;
+            // 
+            // lblAwayTeam
+            // 
+            lblAwayTeam.AutoSize = true;
+            lblAwayTeam.Location = new Point(144, 138);
+            lblAwayTeam.Name = "lblAwayTeam";
+            lblAwayTeam.Size = new Size(0, 20);
+            lblAwayTeam.TabIndex = 7;
+            // 
             // MatchUserControl
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
+            Controls.Add(lblAwayTeam);
+            Controls.Add(lblHomeTeam);
+            Controls.Add(lblAttendance);
+            Controls.Add(lblLocation);
             Controls.Add(lbAwayTeam);
             Controls.Add(lbHomeTeam);
             Controls.Add(lbAttendance);
@@ -90,5 +130,9 @@
         private Label lbAttendance;
         private Label lbHomeTeam;
         private Label lbAwayTeam;
+        private Label lblLocation;
+        private Label lblAttendance;
+        private Label lblHomeTeam;
+        private Label lblAwayTeam;
     }
 }

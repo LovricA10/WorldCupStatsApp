@@ -229,10 +229,18 @@ namespace WinFormsApp.Forms
 
                 if (string.IsNullOrEmpty(selectedCountry)) return;
 
+                flpAllPlayers.AutoScroll = true;
+                flpAllPlayers.WrapContents = false;
+                
+                flpAllPlayers.FlowDirection = FlowDirection.TopDown;
+                flpAllPlayers.HorizontalScroll.Enabled = false;
+
+                flpAllPlayers.Width = 300; // Adjust this width according to your design needs
+                flpAllPlayers.AutoScrollMinSize = new Size(flpAllPlayers.Width, 1);
                 // show loading indicator
                 var loader = new BusyIndicator();
                 loader.Show(flpAllPlayers);
-
+                
 
                 string genderStr = repository.GetStoredGender();
 
@@ -305,7 +313,7 @@ namespace WinFormsApp.Forms
                     }
                 }
 
-                // Rangiranje matches by attendance
+                // rank matches by attendance
                 var rankedMatches = allMatches?
                     .Where(m => m.HomeTeamCountry == selectedCountry || m.AwayTeamCountry == selectedCountry)
                     .OrderByDescending(m => m.Attendance)

@@ -21,6 +21,7 @@ namespace Dao.Json
             }
             Debug.WriteLine("RAW JSON content from API:");
             Debug.WriteLine(response.Content);
+
             T? data = JsonConvert.DeserializeObject<T>(response.Content); // check if is null 
 
             //if (data == null)

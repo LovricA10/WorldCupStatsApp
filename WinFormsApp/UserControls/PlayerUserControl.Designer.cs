@@ -30,6 +30,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PlayerUserControl));
             pbPlayer = new PictureBox();
             lbName = new Label();
             lbNumber = new Label();
@@ -45,11 +46,15 @@
             // 
             // pbPlayer
             // 
+            pbPlayer.Image = (Image)resources.GetObject("pbPlayer.Image");
             pbPlayer.Location = new Point(3, 3);
             pbPlayer.Name = "pbPlayer";
             pbPlayer.Size = new Size(158, 153);
+            pbPlayer.SizeMode = PictureBoxSizeMode.Zoom;
+            //pbPlayer.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             pbPlayer.TabIndex = 0;
             pbPlayer.TabStop = false;
+            
             // 
             // lbName
             // 

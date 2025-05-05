@@ -19,21 +19,10 @@ namespace Dao.Json
             {
                 throw new Exception("Api returned empty content");
             }
-            Debug.WriteLine("RAW JSON content from API:");
-            Debug.WriteLine(response.Content);
-
-            try
-            {
                 T? data = JsonConvert.DeserializeObject<T>(response.Content); // check if is null 
-                return data ?? throw new Exception("Deserialization returned null");
-            }
-            catch (JsonSerializationException jsex)
-            {
-                Debug.WriteLine("Deserialization failed:");
-                Debug.WriteLine(jsex.Message);
-                Debug.WriteLine(jsex.StackTrace);
-                throw;
-            }
+                return data ?? throw new Exception("Deserilization returned null");
+
+
 
             //if (data == null)
             //{
@@ -41,7 +30,7 @@ namespace Dao.Json
             //}
 
 
-            //return data ?? throw new Exception("Deserilization returned null");
+
         }
     }
 }

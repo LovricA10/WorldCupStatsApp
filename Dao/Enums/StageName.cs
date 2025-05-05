@@ -21,6 +21,9 @@ namespace Dao.Enums
         [EnumMember(Value = "Play-off for third place")]
         PlayOffForThirdPlace,
 
+        [EnumMember(Value = "Match for third place")]
+        MatchForThirdPlace,
+
         [EnumMember(Value = "Quarter-finals")]
         QuarterFinals,
 
@@ -37,7 +40,6 @@ namespace Dao.Enums
         [EnumMember(Value = "Semi-final")]
         SemiFinal,
 
-        [EnumMember(Value = "Match for third place")]
-        MatchForThirdPlace
+     
     };
 }

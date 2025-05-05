@@ -158,7 +158,7 @@ namespace WinFormsApp.UserControls
                     lblStar.Visible = true;
                     lblStar.Text = "★";
                     lblStar.ForeColor = Color.Gold;
-                    lblStar.Font = new Font("Segoe UI", 28, FontStyle.Bold);
+                    lblStar.Font = new Font("Segoe UI", 20, FontStyle.Bold);
                 }
                 else
                 {

@@ -218,7 +218,7 @@ namespace WinFormsApp.Forms
 
         private async Task LoadPanelWithPlayersAsync(string teamInput)
         {
-            Debug.WriteLine($"Selected team: {teamInput}");
+            
             try
             {
                 // Reset 
@@ -229,13 +229,13 @@ namespace WinFormsApp.Forms
                 string selectedCountry = teamInput;
 
                 if (string.IsNullOrEmpty(selectedCountry)) return;
-
-                flpAllPlayers.AutoScroll = true;
                 flpAllPlayers.WrapContents = false;
-
+                flpFavoritePlayers.WrapContents = false;
+                //flpFavoritePlayers.AutoScroll = true;
                 flpAllPlayers.FlowDirection = FlowDirection.TopDown;
-                flpAllPlayers.HorizontalScroll.Enabled = false;
+                flpFavoritePlayers.FlowDirection = FlowDirection.TopDown;
                 flpAllPlayers.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+                flpFavoritePlayers.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
 
                 flpAllPlayers.AutoScrollMinSize = new Size(flpAllPlayers.Width, 1);
                 // show loading indicator
@@ -247,13 +247,11 @@ namespace WinFormsApp.Forms
 
                 if (!Enum.TryParse<GenderType>(genderStr, true, out var gender))
                 {
-                    Debug.WriteLine($"Gender from repo: {genderStr}"); //test
                     MessageBox.Show("Invalid gender setting");
                     return;
                 }
                 string apiUrl = EndpointBuilder.BuildMatchesEndpoint(gender);
-                var allMatches = await api.GetDataAsync<IList<MatchDetail>>(apiUrl);
-
+                var allMatches = await api.GetDataAsync<IList<MatchDetail>>(apiUrl); 
                 var relevantMatch = allMatches?.FirstOrDefault(m => m.HomeTeamCountry == selectedCountry || m.AwayTeamCountry == selectedCountry);
                 var isHome = relevantMatch?.HomeTeamCountry == selectedCountry;
                 var teamStats = isHome ? relevantMatch?.HomeTeamStatistics : relevantMatch?.AwayTeamStatistics;
@@ -293,12 +291,14 @@ namespace WinFormsApp.Forms
 
                 // number of goals and cards
                 var countryMatches = allMatches?
-                    .Where(m => m.HomeTeamCountry == selectedCountry)
+                    .Where(m => m.HomeTeamCountry == selectedCountry || m.AwayTeamCountry == selectedCountry)
                     .ToList();
 
                 foreach (var match in countryMatches ?? Enumerable.Empty<MatchDetail>())
                 {
-                    foreach (var evt in match.HomeTeamEvents)
+                    var events = match.HomeTeamCountry == selectedCountry ? match.HomeTeamEvents : match.AwayTeamEvents;
+
+                    foreach (var evt in events)
                     {
                         if (!playerGoals.ContainsKey(evt.Player)) continue;
 
@@ -514,6 +514,8 @@ namespace WinFormsApp.Forms
         {
             flpRankedByGoals.Controls.Clear();
             flpRankedByYellowCards.Controls.Clear();
+            //flpAllPlayers.Controls.Clear();
+            
         }
 
         private void tabControl_Selected(object sender, TabControlEventArgs e)
@@ -525,19 +527,23 @@ namespace WinFormsApp.Forms
 
         private void SetUpScrollForPanels()
         {
+        var panels = new[] 
+            {
+                flpRankedByGoals,
+                flpRankedByYellowCards,
+                flpRankedByAttendance,
+                flpAllPlayers,
+                //flpFavoritePlayers
+             };
 
-            flpRankedByGoals.AutoScroll = true;
-            flpRankedByYellowCards.AutoScroll = true;
-            flpRankedByAttendance.AutoScroll = true;
+            foreach (var panel in panels)
+            {
+                panel.AutoScroll = true;
+                panel.FlowDirection = FlowDirection.TopDown;
+                panel.WrapContents = false;
+                panel.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            }
 
-
-            flpRankedByGoals.HorizontalScroll.Enabled = false;
-            flpRankedByYellowCards.HorizontalScroll.Enabled = false;
-            flpRankedByAttendance.HorizontalScroll.Enabled = false;
-
-            flpRankedByGoals.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            flpRankedByYellowCards.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            flpRankedByAttendance.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
         }
 
         private void PopulateRankingPanel(IDictionary<string, int> playerGoals, FlowLayoutPanel panel, string goals)

@@ -41,117 +41,75 @@
             lblPosition = new Label();
             lblCaptain = new Label();
             lblStar = new Label();
+            lbExtra = new Label();
+            lblExtraValue = new Label();
             ((System.ComponentModel.ISupportInitialize)pbPlayer).BeginInit();
             SuspendLayout();
             // 
             // pbPlayer
             // 
-            pbPlayer.Image = (Image)resources.GetObject("pbPlayer.Image");
-            pbPlayer.Location = new Point(3, 3);
+            resources.ApplyResources(pbPlayer, "pbPlayer");
             pbPlayer.Name = "pbPlayer";
-            pbPlayer.Size = new Size(158, 153);
-            pbPlayer.SizeMode = PictureBoxSizeMode.Zoom;
-            pbPlayer.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            pbPlayer.TabIndex = 0;
             pbPlayer.TabStop = false;
-            
             // 
             // lbName
             // 
-            lbName.AutoSize = true;
-            lbName.Location = new Point(167, 22);
+            resources.ApplyResources(lbName, "lbName");
             lbName.Name = "lbName";
-            lbName.Size = new Size(52, 20);
-            lbName.TabIndex = 1;
-            lbName.Text = "Name:";
             // 
             // lbNumber
             // 
-            lbNumber.AutoSize = true;
-            lbNumber.Location = new Point(167, 55);
+            resources.ApplyResources(lbNumber, "lbNumber");
             lbNumber.Name = "lbNumber";
-            lbNumber.Size = new Size(66, 20);
-            lbNumber.TabIndex = 2;
-            lbNumber.Text = "Number:";
             // 
             // lbPosition
             // 
-            lbPosition.AutoSize = true;
-            lbPosition.Location = new Point(167, 88);
+            resources.ApplyResources(lbPosition, "lbPosition");
             lbPosition.Name = "lbPosition";
-            lbPosition.Size = new Size(61, 20);
-            lbPosition.TabIndex = 3;
-            lbPosition.Text = "Position";
             // 
             // lbCaptain
             // 
-            lbCaptain.AutoSize = true;
-            lbCaptain.Location = new Point(167, 122);
+            resources.ApplyResources(lbCaptain, "lbCaptain");
             lbCaptain.Name = "lbCaptain";
-            lbCaptain.Size = new Size(60, 20);
-            lbCaptain.TabIndex = 4;
-            lbCaptain.Text = "Captain";
             // 
             // lblName
             // 
-            lblName.AutoSize = true;
-            lblName.Location = new Point(225, 22);
+            resources.ApplyResources(lblName, "lblName");
             lblName.Name = "lblName";
-            lblName.Size = new Size(0, 20);
-            lblName.TabIndex = 5;
             // 
             // lblNumber
             // 
-            lblNumber.AutoSize = true;
-            lblNumber.Location = new Point(233, 55);
+            resources.ApplyResources(lblNumber, "lblNumber");
             lblNumber.Name = "lblNumber";
-            lblNumber.Size = new Size(0, 20);
-            lblNumber.TabIndex = 6;
             // 
             // lblPosition
             // 
-            lblPosition.AutoSize = true;
-            lblPosition.Location = new Point(233, 88);
+            resources.ApplyResources(lblPosition, "lblPosition");
             lblPosition.Name = "lblPosition";
-            lblPosition.Size = new Size(0, 20);
-            lblPosition.TabIndex = 7;
             // 
             // lblCaptain
             // 
-            lblCaptain.AutoSize = true;
-            lblCaptain.Location = new Point(228, 122);
+            resources.ApplyResources(lblCaptain, "lblCaptain");
             lblCaptain.Name = "lblCaptain";
-            lblCaptain.Size = new Size(0, 20);
-            lblCaptain.TabIndex = 8;
             // 
             // lblStar
             // 
-            lblStar.AutoSize = true;
-            lblStar.Location = new Point(328, 3);
+            resources.ApplyResources(lblStar, "lblStar");
             lblStar.Name = "lblStar";
-            lblStar.Size = new Size(0, 20);
-            lblStar.TabIndex = 9;
-
+            // 
             // lbExtra
-            lbExtra = new Label();
-            lbExtra.AutoSize = true;
-            lbExtra.Location = new Point(167, 105);
+            // 
+            resources.ApplyResources(lbExtra, "lbExtra");
             lbExtra.Name = "lbExtra";
-            lbExtra.Size = new Size(50, 20);
-            lbExtra.TabIndex = 10;
-            lbExtra.Text = ""; // set from outside
-
+            // 
             // lblExtraValue
-            lblExtraValue = new Label();
-            lblExtraValue.AutoSize = true;
-            lblExtraValue.Location = new Point(233, 105);
+            // 
+            resources.ApplyResources(lblExtraValue, "lblExtraValue");
             lblExtraValue.Name = "lblExtraValue";
-            lblExtraValue.Size = new Size(0, 20);
-            lblExtraValue.TabIndex = 11;
             // 
             // PlayerUserControl
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            resources.ApplyResources(this, "$this");
             AutoScaleMode = AutoScaleMode.Font;
             Controls.Add(lblStar);
             Controls.Add(lblCaptain);
@@ -166,7 +124,6 @@
             Controls.Add(lbExtra);
             Controls.Add(lblExtraValue);
             Name = "PlayerUserControl";
-            Size = new Size(373, 159);
             ((System.ComponentModel.ISupportInitialize)pbPlayer).EndInit();
             ResumeLayout(false);
             PerformLayout();

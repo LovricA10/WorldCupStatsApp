@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MatchUserControl));
             lbLocation = new Label();
             lbAttendance = new Label();
             lbHomeTeam = new Label();
@@ -40,75 +41,47 @@
             // 
             // lbLocation
             // 
-            lbLocation.AutoSize = true;
-            lbLocation.Location = new Point(47, 29);
+            resources.ApplyResources(lbLocation, "lbLocation");
             lbLocation.Name = "lbLocation";
-            lbLocation.Size = new Size(69, 20);
-            lbLocation.TabIndex = 0;
-            lbLocation.Text = "Location:";
             // 
             // lbAttendance
             // 
-            lbAttendance.AutoSize = true;
-            lbAttendance.Location = new Point(47, 66);
+            resources.ApplyResources(lbAttendance, "lbAttendance");
             lbAttendance.Name = "lbAttendance";
-            lbAttendance.Size = new Size(88, 20);
-            lbAttendance.TabIndex = 1;
-            lbAttendance.Text = "Attendance:";
             // 
             // lbHomeTeam
             // 
-            lbHomeTeam.AutoSize = true;
-            lbHomeTeam.Location = new Point(47, 101);
+            resources.ApplyResources(lbHomeTeam, "lbHomeTeam");
             lbHomeTeam.Name = "lbHomeTeam";
-            lbHomeTeam.Size = new Size(91, 20);
-            lbHomeTeam.TabIndex = 2;
-            lbHomeTeam.Text = "Home team:";
             // 
             // lbAwayTeam
             // 
-            lbAwayTeam.AutoSize = true;
-            lbAwayTeam.Location = new Point(47, 138);
+            resources.ApplyResources(lbAwayTeam, "lbAwayTeam");
             lbAwayTeam.Name = "lbAwayTeam";
-            lbAwayTeam.Size = new Size(86, 20);
-            lbAwayTeam.TabIndex = 3;
-            lbAwayTeam.Text = "Away team:";
             // 
             // lblLocation
             // 
-            lblLocation.AutoSize = true;
-            lblLocation.Location = new Point(144, 29);
+            resources.ApplyResources(lblLocation, "lblLocation");
             lblLocation.Name = "lblLocation";
-            lblLocation.Size = new Size(0, 20);
-            lblLocation.TabIndex = 4;
             // 
             // lblAttendance
             // 
-            lblAttendance.AutoSize = true;
-            lblAttendance.Location = new Point(144, 66);
+            resources.ApplyResources(lblAttendance, "lblAttendance");
             lblAttendance.Name = "lblAttendance";
-            lblAttendance.Size = new Size(0, 20);
-            lblAttendance.TabIndex = 5;
             // 
             // lblHomeTeam
             // 
-            lblHomeTeam.AutoSize = true;
-            lblHomeTeam.Location = new Point(144, 101);
+            resources.ApplyResources(lblHomeTeam, "lblHomeTeam");
             lblHomeTeam.Name = "lblHomeTeam";
-            lblHomeTeam.Size = new Size(0, 20);
-            lblHomeTeam.TabIndex = 6;
             // 
             // lblAwayTeam
             // 
-            lblAwayTeam.AutoSize = true;
-            lblAwayTeam.Location = new Point(144, 138);
+            resources.ApplyResources(lblAwayTeam, "lblAwayTeam");
             lblAwayTeam.Name = "lblAwayTeam";
-            lblAwayTeam.Size = new Size(0, 20);
-            lblAwayTeam.TabIndex = 7;
             // 
             // MatchUserControl
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            resources.ApplyResources(this, "$this");
             AutoScaleMode = AutoScaleMode.Font;
             Controls.Add(lblAwayTeam);
             Controls.Add(lblHomeTeam);
@@ -119,7 +92,6 @@
             Controls.Add(lbAttendance);
             Controls.Add(lbLocation);
             Name = "MatchUserControl";
-            Size = new Size(386, 175);
             ResumeLayout(false);
             PerformLayout();
         }

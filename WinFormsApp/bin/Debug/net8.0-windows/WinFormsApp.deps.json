@@ -18,12 +18,6 @@
           "WinFormsApp.dll": {}
         },
         "resources": {
-          "hr-HR/WinFormsApp.resources.dll": {
-            "locale": "hr-HR"
-          },
-          "aa/WinFormsApp.resources.dll": {
-            "locale": "aa"
-          },
           "hr/WinFormsApp.resources.dll": {
             "locale": "hr"
           }

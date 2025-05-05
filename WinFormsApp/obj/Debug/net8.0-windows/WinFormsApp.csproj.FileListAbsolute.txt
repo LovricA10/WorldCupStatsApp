@@ -5,7 +5,6 @@ C:\Users\lovri\OneDrive\Desktop\WorldCupStatsApp\WinFormsApp\bin\Debug\net8.0-wi
 C:\Users\lovri\OneDrive\Desktop\WorldCupStatsApp\WinFormsApp\bin\Debug\net8.0-windows\WinFormsApp.runtimeconfig.json
 C:\Users\lovri\OneDrive\Desktop\WorldCupStatsApp\WinFormsApp\bin\Debug\net8.0-windows\WinFormsApp.dll
 C:\Users\lovri\OneDrive\Desktop\WorldCupStatsApp\WinFormsApp\bin\Debug\net8.0-windows\WinFormsApp.pdb
-C:\Users\lovri\OneDrive\Desktop\WorldCupStatsApp\WinFormsApp\bin\Debug\net8.0-windows\hr-HR\WinFormsApp.resources.dll
 C:\Users\lovri\OneDrive\Desktop\WorldCupStatsApp\WinFormsApp\bin\Debug\net8.0-windows\hr\WinFormsApp.resources.dll
 C:\Users\lovri\OneDrive\Desktop\WorldCupStatsApp\WinFormsApp\bin\Debug\net8.0-windows\Xceed.Wpf.AvalonDock.Themes.Aero.dll
 C:\Users\lovri\OneDrive\Desktop\WorldCupStatsApp\WinFormsApp\bin\Debug\net8.0-windows\Xceed.Wpf.AvalonDock.Themes.Metro.dll
@@ -45,8 +44,6 @@ C:\Users\lovri\OneDrive\Desktop\WorldCupStatsApp\WinFormsApp\obj\Debug\net8.0-wi
 C:\Users\lovri\OneDrive\Desktop\WorldCupStatsApp\WinFormsApp\obj\Debug\net8.0-windows\WinFormsApp.Resources.Resources.resources
 C:\Users\lovri\OneDrive\Desktop\WorldCupStatsApp\WinFormsApp\obj\Debug\net8.0-windows\WinFormsApp.UserControls.MatchUserControl.resources
 C:\Users\lovri\OneDrive\Desktop\WorldCupStatsApp\WinFormsApp\obj\Debug\net8.0-windows\WinFormsApp.UserControls.PlayerUserControl.resources
-C:\Users\lovri\OneDrive\Desktop\WorldCupStatsApp\WinFormsApp\obj\Debug\net8.0-windows\WinFormsApp.Forms.Settings.hr-HR.resources
-C:\Users\lovri\OneDrive\Desktop\WorldCupStatsApp\WinFormsApp\obj\Debug\net8.0-windows\WinFormsApp.Forms.WorldCup.hr-HR.resources
 C:\Users\lovri\OneDrive\Desktop\WorldCupStatsApp\WinFormsApp\obj\Debug\net8.0-windows\WinFormsApp.Resources.Resources.hr.resources
 C:\Users\lovri\OneDrive\Desktop\WorldCupStatsApp\WinFormsApp\obj\Debug\net8.0-windows\WinFormsApp.csproj.GenerateResource.cache
 C:\Users\lovri\OneDrive\Desktop\WorldCupStatsApp\WinFormsApp\obj\Debug\net8.0-windows\WinFormsApp.GeneratedMSBuildEditorConfig.editorconfig
@@ -54,7 +51,6 @@ C:\Users\lovri\OneDrive\Desktop\WorldCupStatsApp\WinFormsApp\obj\Debug\net8.0-wi
 C:\Users\lovri\OneDrive\Desktop\WorldCupStatsApp\WinFormsApp\obj\Debug\net8.0-windows\WinFormsApp.AssemblyInfo.cs
 C:\Users\lovri\OneDrive\Desktop\WorldCupStatsApp\WinFormsApp\obj\Debug\net8.0-windows\WinFormsApp.csproj.CoreCompileInputs.cache
 C:\Users\lovri\OneDrive\Desktop\WorldCupStatsApp\WinFormsApp\obj\Debug\net8.0-windows\WinFormsApp.sourcelink.json
-C:\Users\lovri\OneDrive\Desktop\WorldCupStatsApp\WinFormsApp\obj\Debug\net8.0-windows\hr-HR\WinFormsApp.resources.dll
 C:\Users\lovri\OneDrive\Desktop\WorldCupStatsApp\WinFormsApp\obj\Debug\net8.0-windows\hr\WinFormsApp.resources.dll
 C:\Users\lovri\OneDrive\Desktop\WorldCupStatsApp\WinFormsApp\obj\Debug\net8.0-windows\WinForms.79E25943.Up2Date
 C:\Users\lovri\OneDrive\Desktop\WorldCupStatsApp\WinFormsApp\obj\Debug\net8.0-windows\WinFormsApp.dll
@@ -62,3 +58,7 @@ C:\Users\lovri\OneDrive\Desktop\WorldCupStatsApp\WinFormsApp\obj\Debug\net8.0-wi
 C:\Users\lovri\OneDrive\Desktop\WorldCupStatsApp\WinFormsApp\obj\Debug\net8.0-windows\WinFormsApp.pdb
 C:\Users\lovri\OneDrive\Desktop\WorldCupStatsApp\WinFormsApp\obj\Debug\net8.0-windows\WinFormsApp.genruntimeconfig.cache
 C:\Users\lovri\OneDrive\Desktop\WorldCupStatsApp\WinFormsApp\obj\Debug\net8.0-windows\ref\WinFormsApp.dll
+C:\Users\lovri\OneDrive\Desktop\WorldCupStatsApp\WinFormsApp\obj\Debug\net8.0-windows\WinFormsApp.Forms.WorldCup.hr.resources
+C:\Users\lovri\OneDrive\Desktop\WorldCupStatsApp\WinFormsApp\obj\Debug\net8.0-windows\WinFormsApp.Forms.Settings.hr.resources
+C:\Users\lovri\OneDrive\Desktop\WorldCupStatsApp\WinFormsApp\obj\Debug\net8.0-windows\WinFormsApp.UserControls.PlayerUserControl.hr.resources
+C:\Users\lovri\OneDrive\Desktop\WorldCupStatsApp\WinFormsApp\obj\Debug\net8.0-windows\WinFormsApp.UserControls.MatchUserControl.hr.resources

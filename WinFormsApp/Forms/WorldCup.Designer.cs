@@ -233,6 +233,7 @@
             tabRankAttendance.ResumeLayout(false);
             menuStripWorldCup.ResumeLayout(false);
             menuStripWorldCup.PerformLayout();
+            this.MainMenuStrip = this.menuStripWorldCup;
             ResumeLayout(false);
             PerformLayout();
         }

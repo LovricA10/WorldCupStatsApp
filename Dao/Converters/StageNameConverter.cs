@@ -24,6 +24,8 @@ namespace Dao.Converters
                     return StageName.FirstStage;
                 case "Play-off for third place":
                     return StageName.PlayOffForThirdPlace;
+                case "Match for third place":
+                    return StageName.MatchForThirdPlace;
                 case "Quarter-finals":
                     return StageName.QuarterFinals;
                 case "Quarter-final":
@@ -34,8 +36,7 @@ namespace Dao.Converters
                     return StageName.SemiFinals;
                 case "Semi-final":
                     return StageName.SemiFinal;
-                case "Match for third place":
-                 return StageName.MatchForThirdPlace;
+            
             }
             throw new Exception("Cannot unmarshal type StageName");
         }
@@ -59,6 +60,9 @@ namespace Dao.Converters
                 case StageName.PlayOffForThirdPlace:
                     serializer.Serialize(writer, "Play-off for third place");
                     return;
+                case StageName.MatchForThirdPlace:
+                    serializer.Serialize(writer, "Match for third place");
+                    return;
                 case StageName.QuarterFinals:
                     serializer.Serialize(writer, "Quarter-finals");
                     return;
@@ -74,9 +78,7 @@ namespace Dao.Converters
                 case StageName.SemiFinal:
                     serializer.Serialize(writer, "Semi-final");
                     return;
-                case StageName.MatchForThirdPlace:
-                     serializer.Serialize(writer, "Match for third place");
-                     return;
+          
             }
             throw new Exception("Cannot marshal type StageName");
         }

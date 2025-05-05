@@ -117,28 +117,29 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="rbFemale.Text" xml:space="preserve">
-    <value>Žene</value>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="lbLocation.TabIndex" type="System.Resources.ResXNullRef, System.Windows.Forms">
+    <value />
   </data>
-  <data name="rbMale.Text" xml:space="preserve">
-    <value>Muškarci</value>
+  <data name="lbLocation.Text" xml:space="preserve">
+    <value>Lokacija:</value>
   </data>
-  <data name="rbEnglish.Text" xml:space="preserve">
-    <value>Engleski</value>
+  <data name="lbAttendance.TabIndex" type="System.Resources.ResXNullRef, System.Windows.Forms">
+    <value />
   </data>
-  <data name="rbCroatian.Text" xml:space="preserve">
-    <value>Hrvatski</value>
+  <data name="lbAttendance.Text" xml:space="preserve">
+    <value>Posjetitelji:</value>
   </data>
-  <data name="gbLanguage.Text" xml:space="preserve">
-    <value>Jezik</value>
+  <data name="lbHomeTeam.TabIndex" type="System.Resources.ResXNullRef, System.Windows.Forms">
+    <value />
   </data>
-  <data name="btnSubmit.Text" xml:space="preserve">
-    <value>Potvrdi</value>
+  <data name="lbHomeTeam.Text" xml:space="preserve">
+    <value>Domaćin:</value>
   </data>
-  <data name="$this.Text" xml:space="preserve">
-    <value>Postavke</value>
+  <data name="lbAwayTeam.TabIndex" type="System.Resources.ResXNullRef, System.Windows.Forms">
+    <value />
   </data>
-  <data name="&gt;&gt;$this.Name" xml:space="preserve">
-    <value>&#x8;</value>
+  <data name="lbAwayTeam.Text" xml:space="preserve">
+    <value>Gost:</value>
   </data>
 </root>

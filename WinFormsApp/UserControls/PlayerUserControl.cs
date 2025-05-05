@@ -112,16 +112,36 @@ namespace WinFormsApp.UserControls
             }
         }
 
-        private string labelOverride;
+        
         [Category("Player")]
         public string ExtraLabelText
         {
-            get => labelOverride;
+            get => lbExtra.Text;
             set
             {
-                labelOverride = value;
-                lbNumber.Text = value;
+                lbExtra.Text = value;
+                UpdateNumberVisibility();
+                //labelOverride = value;
+                //lbNumber.Text = value;
             }
+        }
+
+        private void UpdateNumberVisibility()
+        {
+            bool hasExtra = !string.IsNullOrEmpty(lbExtra.Text);
+
+            lbNumber.Visible = !hasExtra;
+            lblNumber.Visible = !hasExtra;
+
+            lbExtra.Visible = hasExtra;
+            lblExtraValue.Visible = hasExtra;
+        }
+
+        [Category("Player")]
+        public string ExtraValueText
+        {
+            get => lblExtraValue.Text;
+            set => lblExtraValue.Text = value;
         }
 
         private bool showStar;

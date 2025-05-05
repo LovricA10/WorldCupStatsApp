@@ -51,7 +51,7 @@
             pbPlayer.Name = "pbPlayer";
             pbPlayer.Size = new Size(158, 153);
             pbPlayer.SizeMode = PictureBoxSizeMode.Zoom;
-            //pbPlayer.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            pbPlayer.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             pbPlayer.TabIndex = 0;
             pbPlayer.TabStop = false;
             
@@ -131,6 +131,23 @@
             lblStar.Name = "lblStar";
             lblStar.Size = new Size(0, 20);
             lblStar.TabIndex = 9;
+
+            // lbExtra
+            lbExtra = new Label();
+            lbExtra.AutoSize = true;
+            lbExtra.Location = new Point(167, 105);
+            lbExtra.Name = "lbExtra";
+            lbExtra.Size = new Size(50, 20);
+            lbExtra.TabIndex = 10;
+            lbExtra.Text = ""; // set from outside
+
+            // lblExtraValue
+            lblExtraValue = new Label();
+            lblExtraValue.AutoSize = true;
+            lblExtraValue.Location = new Point(233, 105);
+            lblExtraValue.Name = "lblExtraValue";
+            lblExtraValue.Size = new Size(0, 20);
+            lblExtraValue.TabIndex = 11;
             // 
             // PlayerUserControl
             // 
@@ -146,6 +163,8 @@
             Controls.Add(lbNumber);
             Controls.Add(lbName);
             Controls.Add(pbPlayer);
+            Controls.Add(lbExtra);
+            Controls.Add(lblExtraValue);
             Name = "PlayerUserControl";
             Size = new Size(373, 159);
             ((System.ComponentModel.ISupportInitialize)pbPlayer).EndInit();
@@ -165,5 +184,7 @@
         private Label lblPosition;
         private Label lblCaptain;
         private Label lblStar;
+        private Label lbExtra;
+        private Label lblExtraValue;
     }
 }

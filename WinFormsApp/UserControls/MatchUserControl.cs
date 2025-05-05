@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.DotNet.DesignTools.Protocol.Values;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -17,14 +18,14 @@ namespace WinFormsApp.UserControls
         public string MatchLocation
         {
             get => lblLocation.Text;
-            set => lblLocation.Text = $"Location: {value}";
+            set => lblLocation.Text = value.ToString();
         }
 
         [Category("Match Info")]
         public string AttendanceText
         {
             get => lblAttendance.Text;
-            set => lblAttendance.Text = $"Attendance: {value}";
+            set => lblAttendance.Text = value.ToString();
         }
 
         [Category("Match Info")]

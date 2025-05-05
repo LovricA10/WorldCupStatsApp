@@ -35,9 +35,9 @@ namespace WinFormsApp.Forms
         private readonly IRepository repository = RepositoryFactory.GetRepository();
 
         public WorldCup()
-        {
-            InitializeCulture();
+        {  
             InitializeComponent();
+            InitializeCulture();
             InitializeDragAndDrop();
             InitializeOpenFileDialog();
         }
@@ -234,8 +234,8 @@ namespace WinFormsApp.Forms
                 
                 flpAllPlayers.FlowDirection = FlowDirection.TopDown;
                 flpAllPlayers.HorizontalScroll.Enabled = false;
+                flpAllPlayers.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
 
-                flpAllPlayers.Width = 300; // Adjust this width according to your design needs
                 flpAllPlayers.AutoScrollMinSize = new Size(flpAllPlayers.Width, 1);
                 // show loading indicator
                 var loader = new BusyIndicator();
@@ -518,6 +518,24 @@ namespace WinFormsApp.Forms
         {
             PopulateRankingPanel(playerGoals, flpRankedByGoals, Resources.Resources.goals);
             PopulateRankingPanel(playerYellowCards, flpRankedByYellowCards, Resources.Resources.cards);
+            SetUpScrollForPanels();
+        }
+
+        private void SetUpScrollForPanels()
+        {
+            
+            flpRankedByGoals.AutoScroll = true;
+            flpRankedByYellowCards.AutoScroll = true;
+            flpRankedByAttendance.AutoScroll = true;
+
+            
+            flpRankedByGoals.HorizontalScroll.Enabled = false;
+            flpRankedByYellowCards.HorizontalScroll.Enabled = false;
+            flpRankedByAttendance.HorizontalScroll.Enabled = false;
+
+            flpRankedByGoals.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            flpRankedByYellowCards.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            flpRankedByAttendance.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
         }
 
         private void PopulateRankingPanel(IDictionary<string, int> playerGoals, FlowLayoutPanel panel, string goals)
@@ -538,10 +556,11 @@ namespace WinFormsApp.Forms
             return new PlayerUserControl
             {
                 NameText = name,
+                ExtraLabelText = label,
+                ExtraValueText = value.ToString(),
                 NumberText = value.ToString(),
                 ShowPosition = false,
                 ShowCaptain = false,
-                ExtraLabelText = label,
                 Name = name
             };
         }

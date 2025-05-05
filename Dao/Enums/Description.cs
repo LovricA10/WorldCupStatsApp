@@ -18,6 +18,9 @@ namespace Dao.Enums
         [EnumMember(Value = "Cloudy")]
         Cloudy,
 
+        [EnumMember(Value = "Cloudy Night")]
+        CloudyNight,
+
         [EnumMember(Value = "Partly Cloudy")]
         PartlyCloudy,
 

@@ -11,6 +11,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Diagnostics;
 using System.Drawing;
+using System.Drawing.Printing;
 using System.Linq;
 using System.Reflection.Emit;
 using System.Text;
@@ -35,7 +36,7 @@ namespace WinFormsApp.Forms
         private readonly IRepository repository = RepositoryFactory.GetRepository();
 
         public WorldCup()
-        {  
+        {
             InitializeComponent();
             InitializeCulture();
             InitializeDragAndDrop();
@@ -231,7 +232,7 @@ namespace WinFormsApp.Forms
 
                 flpAllPlayers.AutoScroll = true;
                 flpAllPlayers.WrapContents = false;
-                
+
                 flpAllPlayers.FlowDirection = FlowDirection.TopDown;
                 flpAllPlayers.HorizontalScroll.Enabled = false;
                 flpAllPlayers.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
@@ -240,12 +241,13 @@ namespace WinFormsApp.Forms
                 // show loading indicator
                 var loader = new BusyIndicator();
                 loader.Show(flpAllPlayers);
-                
+
 
                 string genderStr = repository.GetStoredGender();
 
                 if (!Enum.TryParse<GenderType>(genderStr, true, out var gender))
                 {
+                    Debug.WriteLine($"Gender from repo: {genderStr}"); //test
                     MessageBox.Show("Invalid gender setting");
                     return;
                 }
@@ -523,12 +525,12 @@ namespace WinFormsApp.Forms
 
         private void SetUpScrollForPanels()
         {
-            
+
             flpRankedByGoals.AutoScroll = true;
             flpRankedByYellowCards.AutoScroll = true;
             flpRankedByAttendance.AutoScroll = true;
 
-            
+
             flpRankedByGoals.HorizontalScroll.Enabled = false;
             flpRankedByYellowCards.HorizontalScroll.Enabled = false;
             flpRankedByAttendance.HorizontalScroll.Enabled = false;
@@ -540,15 +542,15 @@ namespace WinFormsApp.Forms
 
         private void PopulateRankingPanel(IDictionary<string, int> playerGoals, FlowLayoutPanel panel, string goals)
         {
-        playerGoals?
-       .OrderByDescending(entry => entry.Value)
-       .ToList()
-       .ForEach(entry =>
-       {
-           var control = CreatePlayerStatControl(entry.Key, entry.Value, goals);
-           panel.Controls.Add(control);
-           LoadPictureIfPreviouslySelected(control);
-       });
+            playerGoals?
+           .OrderByDescending(entry => entry.Value)
+           .ToList()
+           .ForEach(entry =>
+           {
+               var control = CreatePlayerStatControl(entry.Key, entry.Value, goals);
+               panel.Controls.Add(control);
+               LoadPictureIfPreviouslySelected(control);
+           });
         }
 
         private PlayerUserControl CreatePlayerStatControl(string name, int value, string label)
@@ -563,6 +565,75 @@ namespace WinFormsApp.Forms
                 ShowCaptain = false,
                 Name = name
             };
+        }
+
+        private void btnPrintGoals_Click(object sender, EventArgs e)
+        {
+            controlCounter = 0;
+            ppdGoals.Document = pdGoals;
+            ppdGoals.ShowDialog();
+        }
+
+        private void btnPrintCard_Click(object sender, EventArgs e)
+        {
+            controlCounter = 0;
+            ppdCards.Document = pdCards;
+            ppdCards.ShowDialog();
+        }
+
+        private void btnPrintAttendance_Click(object sender, EventArgs e)
+        {
+            controlCounter = 0;
+            ppdAttendance.Document = pdAttendance;
+            ppdAttendance.ShowDialog();
+        }
+
+        private void pdGoals_PrintPage(object sender, PrintPageEventArgs e)
+        {
+            PrintPanelControls(e, flpRankedByGoals);
+        }
+
+        private void pdCards_PrintPage(object sender, PrintPageEventArgs e)
+        {
+            PrintPanelControls(e, flpRankedByYellowCards);
+        }
+
+        private void pdAttendance_PrintPage(object sender,PrintPageEventArgs e)
+        {
+            PrintPanelControls(e, flpRankedByAttendance);
+        }
+
+        private void PrintPanelControls(PrintPageEventArgs e, FlowLayoutPanel panel)
+        {
+            const int startY = 25;
+            const int x = 275;
+            const int yIncrement = 150;
+            var y = startY;
+
+            for (var i = controlCounter; i < panel.Controls.Count; i++)
+            {
+                var control = panel.Controls[i];
+
+                using var bitmap = new Bitmap(control.Width, control.Height);
+                var rectangle = new Rectangle(0, 0, control.Width, control.Height);
+
+                if (controlCounter % 7 != 0 || controlCounter == 0)
+                {
+                    control.DrawToBitmap(bitmap, rectangle);
+                    e.Graphics.DrawImage(bitmap, new Point(x, y));
+
+                    y += yIncrement;
+                    controlCounter++;
+                }
+                else
+                {
+                    controlCounter++;
+                    e.HasMorePages = true;
+                    return;
+                }
+            }
+
+            e.HasMorePages = false;
         }
     }
 }

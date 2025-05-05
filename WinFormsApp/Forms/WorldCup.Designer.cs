@@ -63,18 +63,18 @@
             // 
             // cbTeams
             // 
-            resources.ApplyResources(cbTeams, "cbTeams");
             cbTeams.FormattingEnabled = true;
+            resources.ApplyResources(cbTeams, "cbTeams");
             cbTeams.Name = "cbTeams";
             cbTeams.SelectedIndexChanged += cbTeams_SelectedIndexChanged;
             // 
             // tabControl
             // 
-            resources.ApplyResources(tabControl, "tabControl");
             tabControl.Controls.Add(tabPlayers);
             tabControl.Controls.Add(tabRankGoals);
             tabControl.Controls.Add(tabRankCards);
             tabControl.Controls.Add(tabRankAttendance);
+            resources.ApplyResources(tabControl, "tabControl");
             tabControl.Name = "tabControl";
             tabControl.SelectedIndex = 0;
             tabControl.Tag = "RankCards";
@@ -83,9 +83,9 @@
             // 
             // tabPlayers
             // 
-            resources.ApplyResources(tabPlayers, "tabPlayers");
             tabPlayers.Controls.Add(flpAllPlayers);
             tabPlayers.Controls.Add(flpFavoritePlayers);
+            resources.ApplyResources(tabPlayers, "tabPlayers");
             tabPlayers.Name = "tabPlayers";
             tabPlayers.Tag = "players";
             tabPlayers.UseVisualStyleBackColor = true;
@@ -106,17 +106,17 @@
             // 
             // tabRankGoals
             // 
-            resources.ApplyResources(tabRankGoals, "tabRankGoals");
             tabRankGoals.Controls.Add(flpRankedByGoals);
             tabRankGoals.Controls.Add(btnPrintGoals);
+            resources.ApplyResources(tabRankGoals, "tabRankGoals");
             tabRankGoals.Name = "tabRankGoals";
             tabRankGoals.Tag = "rankGoals";
             tabRankGoals.UseVisualStyleBackColor = true;
             // 
             // flpRankedByGoals
             // 
-            resources.ApplyResources(flpRankedByGoals, "flpRankedByGoals");
             flpRankedByGoals.BackColor = Color.FromArgb(192, 255, 192);
+            resources.ApplyResources(flpRankedByGoals, "flpRankedByGoals");
             flpRankedByGoals.Name = "flpRankedByGoals";
             // 
             // btnPrintGoals
@@ -124,20 +124,21 @@
             resources.ApplyResources(btnPrintGoals, "btnPrintGoals");
             btnPrintGoals.Name = "btnPrintGoals";
             btnPrintGoals.UseVisualStyleBackColor = true;
+            btnPrintGoals.Click += btnPrintGoals_Click;
             // 
             // tabRankCards
             // 
-            resources.ApplyResources(tabRankCards, "tabRankCards");
             tabRankCards.Controls.Add(flpRankedByYellowCards);
             tabRankCards.Controls.Add(btnPrintCard);
+            resources.ApplyResources(tabRankCards, "tabRankCards");
             tabRankCards.Name = "tabRankCards";
             tabRankCards.Tag = "rankCards";
             tabRankCards.UseVisualStyleBackColor = true;
             // 
             // flpRankedByYellowCards
             // 
-            resources.ApplyResources(flpRankedByYellowCards, "flpRankedByYellowCards");
             flpRankedByYellowCards.BackColor = Color.FromArgb(192, 255, 192);
+            resources.ApplyResources(flpRankedByYellowCards, "flpRankedByYellowCards");
             flpRankedByYellowCards.Name = "flpRankedByYellowCards";
             // 
             // btnPrintCard
@@ -145,20 +146,21 @@
             resources.ApplyResources(btnPrintCard, "btnPrintCard");
             btnPrintCard.Name = "btnPrintCard";
             btnPrintCard.UseVisualStyleBackColor = true;
+            btnPrintCard.Click += btnPrintCard_Click;
             // 
             // tabRankAttendance
             // 
-            resources.ApplyResources(tabRankAttendance, "tabRankAttendance");
             tabRankAttendance.Controls.Add(flpRankedByAttendance);
             tabRankAttendance.Controls.Add(btnPrintAttendance);
+            resources.ApplyResources(tabRankAttendance, "tabRankAttendance");
             tabRankAttendance.Name = "tabRankAttendance";
             tabRankAttendance.Tag = "RankAttendances";
             tabRankAttendance.UseVisualStyleBackColor = true;
             // 
             // flpRankedByAttendance
             // 
-            resources.ApplyResources(flpRankedByAttendance, "flpRankedByAttendance");
             flpRankedByAttendance.BackColor = Color.FromArgb(192, 255, 192);
+            resources.ApplyResources(flpRankedByAttendance, "flpRankedByAttendance");
             flpRankedByAttendance.Name = "flpRankedByAttendance";
             // 
             // btnPrintAttendance
@@ -166,18 +168,19 @@
             resources.ApplyResources(btnPrintAttendance, "btnPrintAttendance");
             btnPrintAttendance.Name = "btnPrintAttendance";
             btnPrintAttendance.UseVisualStyleBackColor = true;
+            btnPrintAttendance.Click += btnPrintAttendance_Click;
             // 
             // menuStripWorldCup
             // 
-            resources.ApplyResources(menuStripWorldCup, "menuStripWorldCup");
             menuStripWorldCup.ImageScalingSize = new Size(20, 20);
             menuStripWorldCup.Items.AddRange(new ToolStripItem[] { settingsToolStripMenuItem });
+            resources.ApplyResources(menuStripWorldCup, "menuStripWorldCup");
             menuStripWorldCup.Name = "menuStripWorldCup";
             // 
             // settingsToolStripMenuItem
             // 
-            resources.ApplyResources(settingsToolStripMenuItem, "settingsToolStripMenuItem");
             settingsToolStripMenuItem.Name = "settingsToolStripMenuItem";
+            resources.ApplyResources(settingsToolStripMenuItem, "settingsToolStripMenuItem");
             settingsToolStripMenuItem.Click += settingsToolStripMenuItem_Click;
             // 
             // ppdGoals
@@ -185,10 +188,22 @@
             resources.ApplyResources(ppdGoals, "ppdGoals");
             ppdGoals.Name = "ppdGoals";
             // 
+            // pdGoals
+            // 
+            pdGoals.PrintPage += pdGoals_PrintPage;
+            // 
+            // pdCards
+            // 
+            pdCards.PrintPage += pdCards_PrintPage;
+            // 
             // ppdCards
             // 
             resources.ApplyResources(ppdCards, "ppdCards");
             ppdCards.Name = "ppdCards";
+            // 
+            // pdAttendance
+            // 
+            pdAttendance.PrintPage += pdAttendance_PrintPage;
             // 
             // ppdAttendance
             // 
@@ -197,9 +212,9 @@
             // 
             // contextMenuStrip
             // 
-            resources.ApplyResources(contextMenuStrip, "contextMenuStrip");
             contextMenuStrip.ImageScalingSize = new Size(20, 20);
             contextMenuStrip.Name = "contextMenuStrip";
+            resources.ApplyResources(contextMenuStrip, "contextMenuStrip");
             // 
             // WorldCup
             // 

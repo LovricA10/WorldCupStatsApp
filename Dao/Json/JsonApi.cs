@@ -22,7 +22,18 @@ namespace Dao.Json
             Debug.WriteLine("RAW JSON content from API:");
             Debug.WriteLine(response.Content);
 
-            T? data = JsonConvert.DeserializeObject<T>(response.Content); // check if is null 
+            try
+            {
+                T? data = JsonConvert.DeserializeObject<T>(response.Content); // check if is null 
+                return data ?? throw new Exception("Deserialization returned null");
+            }
+            catch (JsonSerializationException jsex)
+            {
+                Debug.WriteLine("Deserialization failed:");
+                Debug.WriteLine(jsex.Message);
+                Debug.WriteLine(jsex.StackTrace);
+                throw;
+            }
 
             //if (data == null)
             //{
@@ -30,7 +41,7 @@ namespace Dao.Json
             //}
 
 
-            return data ?? throw new Exception("Deserilization returned null");
+            //return data ?? throw new Exception("Deserilization returned null");
         }
     }
 }

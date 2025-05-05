@@ -1,17 +1,17 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <root>
-  <!-- 
-    Microsoft ResX Schema 
-    
+  <!--
+    Microsoft ResX Schema
+
     Version 2.0
-    
-    The primary goals of this format is to allow a simple XML format 
-    that is mostly human readable. The generation and parsing of the 
-    various data types are done through the TypeConverter classes 
+
+    The primary goals of this format is to allow a simple XML format
+    that is mostly human readable. The generation and parsing of the
+    various data types are done through the TypeConverter classes
     associated with the data types.
-    
+
     Example:
-    
+
     ... ado.net/XML headers & schema ...
     <resheader name="resmimetype">text/microsoft-resx</resheader>
     <resheader name="version">2.0</resheader>
@@ -26,36 +26,36 @@
         <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
         <comment>This is a comment</comment>
     </data>
-                
-    There are any number of "resheader" rows that contain simple 
+
+    There are any number of "resheader" rows that contain simple
     name/value pairs.
-    
-    Each data row contains a name, and value. The row also contains a 
-    type or mimetype. Type corresponds to a .NET class that support 
-    text/value conversion through the TypeConverter architecture. 
-    Classes that don't support this are serialized and stored with the 
+
+    Each data row contains a name, and value. The row also contains a
+    type or mimetype. Type corresponds to a .NET class that support
+    text/value conversion through the TypeConverter architecture.
+    Classes that don't support this are serialized and stored with the
     mimetype set.
-    
-    The mimetype is used for serialized objects, and tells the 
-    ResXResourceReader how to depersist the object. This is currently not 
+
+    The mimetype is used for serialized objects, and tells the
+    ResXResourceReader how to depersist the object. This is currently not
     extensible. For a given mimetype the value must be set accordingly:
-    
-    Note - application/x-microsoft.net.object.binary.base64 is the format 
-    that the ResXResourceWriter will generate, however the reader can 
+
+    Note - application/x-microsoft.net.object.binary.base64 is the format
+    that the ResXResourceWriter will generate, however the reader can
     read any of the formats listed below.
-    
+
     mimetype: application/x-microsoft.net.object.binary.base64
-    value   : The object must be serialized with 
+    value   : The object must be serialized with
             : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
             : and then encoded with base64 encoding.
-    
+
     mimetype: application/x-microsoft.net.object.soap.base64
-    value   : The object must be serialized with 
+    value   : The object must be serialized with
             : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
             : and then encoded with base64 encoding.
 
     mimetype: application/x-microsoft.net.object.bytearray.base64
-    value   : The object must be serialized into a byte array 
+    value   : The object must be serialized into a byte array
             : using a System.ComponentModel.TypeConverter
             : and then encoded with base64 encoding.
     -->
@@ -140,6 +140,75 @@
   <data name="&gt;&gt;cbTeams.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
+  <data name="&gt;&gt;tabPlayers.Name" xml:space="preserve">
+    <value>tabPlayers</value>
+  </data>
+  <data name="&gt;&gt;tabPlayers.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tabPlayers.Parent" xml:space="preserve">
+    <value>tabControl</value>
+  </data>
+  <data name="&gt;&gt;tabPlayers.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;tabRankGoals.Name" xml:space="preserve">
+    <value>tabRankGoals</value>
+  </data>
+  <data name="&gt;&gt;tabRankGoals.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tabRankGoals.Parent" xml:space="preserve">
+    <value>tabControl</value>
+  </data>
+  <data name="&gt;&gt;tabRankGoals.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;tabRankCards.Name" xml:space="preserve">
+    <value>tabRankCards</value>
+  </data>
+  <data name="&gt;&gt;tabRankCards.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tabRankCards.Parent" xml:space="preserve">
+    <value>tabControl</value>
+  </data>
+  <data name="&gt;&gt;tabRankCards.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;tabRankAttendance.Name" xml:space="preserve">
+    <value>tabRankAttendance</value>
+  </data>
+  <data name="&gt;&gt;tabRankAttendance.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tabRankAttendance.Parent" xml:space="preserve">
+    <value>tabControl</value>
+  </data>
+  <data name="&gt;&gt;tabRankAttendance.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="tabControl.Location" type="System.Drawing.Point, System.Drawing">
+    <value>12, 83</value>
+  </data>
+  <data name="tabControl.Size" type="System.Drawing.Size, System.Drawing">
+    <value>808, 508</value>
+  </data>
+  <data name="tabControl.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;tabControl.Name" xml:space="preserve">
+    <value>tabControl</value>
+  </data>
+  <data name="&gt;&gt;tabControl.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabControl, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tabControl.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;tabControl.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
   <data name="&gt;&gt;flpAllPlayers.Name" xml:space="preserve">
     <value>flpAllPlayers</value>
   </data>
@@ -192,6 +261,55 @@
   <data name="&gt;&gt;tabPlayers.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="flpAllPlayers.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Bottom, Left</value>
+  </data>
+  <data name="flpAllPlayers.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 6</value>
+  </data>
+  <data name="flpAllPlayers.Size" type="System.Drawing.Size, System.Drawing">
+    <value>350, 457</value>
+  </data>
+  <data name="flpAllPlayers.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;flpAllPlayers.Name" xml:space="preserve">
+    <value>flpAllPlayers</value>
+  </data>
+  <data name="&gt;&gt;flpAllPlayers.Type" xml:space="preserve">
+    <value>System.Windows.Forms.FlowLayoutPanel, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;flpAllPlayers.Parent" xml:space="preserve">
+    <value>tabPlayers</value>
+  </data>
+  <data name="&gt;&gt;flpAllPlayers.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="flpFavoritePlayers.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Bottom, Left</value>
+  </data>
+  <data name="flpFavoritePlayers.Location" type="System.Drawing.Point, System.Drawing">
+    <value>444, 6</value>
+  </data>
+  <data name="flpFavoritePlayers.Size" type="System.Drawing.Size, System.Drawing">
+    <value>350, 457</value>
+  </data>
+  <data name="flpFavoritePlayers.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;flpFavoritePlayers.Name" xml:space="preserve">
+    <value>flpFavoritePlayers</value>
+  </data>
+  <data name="&gt;&gt;flpFavoritePlayers.Type" xml:space="preserve">
+    <value>System.Windows.Forms.FlowLayoutPanel, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;flpFavoritePlayers.Parent" xml:space="preserve">
+    <value>tabPlayers</value>
+  </data>
+  <data name="&gt;&gt;flpFavoritePlayers.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
   <data name="&gt;&gt;flpRankedByGoals.Name" xml:space="preserve">
     <value>flpRankedByGoals</value>
   </data>
@@ -241,6 +359,51 @@
     <value>tabControl</value>
   </data>
   <data name="&gt;&gt;tabRankGoals.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="flpRankedByGoals.Location" type="System.Drawing.Point, System.Drawing">
+    <value>185, 6</value>
+  </data>
+  <data name="flpRankedByGoals.Size" type="System.Drawing.Size, System.Drawing">
+    <value>430, 463</value>
+  </data>
+  <data name="flpRankedByGoals.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;flpRankedByGoals.Name" xml:space="preserve">
+    <value>flpRankedByGoals</value>
+  </data>
+  <data name="&gt;&gt;flpRankedByGoals.Type" xml:space="preserve">
+    <value>System.Windows.Forms.FlowLayoutPanel, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;flpRankedByGoals.Parent" xml:space="preserve">
+    <value>tabRankGoals</value>
+  </data>
+  <data name="&gt;&gt;flpRankedByGoals.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="btnPrintGoals.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 211</value>
+  </data>
+  <data name="btnPrintGoals.Size" type="System.Drawing.Size, System.Drawing">
+    <value>173, 52</value>
+  </data>
+  <data name="btnPrintGoals.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="btnPrintGoals.Text" xml:space="preserve">
+    <value>PRINT</value>
+  </data>
+  <data name="&gt;&gt;btnPrintGoals.Name" xml:space="preserve">
+    <value>btnPrintGoals</value>
+  </data>
+  <data name="&gt;&gt;btnPrintGoals.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnPrintGoals.Parent" xml:space="preserve">
+    <value>tabRankGoals</value>
+  </data>
+  <data name="&gt;&gt;btnPrintGoals.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
   <data name="&gt;&gt;flpRankedByYellowCards.Name" xml:space="preserve">
@@ -294,6 +457,51 @@
   <data name="&gt;&gt;tabRankCards.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
+  <data name="flpRankedByYellowCards.Location" type="System.Drawing.Point, System.Drawing">
+    <value>185, 6</value>
+  </data>
+  <data name="flpRankedByYellowCards.Size" type="System.Drawing.Size, System.Drawing">
+    <value>430, 463</value>
+  </data>
+  <data name="flpRankedByYellowCards.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;flpRankedByYellowCards.Name" xml:space="preserve">
+    <value>flpRankedByYellowCards</value>
+  </data>
+  <data name="&gt;&gt;flpRankedByYellowCards.Type" xml:space="preserve">
+    <value>System.Windows.Forms.FlowLayoutPanel, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;flpRankedByYellowCards.Parent" xml:space="preserve">
+    <value>tabRankCards</value>
+  </data>
+  <data name="&gt;&gt;flpRankedByYellowCards.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="btnPrintCard.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 211</value>
+  </data>
+  <data name="btnPrintCard.Size" type="System.Drawing.Size, System.Drawing">
+    <value>173, 52</value>
+  </data>
+  <data name="btnPrintCard.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="btnPrintCard.Text" xml:space="preserve">
+    <value>PRINT</value>
+  </data>
+  <data name="&gt;&gt;btnPrintCard.Name" xml:space="preserve">
+    <value>btnPrintCard</value>
+  </data>
+  <data name="&gt;&gt;btnPrintCard.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnPrintCard.Parent" xml:space="preserve">
+    <value>tabRankCards</value>
+  </data>
+  <data name="&gt;&gt;btnPrintCard.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
   <data name="&gt;&gt;flpRankedByAttendance.Name" xml:space="preserve">
     <value>flpRankedByAttendance</value>
   </data>
@@ -345,94 +553,6 @@
   <data name="&gt;&gt;tabRankAttendance.ZOrder" xml:space="preserve">
     <value>3</value>
   </data>
-  <data name="tabControl.Location" type="System.Drawing.Point, System.Drawing">
-    <value>12, 83</value>
-  </data>
-  <data name="tabControl.Size" type="System.Drawing.Size, System.Drawing">
-    <value>808, 508</value>
-  </data>
-  <data name="tabControl.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;tabControl.Name" xml:space="preserve">
-    <value>tabControl</value>
-  </data>
-  <data name="&gt;&gt;tabControl.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabControl, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tabControl.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;tabControl.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="flpAllPlayers.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Bottom, Left</value>
-  </data>
-  <data name="flpAllPlayers.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 6</value>
-  </data>
-  <data name="flpAllPlayers.Size" type="System.Drawing.Size, System.Drawing">
-    <value>350, 457</value>
-  </data>
-  <data name="flpAllPlayers.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="flpFavoritePlayers.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Bottom, Left</value>
-  </data>
-  <data name="flpFavoritePlayers.Location" type="System.Drawing.Point, System.Drawing">
-    <value>444, 6</value>
-  </data>
-  <data name="flpFavoritePlayers.Size" type="System.Drawing.Size, System.Drawing">
-    <value>350, 457</value>
-  </data>
-  <data name="flpFavoritePlayers.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="flpRankedByGoals.Location" type="System.Drawing.Point, System.Drawing">
-    <value>185, 6</value>
-  </data>
-  <data name="flpRankedByGoals.Size" type="System.Drawing.Size, System.Drawing">
-    <value>430, 463</value>
-  </data>
-  <data name="flpRankedByGoals.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="btnPrintGoals.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 211</value>
-  </data>
-  <data name="btnPrintGoals.Size" type="System.Drawing.Size, System.Drawing">
-    <value>173, 52</value>
-  </data>
-  <data name="btnPrintGoals.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="btnPrintGoals.Text" xml:space="preserve">
-    <value>PRINT</value>
-  </data>
-  <data name="flpRankedByYellowCards.Location" type="System.Drawing.Point, System.Drawing">
-    <value>185, 6</value>
-  </data>
-  <data name="flpRankedByYellowCards.Size" type="System.Drawing.Size, System.Drawing">
-    <value>430, 463</value>
-  </data>
-  <data name="flpRankedByYellowCards.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="btnPrintCard.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 211</value>
-  </data>
-  <data name="btnPrintCard.Size" type="System.Drawing.Size, System.Drawing">
-    <value>173, 52</value>
-  </data>
-  <data name="btnPrintCard.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="btnPrintCard.Text" xml:space="preserve">
-    <value>PRINT</value>
-  </data>
   <data name="flpRankedByAttendance.Location" type="System.Drawing.Point, System.Drawing">
     <value>185, 6</value>
   </data>
@@ -441,6 +561,18 @@
   </data>
   <data name="flpRankedByAttendance.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
+  </data>
+  <data name="&gt;&gt;flpRankedByAttendance.Name" xml:space="preserve">
+    <value>flpRankedByAttendance</value>
+  </data>
+  <data name="&gt;&gt;flpRankedByAttendance.Type" xml:space="preserve">
+    <value>System.Windows.Forms.FlowLayoutPanel, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;flpRankedByAttendance.Parent" xml:space="preserve">
+    <value>tabRankAttendance</value>
+  </data>
+  <data name="&gt;&gt;flpRankedByAttendance.ZOrder" xml:space="preserve">
+    <value>0</value>
   </data>
   <data name="btnPrintAttendance.Location" type="System.Drawing.Point, System.Drawing">
     <value>6, 211</value>
@@ -454,9 +586,21 @@
   <data name="btnPrintAttendance.Text" xml:space="preserve">
     <value>PRINT</value>
   </data>
-  <data name="menuStripWorldCup.TrayLocation" type="System.Drawing.Point, System.Drawing">
-    <value>15, 25</value>
+  <data name="&gt;&gt;btnPrintAttendance.Name" xml:space="preserve">
+    <value>btnPrintAttendance</value>
   </data>
+  <data name="&gt;&gt;btnPrintAttendance.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnPrintAttendance.Parent" xml:space="preserve">
+    <value>tabRankAttendance</value>
+  </data>
+  <data name="&gt;&gt;btnPrintAttendance.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <metadata name="menuStripWorldCup.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>15, 25</value>
+  </metadata>
   <data name="menuStripWorldCup.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 0</value>
   </data>
@@ -487,9 +631,9 @@
   <data name="settingsToolStripMenuItem.Text" xml:space="preserve">
     <value>Settings</value>
   </data>
-  <data name="ppdGoals.TrayLocation" type="System.Drawing.Point, System.Drawing">
+  <metadata name="ppdGoals.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>369, 25</value>
-  </data>
+  </metadata>
   <data name="ppdGoals.AutoScrollMargin" type="System.Drawing.Size, System.Drawing">
     <value>0, 0</value>
   </data>
@@ -534,15 +678,15 @@
   <data name="&gt;&gt;ppdGoals.Type" xml:space="preserve">
     <value>System.Windows.Forms.PrintPreviewDialog, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="pdGoals.TrayLocation" type="System.Drawing.Point, System.Drawing">
+  <metadata name="pdGoals.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>539, 27</value>
-  </data>
-  <data name="pdCards.TrayLocation" type="System.Drawing.Point, System.Drawing">
+  </metadata>
+  <metadata name="pdCards.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>662, 26</value>
-  </data>
-  <data name="ppdCards.TrayLocation" type="System.Drawing.Point, System.Drawing">
+  </metadata>
+  <metadata name="ppdCards.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>800, 25</value>
-  </data>
+  </metadata>
   <data name="ppdCards.AutoScrollMargin" type="System.Drawing.Size, System.Drawing">
     <value>0, 0</value>
   </data>
@@ -587,12 +731,12 @@
   <data name="&gt;&gt;ppdCards.Type" xml:space="preserve">
     <value>System.Windows.Forms.PrintPreviewDialog, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="pdAttendance.TrayLocation" type="System.Drawing.Point, System.Drawing">
+  <metadata name="pdAttendance.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>954, 25</value>
-  </data>
-  <data name="ppdAttendance.TrayLocation" type="System.Drawing.Point, System.Drawing">
+  </metadata>
+  <metadata name="ppdAttendance.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>1132, 27</value>
-  </data>
+  </metadata>
   <data name="ppdAttendance.AutoScrollMargin" type="System.Drawing.Size, System.Drawing">
     <value>0, 0</value>
   </data>
@@ -637,9 +781,9 @@
   <data name="&gt;&gt;ppdAttendance.Type" xml:space="preserve">
     <value>System.Windows.Forms.PrintPreviewDialog, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="contextMenuStrip.TrayLocation" type="System.Drawing.Point, System.Drawing">
+  <metadata name="contextMenuStrip.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>197, 27</value>
-  </data>
+  </metadata>
   <data name="contextMenuStrip.Size" type="System.Drawing.Size, System.Drawing">
     <value>61, 4</value>
   </data>
@@ -649,12 +793,12 @@
   <data name="&gt;&gt;contextMenuStrip.Type" xml:space="preserve">
     <value>System.Windows.Forms.ContextMenuStrip, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="$this.Localizable" type="System.Boolean, mscorlib">
+  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
-  </data>
-  <data name="$this.TrayHeight" type="System.Int32, mscorlib">
+  </metadata>
+  <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>79</value>
-  </data>
+  </metadata>
   <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
     <value>8, 20</value>
   </data>

@@ -24,10 +24,20 @@ namespace Dao.Enums
         [EnumMember(Value = "Quarter-finals")]
         QuarterFinals,
 
+        [EnumMember(Value = "Quarter-final")]
+        QuarterFinal,
+
+
         [EnumMember(Value = "Round of 16")]
         RoundOf16,
 
         [EnumMember(Value = "Semi-finals")]
-        SemiFinals
+        SemiFinals,
+
+        [EnumMember(Value = "Semi-final")]
+        SemiFinal,
+
+        [EnumMember(Value = "Match for third place")]
+        MatchForThirdPlace
     };
 }

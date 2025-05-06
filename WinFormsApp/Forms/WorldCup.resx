@@ -140,75 +140,6 @@
   <data name="&gt;&gt;cbTeams.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
-  <data name="&gt;&gt;tabPlayers.Name" xml:space="preserve">
-    <value>tabPlayers</value>
-  </data>
-  <data name="&gt;&gt;tabPlayers.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tabPlayers.Parent" xml:space="preserve">
-    <value>tabControl</value>
-  </data>
-  <data name="&gt;&gt;tabPlayers.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;tabRankGoals.Name" xml:space="preserve">
-    <value>tabRankGoals</value>
-  </data>
-  <data name="&gt;&gt;tabRankGoals.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tabRankGoals.Parent" xml:space="preserve">
-    <value>tabControl</value>
-  </data>
-  <data name="&gt;&gt;tabRankGoals.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;tabRankCards.Name" xml:space="preserve">
-    <value>tabRankCards</value>
-  </data>
-  <data name="&gt;&gt;tabRankCards.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tabRankCards.Parent" xml:space="preserve">
-    <value>tabControl</value>
-  </data>
-  <data name="&gt;&gt;tabRankCards.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="&gt;&gt;tabRankAttendance.Name" xml:space="preserve">
-    <value>tabRankAttendance</value>
-  </data>
-  <data name="&gt;&gt;tabRankAttendance.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tabRankAttendance.Parent" xml:space="preserve">
-    <value>tabControl</value>
-  </data>
-  <data name="&gt;&gt;tabRankAttendance.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="tabControl.Location" type="System.Drawing.Point, System.Drawing">
-    <value>12, 83</value>
-  </data>
-  <data name="tabControl.Size" type="System.Drawing.Size, System.Drawing">
-    <value>808, 508</value>
-  </data>
-  <data name="tabControl.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;tabControl.Name" xml:space="preserve">
-    <value>tabControl</value>
-  </data>
-  <data name="&gt;&gt;tabControl.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabControl, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tabControl.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;tabControl.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
   <data name="&gt;&gt;flpAllPlayers.Name" xml:space="preserve">
     <value>flpAllPlayers</value>
   </data>
@@ -261,106 +192,6 @@
   <data name="&gt;&gt;tabPlayers.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="flpAllPlayers.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Bottom, Left</value>
-  </data>
-  <data name="flpAllPlayers.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 6</value>
-  </data>
-  <data name="flpAllPlayers.Size" type="System.Drawing.Size, System.Drawing">
-    <value>350, 457</value>
-  </data>
-  <data name="flpAllPlayers.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;flpAllPlayers.Name" xml:space="preserve">
-    <value>flpAllPlayers</value>
-  </data>
-  <data name="&gt;&gt;flpAllPlayers.Type" xml:space="preserve">
-    <value>System.Windows.Forms.FlowLayoutPanel, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;flpAllPlayers.Parent" xml:space="preserve">
-    <value>tabPlayers</value>
-  </data>
-  <data name="&gt;&gt;flpAllPlayers.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="flpFavoritePlayers.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Bottom, Left</value>
-  </data>
-  <data name="flpFavoritePlayers.Location" type="System.Drawing.Point, System.Drawing">
-    <value>444, 6</value>
-  </data>
-  <data name="flpFavoritePlayers.Size" type="System.Drawing.Size, System.Drawing">
-    <value>350, 457</value>
-  </data>
-  <data name="flpFavoritePlayers.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;flpFavoritePlayers.Name" xml:space="preserve">
-    <value>flpFavoritePlayers</value>
-  </data>
-  <data name="&gt;&gt;flpFavoritePlayers.Type" xml:space="preserve">
-    <value>System.Windows.Forms.FlowLayoutPanel, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;flpFavoritePlayers.Parent" xml:space="preserve">
-    <value>tabPlayers</value>
-  </data>
-  <data name="&gt;&gt;flpFavoritePlayers.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;flpRankedByGoals.Name" xml:space="preserve">
-    <value>flpRankedByGoals</value>
-  </data>
-  <data name="&gt;&gt;flpRankedByGoals.Type" xml:space="preserve">
-    <value>System.Windows.Forms.FlowLayoutPanel, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;flpRankedByGoals.Parent" xml:space="preserve">
-    <value>tabRankGoals</value>
-  </data>
-  <data name="&gt;&gt;flpRankedByGoals.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;btnPrintGoals.Name" xml:space="preserve">
-    <value>btnPrintGoals</value>
-  </data>
-  <data name="&gt;&gt;btnPrintGoals.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;btnPrintGoals.Parent" xml:space="preserve">
-    <value>tabRankGoals</value>
-  </data>
-  <data name="&gt;&gt;btnPrintGoals.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="tabRankGoals.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 29</value>
-  </data>
-  <data name="tabRankGoals.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 3, 3, 3</value>
-  </data>
-  <data name="tabRankGoals.Size" type="System.Drawing.Size, System.Drawing">
-    <value>800, 475</value>
-  </data>
-  <data name="tabRankGoals.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="tabRankGoals.Text" xml:space="preserve">
-    <value>Rank by Goals</value>
-  </data>
-  <data name="&gt;&gt;tabRankGoals.Name" xml:space="preserve">
-    <value>tabRankGoals</value>
-  </data>
-  <data name="&gt;&gt;tabRankGoals.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tabRankGoals.Parent" xml:space="preserve">
-    <value>tabControl</value>
-  </data>
-  <data name="&gt;&gt;tabRankGoals.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
   <data name="flpRankedByGoals.Location" type="System.Drawing.Point, System.Drawing">
     <value>185, 6</value>
   </data>
@@ -406,56 +237,32 @@
   <data name="&gt;&gt;btnPrintGoals.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <data name="&gt;&gt;flpRankedByYellowCards.Name" xml:space="preserve">
-    <value>flpRankedByYellowCards</value>
-  </data>
-  <data name="&gt;&gt;flpRankedByYellowCards.Type" xml:space="preserve">
-    <value>System.Windows.Forms.FlowLayoutPanel, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;flpRankedByYellowCards.Parent" xml:space="preserve">
-    <value>tabRankCards</value>
-  </data>
-  <data name="&gt;&gt;flpRankedByYellowCards.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;btnPrintCard.Name" xml:space="preserve">
-    <value>btnPrintCard</value>
-  </data>
-  <data name="&gt;&gt;btnPrintCard.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;btnPrintCard.Parent" xml:space="preserve">
-    <value>tabRankCards</value>
-  </data>
-  <data name="&gt;&gt;btnPrintCard.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="tabRankCards.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="tabRankGoals.Location" type="System.Drawing.Point, System.Drawing">
     <value>4, 29</value>
   </data>
-  <data name="tabRankCards.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+  <data name="tabRankGoals.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 3, 3, 3</value>
   </data>
-  <data name="tabRankCards.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="tabRankGoals.Size" type="System.Drawing.Size, System.Drawing">
     <value>800, 475</value>
   </data>
-  <data name="tabRankCards.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
+  <data name="tabRankGoals.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
   </data>
-  <data name="tabRankCards.Text" xml:space="preserve">
-    <value>Rank by yellow cards</value>
+  <data name="tabRankGoals.Text" xml:space="preserve">
+    <value>Rank by Goals</value>
   </data>
-  <data name="&gt;&gt;tabRankCards.Name" xml:space="preserve">
-    <value>tabRankCards</value>
+  <data name="&gt;&gt;tabRankGoals.Name" xml:space="preserve">
+    <value>tabRankGoals</value>
   </data>
-  <data name="&gt;&gt;tabRankCards.Type" xml:space="preserve">
+  <data name="&gt;&gt;tabRankGoals.Type" xml:space="preserve">
     <value>System.Windows.Forms.TabPage, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;tabRankCards.Parent" xml:space="preserve">
+  <data name="&gt;&gt;tabRankGoals.Parent" xml:space="preserve">
     <value>tabControl</value>
   </data>
-  <data name="&gt;&gt;tabRankCards.ZOrder" xml:space="preserve">
-    <value>2</value>
+  <data name="&gt;&gt;tabRankGoals.ZOrder" xml:space="preserve">
+    <value>1</value>
   </data>
   <data name="flpRankedByYellowCards.Location" type="System.Drawing.Point, System.Drawing">
     <value>185, 6</value>
@@ -501,6 +308,33 @@
   </data>
   <data name="&gt;&gt;btnPrintCard.ZOrder" xml:space="preserve">
     <value>1</value>
+  </data>
+  <data name="tabRankCards.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 29</value>
+  </data>
+  <data name="tabRankCards.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 3, 3, 3</value>
+  </data>
+  <data name="tabRankCards.Size" type="System.Drawing.Size, System.Drawing">
+    <value>800, 475</value>
+  </data>
+  <data name="tabRankCards.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="tabRankCards.Text" xml:space="preserve">
+    <value>Rank by yellow cards</value>
+  </data>
+  <data name="&gt;&gt;tabRankCards.Name" xml:space="preserve">
+    <value>tabRankCards</value>
+  </data>
+  <data name="&gt;&gt;tabRankCards.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tabRankCards.Parent" xml:space="preserve">
+    <value>tabControl</value>
+  </data>
+  <data name="&gt;&gt;tabRankCards.ZOrder" xml:space="preserve">
+    <value>2</value>
   </data>
   <data name="&gt;&gt;flpRankedByAttendance.Name" xml:space="preserve">
     <value>flpRankedByAttendance</value>
@@ -552,6 +386,76 @@
   </data>
   <data name="&gt;&gt;tabRankAttendance.ZOrder" xml:space="preserve">
     <value>3</value>
+  </data>
+  <data name="tabControl.Location" type="System.Drawing.Point, System.Drawing">
+    <value>12, 83</value>
+  </data>
+  <data name="tabControl.Size" type="System.Drawing.Size, System.Drawing">
+    <value>808, 508</value>
+  </data>
+  <data name="tabControl.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;tabControl.Name" xml:space="preserve">
+    <value>tabControl</value>
+  </data>
+  <data name="&gt;&gt;tabControl.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabControl, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tabControl.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;tabControl.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="flpAllPlayers.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Bottom, Left</value>
+  </data>
+  <data name="flpAllPlayers.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 6</value>
+  </data>
+  <data name="flpAllPlayers.Size" type="System.Drawing.Size, System.Drawing">
+    <value>350, 457</value>
+  </data>
+  <data name="flpAllPlayers.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;flpAllPlayers.Name" xml:space="preserve">
+    <value>flpAllPlayers</value>
+  </data>
+  <data name="&gt;&gt;flpAllPlayers.Type" xml:space="preserve">
+    <value>System.Windows.Forms.FlowLayoutPanel, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;flpAllPlayers.Parent" xml:space="preserve">
+    <value>tabPlayers</value>
+  </data>
+  <data name="&gt;&gt;flpAllPlayers.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="flpFavoritePlayers.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Bottom, Left</value>
+  </data>
+  <data name="flpFavoritePlayers.Location" type="System.Drawing.Point, System.Drawing">
+    <value>444, 6</value>
+  </data>
+  <data name="flpFavoritePlayers.Size" type="System.Drawing.Size, System.Drawing">
+    <value>350, 457</value>
+  </data>
+  <data name="flpFavoritePlayers.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;flpFavoritePlayers.Name" xml:space="preserve">
+    <value>flpFavoritePlayers</value>
+  </data>
+  <data name="&gt;&gt;flpFavoritePlayers.Type" xml:space="preserve">
+    <value>System.Windows.Forms.FlowLayoutPanel, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;flpFavoritePlayers.Parent" xml:space="preserve">
+    <value>tabPlayers</value>
+  </data>
+  <data name="&gt;&gt;flpFavoritePlayers.ZOrder" xml:space="preserve">
+    <value>1</value>
   </data>
   <data name="flpRankedByAttendance.Location" type="System.Drawing.Point, System.Drawing">
     <value>185, 6</value>

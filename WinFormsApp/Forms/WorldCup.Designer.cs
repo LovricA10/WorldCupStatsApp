@@ -93,13 +93,13 @@
             // flpAllPlayers
             // 
             resources.ApplyResources(flpAllPlayers, "flpAllPlayers");
-            flpAllPlayers.BackColor = Color.FromArgb(192, 255, 192);
+            flpAllPlayers.BackColor = Color.White;
             flpAllPlayers.Name = "flpAllPlayers";
             // 
             // flpFavoritePlayers
             // 
             resources.ApplyResources(flpFavoritePlayers, "flpFavoritePlayers");
-            flpFavoritePlayers.BackColor = Color.FromArgb(192, 255, 192);
+            flpFavoritePlayers.BackColor = Color.White;
             flpFavoritePlayers.Name = "flpFavoritePlayers";
             flpFavoritePlayers.DragDrop += flpFavoritePlayers_DragDrop;
             flpFavoritePlayers.DragEnter += flpFavoritePlayers_DragEnter;
@@ -115,15 +115,17 @@
             // 
             // flpRankedByGoals
             // 
-            flpRankedByGoals.BackColor = Color.FromArgb(192, 255, 192);
+            flpRankedByGoals.BackColor = Color.White;
             resources.ApplyResources(flpRankedByGoals, "flpRankedByGoals");
             flpRankedByGoals.Name = "flpRankedByGoals";
             // 
             // btnPrintGoals
             // 
+            btnPrintGoals.BackColor = Color.Black;
+            btnPrintGoals.ForeColor = SystemColors.ButtonHighlight;
             resources.ApplyResources(btnPrintGoals, "btnPrintGoals");
             btnPrintGoals.Name = "btnPrintGoals";
-            btnPrintGoals.UseVisualStyleBackColor = true;
+            btnPrintGoals.UseVisualStyleBackColor = false;
             btnPrintGoals.Click += btnPrintGoals_Click;
             // 
             // tabRankCards
@@ -137,15 +139,17 @@
             // 
             // flpRankedByYellowCards
             // 
-            flpRankedByYellowCards.BackColor = Color.FromArgb(192, 255, 192);
+            flpRankedByYellowCards.BackColor = Color.White;
             resources.ApplyResources(flpRankedByYellowCards, "flpRankedByYellowCards");
             flpRankedByYellowCards.Name = "flpRankedByYellowCards";
             // 
             // btnPrintCard
             // 
+            btnPrintCard.BackColor = Color.Black;
+            btnPrintCard.ForeColor = SystemColors.ButtonHighlight;
             resources.ApplyResources(btnPrintCard, "btnPrintCard");
             btnPrintCard.Name = "btnPrintCard";
-            btnPrintCard.UseVisualStyleBackColor = true;
+            btnPrintCard.UseVisualStyleBackColor = false;
             btnPrintCard.Click += btnPrintCard_Click;
             // 
             // tabRankAttendance
@@ -159,15 +163,17 @@
             // 
             // flpRankedByAttendance
             // 
-            flpRankedByAttendance.BackColor = Color.FromArgb(192, 255, 192);
+            flpRankedByAttendance.BackColor = Color.White;
             resources.ApplyResources(flpRankedByAttendance, "flpRankedByAttendance");
             flpRankedByAttendance.Name = "flpRankedByAttendance";
             // 
             // btnPrintAttendance
             // 
+            btnPrintAttendance.BackColor = Color.Black;
+            btnPrintAttendance.ForeColor = SystemColors.ButtonHighlight;
             resources.ApplyResources(btnPrintAttendance, "btnPrintAttendance");
             btnPrintAttendance.Name = "btnPrintAttendance";
-            btnPrintAttendance.UseVisualStyleBackColor = true;
+            btnPrintAttendance.UseVisualStyleBackColor = false;
             btnPrintAttendance.Click += btnPrintAttendance_Click;
             // 
             // menuStripWorldCup
@@ -223,6 +229,7 @@
             Controls.Add(tabControl);
             Controls.Add(cbTeams);
             Controls.Add(menuStripWorldCup);
+            MainMenuStrip = menuStripWorldCup;
             Name = "WorldCup";
             Activated += WorldCup_Activated;
             FormClosing += WorldCup_FormClosing;
@@ -233,7 +240,6 @@
             tabRankAttendance.ResumeLayout(false);
             menuStripWorldCup.ResumeLayout(false);
             menuStripWorldCup.PerformLayout();
-            this.MainMenuStrip = this.menuStripWorldCup;
             ResumeLayout(false);
             PerformLayout();
         }

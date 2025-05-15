@@ -44,7 +44,11 @@ C:\Users\lovri\OneDrive\Desktop\WorldCupStatsApp\WinFormsApp\obj\Debug\net8.0-wi
 C:\Users\lovri\OneDrive\Desktop\WorldCupStatsApp\WinFormsApp\obj\Debug\net8.0-windows\WinFormsApp.Resources.Resources.resources
 C:\Users\lovri\OneDrive\Desktop\WorldCupStatsApp\WinFormsApp\obj\Debug\net8.0-windows\WinFormsApp.UserControls.MatchUserControl.resources
 C:\Users\lovri\OneDrive\Desktop\WorldCupStatsApp\WinFormsApp\obj\Debug\net8.0-windows\WinFormsApp.UserControls.PlayerUserControl.resources
+C:\Users\lovri\OneDrive\Desktop\WorldCupStatsApp\WinFormsApp\obj\Debug\net8.0-windows\WinFormsApp.Forms.Settings.hr.resources
+C:\Users\lovri\OneDrive\Desktop\WorldCupStatsApp\WinFormsApp\obj\Debug\net8.0-windows\WinFormsApp.Forms.WorldCup.hr.resources
 C:\Users\lovri\OneDrive\Desktop\WorldCupStatsApp\WinFormsApp\obj\Debug\net8.0-windows\WinFormsApp.Resources.Resources.hr.resources
+C:\Users\lovri\OneDrive\Desktop\WorldCupStatsApp\WinFormsApp\obj\Debug\net8.0-windows\WinFormsApp.UserControls.MatchUserControl.hr.resources
+C:\Users\lovri\OneDrive\Desktop\WorldCupStatsApp\WinFormsApp\obj\Debug\net8.0-windows\WinFormsApp.UserControls.PlayerUserControl.hr.resources
 C:\Users\lovri\OneDrive\Desktop\WorldCupStatsApp\WinFormsApp\obj\Debug\net8.0-windows\WinFormsApp.csproj.GenerateResource.cache
 C:\Users\lovri\OneDrive\Desktop\WorldCupStatsApp\WinFormsApp\obj\Debug\net8.0-windows\WinFormsApp.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\lovri\OneDrive\Desktop\WorldCupStatsApp\WinFormsApp\obj\Debug\net8.0-windows\WinFormsApp.AssemblyInfoInputs.cache
@@ -58,7 +62,3 @@ C:\Users\lovri\OneDrive\Desktop\WorldCupStatsApp\WinFormsApp\obj\Debug\net8.0-wi
 C:\Users\lovri\OneDrive\Desktop\WorldCupStatsApp\WinFormsApp\obj\Debug\net8.0-windows\WinFormsApp.pdb
 C:\Users\lovri\OneDrive\Desktop\WorldCupStatsApp\WinFormsApp\obj\Debug\net8.0-windows\WinFormsApp.genruntimeconfig.cache
 C:\Users\lovri\OneDrive\Desktop\WorldCupStatsApp\WinFormsApp\obj\Debug\net8.0-windows\ref\WinFormsApp.dll
-C:\Users\lovri\OneDrive\Desktop\WorldCupStatsApp\WinFormsApp\obj\Debug\net8.0-windows\WinFormsApp.Forms.WorldCup.hr.resources
-C:\Users\lovri\OneDrive\Desktop\WorldCupStatsApp\WinFormsApp\obj\Debug\net8.0-windows\WinFormsApp.Forms.Settings.hr.resources
-C:\Users\lovri\OneDrive\Desktop\WorldCupStatsApp\WinFormsApp\obj\Debug\net8.0-windows\WinFormsApp.UserControls.PlayerUserControl.hr.resources
-C:\Users\lovri\OneDrive\Desktop\WorldCupStatsApp\WinFormsApp\obj\Debug\net8.0-windows\WinFormsApp.UserControls.MatchUserControl.hr.resources

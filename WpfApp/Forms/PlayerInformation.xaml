@@ -1,0 +1,103 @@
+﻿<Window x:Class="WpfApp.Forms.PlayerInformation"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp.Forms"
+        xmlns:properties="clr-namespace:WpfApp.Properties"
+        mc:Ignorable="d"
+        Title="{x:Static properties:Resources.playerInfoTitle}" 
+        DataContext="{Binding RelativeSource={RelativeSource Self}}" Height="450" Width="800">
+    <Window.Resources>
+        <Style TargetType="{x:Type TextBlock}">
+            <Setter Property="Margin" Value="20,10,20,10" />
+            <Setter Property="VerticalAlignment" Value="Center" />
+            <Setter Property="FontSize" Value="16" />
+            <Setter Property="TextWrapping" Value="Wrap" />
+        </Style>
+    </Window.Resources>
+
+    <Grid Margin="30">
+        <!--Columns and rows definition-->
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*" />
+            <ColumnDefinition Width="1*" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="5*" />
+            <!-- Za sliku -->
+            <RowDefinition Height="1.5*" />
+            <!-- For PlayerName and ShirtNumber -->
+            <RowDefinition Height="1.5*" />
+            <!-- For Position and Captain -->
+            <RowDefinition Height="1.5*" />
+            <!-- For GoalsScored i YellowCards -->
+        </Grid.RowDefinitions>
+
+        <Image
+        Grid.Row="0"
+        Grid.Column="0"
+        Grid.ColumnSpan="2"
+        HorizontalAlignment="Center"
+        VerticalAlignment="Center"
+        Margin="0,10"
+        MaxHeight="250"
+        MaxWidth="250"
+        Stretch="Uniform"
+        Source="{Binding PlayerImagePath}" />
+
+        <TextBlock 
+        Grid.Row="1"
+        Grid.Column="0"
+        Padding="10">
+        <Run Text="{x:Static properties:Resources.txtPlayerName}" FontWeight="Bold" />
+        <Run Text=": " />
+        <Run Text="{Binding PlayerName}" />
+        </TextBlock>
+
+        <TextBlock 
+        Grid.Row="1"
+        Grid.Column="1"
+        Padding="10">
+        <Run Text="{x:Static properties:Resources.txtShirtNumber}" FontWeight="Bold" />
+        <Run Text=": " />
+        <Run Text="{Binding ShirtNumber}" />
+        </TextBlock>
+
+        <TextBlock 
+        Grid.Row="2"
+        Grid.Column="0"
+        Padding="10">
+        <Run Text="{x:Static properties:Resources.txtPosition}" FontWeight="Bold" />
+        <Run Text=": " />
+        <Run Text="{Binding Position}" />
+        </TextBlock>
+
+        <TextBlock 
+        Grid.Row="2"
+        Grid.Column="1"
+        Padding="10">
+        <Run Text="{x:Static properties:Resources.txtCaptain}" FontWeight="Bold" />
+        <Run Text=": " />
+        <Run Text="{Binding Captain}" />
+        </TextBlock>
+
+        <TextBlock 
+        Grid.Row="3"
+        Grid.Column="0"
+        Padding="10">
+        <Run Text="{x:Static properties:Resources.txtGoalsScored}" FontWeight="Bold" />
+        <Run Text=": " />
+        <Run Text="{Binding GoalsScored}" />
+        </TextBlock>
+
+        <TextBlock 
+        Grid.Row="3"
+        Grid.Column="1"
+        Padding="10">
+        <Run Text="{x:Static properties:Resources.txtYellowCards}" FontWeight="Bold" />
+        <Run Text=": " />
+        <Run Text="{Binding YellowCardsReceived}" />
+        </TextBlock>
+    </Grid>
+</Window>

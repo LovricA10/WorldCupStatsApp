@@ -73,20 +73,20 @@
         <!-- Menu -->
         <DockPanel Grid.Row="0" Grid.ColumnSpan="8">
             <Menu DockPanel.Dock="Top">
-                <MenuItem Header="{x:Static properties:Resources.settingsFormTitle}" Click="MenuItem_OnClick" />
+                <MenuItem Header="{x:Static properties:Resources.settingsFormTitle}" Click="MenuItem_Click" />
             </Menu>
         </DockPanel>
 
         <!-- Home team -->
         <StackPanel Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="4" Style="{StaticResource ComboBoxStyle}">
-            <ComboBox x:Name="CbHomeTeam" SelectionChanged="CbHomeTeam_OnSelectionChanged" Height="30" FontSize="14"/>
-            <Button x:Name="BtnHomeTeamInformation" Content="{x:Static properties:Resources.btnTeamInfo}" Click="BtnHomeTeamInformation_OnClick"/>
+            <ComboBox x:Name="CbHomeTeam" SelectionChanged="CbHomeTeam_SelectionChanged" Height="30" FontSize="14"/>
+            <Button x:Name="BtnHomeTeamInformation" Content="{x:Static properties:Resources.btnTeamInfo}" Click="BtnHomeTeamInformation_Click"/>
         </StackPanel>
 
         <!-- Away team -->
         <StackPanel Grid.Row="1" Grid.Column="4" Grid.ColumnSpan="4" Style="{StaticResource ComboBoxStyle}">
-            <ComboBox x:Name="CbAwayTeam" SelectionChanged="CbAwayTeam_OnSelectionChanged" Height="30" FontSize="14"/>
-            <Button x:Name="BtnAwayTeamInformation" Content="{x:Static properties:Resources.btnTeamInfo}" Click="BtnAwayTeamInformation_OnClick"/>
+            <ComboBox x:Name="CbAwayTeam" SelectionChanged="CbAwayTeam_SelectionChanged" Height="30" FontSize="14"/>
+            <Button x:Name="BtnAwayTeamInformation" Content="{x:Static properties:Resources.btnTeamInfo}" Click="BtnAwayTeamInformation_Click"/>
         </StackPanel>
 
         <!-- Loading spinner -->
@@ -97,7 +97,7 @@
         <!-- Background image -->
         <Grid Grid.Row="2" Grid.ColumnSpan="8">
             <Grid.Background>
-                <ImageBrush ImageSource="/ImageSource/football_pitch.jpg" Stretch="UniformToFill"/>
+                <ImageBrush ImageSource="/WpfApp;component/ImageSource/football_pitch.jpg" Stretch="UniformToFill"/>
             </Grid.Background>
 
             <!-- Home Team Panels -->

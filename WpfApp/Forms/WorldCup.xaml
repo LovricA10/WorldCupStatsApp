@@ -10,24 +10,21 @@
         Title="{x:Static properties:Resources.worldCupTitle}"
         Loaded="WorldCup_OnLoaded"
         Closing="WorldCup_Closing"
-        Height="450" Width="800">
+        Height="600" Width="800">
     <Window.Resources>
         <!-- Styles -->
         <Style TargetType="{x:Type WrapPanel}">
             <Setter Property="Orientation" Value="Vertical" />
             <Setter Property="VerticalAlignment" Value="Center" />
-            <Setter Property="HorizontalAlignment" Value="Center" />
-            <Setter Property="Margin" Value="5" />
         </Style>
 
         <Style TargetType="{x:Type Button}">
-            <Setter Property="Margin" Value="0,10" />
-            <Setter Property="Width" Value="140" />
-            <Setter Property="FontSize" Value="14" />
+            <Setter Property="Margin" Value="0 15 0 0" />
+            <Setter Property="Width" Value="110" />
         </Style>
 
         <Style x:Key="ComboBoxStyle" TargetType="{x:Type Panel}">
-            <Setter Property="Margin" Value="20,10" />
+            <Setter Property="Margin" Value="20 0 20 0" />
             <Setter Property="VerticalAlignment" Value="Center" />
         </Style>
     </Window.Resources>
@@ -55,23 +52,23 @@
     <Grid>
         <!-- Column & Row Definitions -->
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="*" />
-            <ColumnDefinition Width="*" />
-            <ColumnDefinition Width="*" />
-            <ColumnDefinition Width="*" />
-            <ColumnDefinition Width="*" />
-            <ColumnDefinition Width="*" />
-            <ColumnDefinition Width="*" />
-            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="1*" />
+            <ColumnDefinition Width="1*" />
+            <ColumnDefinition Width="1*" />
+            <ColumnDefinition Width="1*" />
+            <ColumnDefinition Width="1*" />
+            <ColumnDefinition Width="1*" />
+            <ColumnDefinition Width="1*" />
+            <ColumnDefinition Width="1*" />
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
-            <RowDefinition Height="Auto" />
-            <RowDefinition Height="Auto" />
-            <RowDefinition Height="*" />
+            <RowDefinition Height="0.2*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="5*" />
         </Grid.RowDefinitions>
 
         <!-- Menu -->
-        <DockPanel Grid.Row="0" Grid.ColumnSpan="8">
+        <DockPanel Grid.Row="0" Grid.Column="0">
             <Menu DockPanel.Dock="Top">
                 <MenuItem Header="{x:Static properties:Resources.settingsFormTitle}" Click="MenuItem_Click" />
             </Menu>
@@ -79,13 +76,13 @@
 
         <!-- Home team -->
         <StackPanel Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="4" Style="{StaticResource ComboBoxStyle}">
-            <ComboBox x:Name="CbHomeTeam" SelectionChanged="CbHomeTeam_SelectionChanged" Height="30" FontSize="14"/>
+            <ComboBox x:Name="CbHomeTeam" SelectionChanged="CbHomeTeam_SelectionChanged"/>
             <Button x:Name="BtnHomeTeamInformation" Content="{x:Static properties:Resources.btnTeamInfo}" Click="BtnHomeTeamInformation_Click"/>
         </StackPanel>
 
         <!-- Away team -->
         <StackPanel Grid.Row="1" Grid.Column="4" Grid.ColumnSpan="4" Style="{StaticResource ComboBoxStyle}">
-            <ComboBox x:Name="CbAwayTeam" SelectionChanged="CbAwayTeam_SelectionChanged" Height="30" FontSize="14"/>
+            <ComboBox x:Name="CbAwayTeam" SelectionChanged="CbAwayTeam_SelectionChanged"/>
             <Button x:Name="BtnAwayTeamInformation" Content="{x:Static properties:Resources.btnTeamInfo}" Click="BtnAwayTeamInformation_Click"/>
         </StackPanel>
 
@@ -95,22 +92,21 @@
         </StackPanel>
 
         <!-- Background image -->
-        <Grid Grid.Row="2" Grid.ColumnSpan="8">
-            <Grid.Background>
-                <ImageBrush ImageSource="/WpfApp;component/ImageSource/football_pitch.jpg" Stretch="UniformToFill"/>
-            </Grid.Background>
-
+        <StackPanel Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="8">
+            <StackPanel.Background>
+                <ImageBrush ImageSource="/WpfApp;component/ImageSource/football_pitch.jpg"/>
+            </StackPanel.Background>
+         </StackPanel>
             <!-- Home Team Panels -->
-            <WrapPanel x:Name="PnlHomeTeamGoalie" Grid.Column="0" Opacity="0" Background="#FFCCE5FF"/>
-            <WrapPanel x:Name="PnlHomeTeamDefender" Grid.Column="1" Opacity="0" Background="#FFCCE5FF"/>
-            <WrapPanel x:Name="PnlHomeTeamMidfield" Grid.Column="2" Opacity="0" Background="#FFCCE5FF"/>
-            <WrapPanel x:Name="PnlHomeTeamForward" Grid.Column="3" Opacity="0" Background="#FFCCE5FF"/>
+        <WrapPanel x:Name="PnlHomeTeamGoalie" Orientation="Horizontal" Grid.Column="0" Grid.Row="2" />
+        <WrapPanel x:Name="PnlHomeTeamDefender" Orientation="Horizontal" Grid.Column="1" Grid.Row="2"/>
+        <WrapPanel x:Name="PnlHomeTeamMidfield" Orientation="Horizontal" Grid.Column="2" Grid.Row="2"/>
+        <WrapPanel x:Name="PnlHomeTeamForward" Orientation="Horizontal" Grid.Column="3" Grid.Row="2"/>
 
             <!-- Away Team Panels -->
-            <WrapPanel x:Name="PnlAwayTeamForward" Grid.Column="4" Opacity="0" Background="#FFFFCCCC"/>
-            <WrapPanel x:Name="PnlAwayTeamMidfield" Grid.Column="5" Opacity="0" Background="#FFFFCCCC"/>
-            <WrapPanel x:Name="PnlAwayTeamDefender" Grid.Column="6" Opacity="0" Background="#FFFFCCCC"/>
-            <WrapPanel x:Name="PnlAwayTeamGoalie" Grid.Column="7" Opacity="0" Background="#FFFFCCCC"/>
-        </Grid>
+        <WrapPanel x:Name="PnlAwayTeamForward" Orientation="Horizontal" Grid.Column="4" Grid.Row="2"/>
+        <WrapPanel x:Name="PnlAwayTeamMidfield" Orientation="Horizontal" Grid.Column="5" Grid.Row="2"/>
+        <WrapPanel x:Name="PnlAwayTeamDefender" Orientation="Horizontal" Grid.Column="6" Grid.Row="2"/>
+        <WrapPanel x:Name="PnlAwayTeamGoalie" Orientation="Horizontal" Grid.Column="7" Grid.Row="2"/>
     </Grid>
 </Window>

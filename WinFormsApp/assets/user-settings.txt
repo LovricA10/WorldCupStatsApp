@@ -1,1 +1,1 @@
-male|EN|Croatia
+male|HR

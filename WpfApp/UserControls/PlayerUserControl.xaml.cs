@@ -23,23 +23,28 @@ namespace WpfApp.UserControls
     {
 
         private readonly IRepository repository;
-        private const string DefaultImagePath = @"../../ImageSource/player.png";
+        //private const string DefaultImagePath = @"../../ImageSource/player.png";
+        private const string DefaultImagePath = @"pack://application:,,,/ImageSource/player.png";
 
+        public string PlayerName { get; set; }
+        public string ShirtNumber { get; set; }
+
+        public string PlayerImagePath { get; private set; }
+       
         public PlayerUserControl(string playerName, string shirtNumber)
         {
             InitializeComponent();
             repository = RepositoryFactory.GetRepository();
             PlayerName = playerName;
             ShirtNumber = shirtNumber;
+
+            PlayerImagePath = repository.ImageExists(PlayerName)
+               ? repository.RetrieveImagePath(PlayerName)
+               : DefaultImagePath;
+
+
             DataContext = this;
         }
-
-
-        public string PlayerName { get; set; }
-        public string ShirtNumber { get; set; }
-
-        public string ImagePath => repository.ImageExists(PlayerName)
-            ? repository.RetrieveImagePath(PlayerName) : DefaultImagePath;
 
     }
 }

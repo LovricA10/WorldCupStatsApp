@@ -33,7 +33,7 @@ namespace WpfApp.Forms
         private readonly IApi api = ApiFactory.GetApi();
         private readonly IRepository repository = RepositoryFactory.GetRepository();
 
-        public MatchTeam HomeTeam { get; private set; }
+        public Team HomeTeam { get; private set; }
         public Team AwayTeam { get; private set; }
         public WorldCup()
         {
@@ -46,6 +46,10 @@ namespace WpfApp.Forms
         {
             switch (repository.GetSavedWindowSize()?.ToLowerInvariant())
             {
+                case "small":
+                    Width = 800;
+                    Height = 600;
+                    break;
                 case "medium":
                     Width = 1024;
                     Height = 768;
@@ -109,7 +113,7 @@ namespace WpfApp.Forms
         }
 
         private void BtnHomeTeamInformation_Click(object sender, RoutedEventArgs e)
-        => ShowTeamStats(CbHomeTeam.SelectedItem as MatchTeam);
+        => ShowTeamStats(CbHomeTeam.SelectedItem as Team);
 
 
         private void BtnAwayTeamInformation_Click(object sender, RoutedEventArgs e)
@@ -122,7 +126,7 @@ namespace WpfApp.Forms
             try
             {
                 var gender = Enum.Parse<GenderType>(repository.GetStoredGender(), ignoreCase: true);
-                var endpoint = Dao.Utilitly.EndpointBuilder.BuildTeamResultsEndpoint(gender);
+                var endpoint = EndpointBuilder.BuildTeamResultsEndpoint(gender);
                 var results = await api.GetDataAsync<IList<TeamResult>>(endpoint);
                 var stat = results.FirstOrDefault(r => r.Country == team.Country);
 
@@ -152,7 +156,7 @@ namespace WpfApp.Forms
 
         private void CbHomeTeam_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            HomeTeam = (sender as ComboBox)?.SelectedItem as MatchTeam;
+            HomeTeam = (sender as ComboBox).SelectedItem as Team;
             ClearTeamPanels(isAwayTeam: false);
             LoadPlayersAsync(HomeTeam?.Country, isAwayTeam: false);
             LoadOpponentsAsync(CbAwayTeam, HomeTeam?.Country);
@@ -172,17 +176,25 @@ namespace WpfApp.Forms
             try
             {
                 var gender = Enum.Parse<GenderType>(repository.GetStoredGender(), ignoreCase: true);
-                var endpoint = EndpointBuilder.BuildMatchesEndpoint(gender);
-                var matches = await api.GetDataAsync<IList<MatchDetail>>(endpoint);
 
-                var opponents = matches
-                    .Where(m => m.HomeTeamCountry == homeTeamCountry || m.AwayTeamCountry == homeTeamCountry)
-                    .Select(m => m.HomeTeamCountry == homeTeamCountry ? m.AwayTeam : m.HomeTeam)
+                var teamsEndpoint = EndpointBuilder.BuildTeamsEndpoint(gender);
+                var allTeams = await api.GetDataAsync<IList<Team>>(teamsEndpoint);
+
+                var matchesEndpoint = EndpointBuilder.BuildMatchesEndpoint(gender);
+                var matches = await api.GetDataAsync<IList<MatchDetail>>(matchesEndpoint);
+
+                var opponentCountries = matches
+                    .Where(m => m.HomeTeamCountry == homeTeamCountry)
+                    .Select(m =>  m.AwayTeamCountry)
                     .Distinct()
+                    //.Select(country => new Team { Country = country, })
                     .ToList();
                 //foreach (var match in matches.Where(m => m.HomeTeamCountry == homeTeamCountry))
                 //    combo.Items.Add(match.AwayTeam);
 
+                var opponents = allTeams
+                    .Where(t => opponentCountries.Contains(t.Country))
+                    .ToList();
                 foreach (var opponent in opponents)
                     combo.Items.Add(opponent);
             }
@@ -200,14 +212,30 @@ namespace WpfApp.Forms
             {
                 ShowSpinner(true);
 
+
+                foreach (Position pos in Enum.GetValues(typeof(Position)))
+                {
+                    var panel = GetPanel(pos, isAwayTeam);
+                    panel.Children.Clear();
+                    //panel.Opacity = 1; 
+                }
                 var gender = Enum.Parse<GenderType>(repository.GetStoredGender(), ignoreCase: true);
-                var endpoint = Dao.Utilitly.EndpointBuilder.BuildMatchesEndpoint(gender);
+                var endpoint = EndpointBuilder.BuildMatchesEndpoint(gender);
                 var matches = await api.GetDataAsync<IList<MatchDetail>>(endpoint);
-                var match = matches?.FirstOrDefault(m => m.HomeTeamCountry == country);
+                //var match = matches?.FirstOrDefault(m => m.HomeTeamCountry == country);
+                //var players = match?.HomeTeamStatistics?.StartingEleven;
 
-                var players = match?.HomeTeamStatistics?.StartingEleven;
+                var match = matches?.FirstOrDefault(m =>
+                    (!isAwayTeam && m.HomeTeamCountry == country) ||
+                    (isAwayTeam && m.AwayTeamCountry == country));
+
+                var players = isAwayTeam
+                    ? match?.AwayTeamStatistics?.StartingEleven
+                    : match?.HomeTeamStatistics?.StartingEleven;
+
                 if (players == null) return;
-
+                
+                
                 foreach (var player in players)
                 {
                     var playerControl = new PlayerUserControl(player.Name, player.ShirtNumber.ToString())
@@ -238,13 +266,22 @@ namespace WpfApp.Forms
         try
             {
                var gender = Enum.Parse<GenderType>(repository.GetStoredGender(), ignoreCase: true);
-               var endpoint = Dao.Utilitly.EndpointBuilder.BuildMatchesEndpoint(gender);
+               var endpoint = EndpointBuilder.BuildMatchesEndpoint(gender);
                var matches = await api.GetDataAsync<IList<MatchDetail>>(endpoint);
-               var match = matches.FirstOrDefault(m => m.HomeTeamCountry == HomeTeam.Country && m.AwayTeamCountry == AwayTeam.Country);
+               var match = matches.FirstOrDefault(m => 
+               m.HomeTeamCountry?.Trim().ToLower() == HomeTeam?.Country?.Trim().ToLower() && m.AwayTeamCountry?.Trim().ToLower() == AwayTeam.Country?.Trim().ToLower());
 
                var button = sender as Button;
                var panel = button?.Content as StackPanel;
-               var playerName = (panel?.Children[0] as Label)?.Content.ToString();
+                var label = panel?.Children.OfType<Label>().FirstOrDefault();
+
+                if (label == null || label.Content == null)
+                {
+                    ShowError();
+                    return;
+                }
+
+                var playerName = label.Content.ToString();
 
                 var homePlayers = match?.HomeTeamStatistics?.StartingEleven ?? Enumerable.Empty<StartingEleven>();
                 var awayPlayers = match?.AwayTeamStatistics?.StartingEleven ?? Enumerable.Empty<StartingEleven>();
@@ -262,8 +299,13 @@ namespace WpfApp.Forms
                 var goals = events.Count(ev => ev.TypeOfEvent == TypeOfEvent.Goal || ev.TypeOfEvent == TypeOfEvent.GoalOwn);
                var yellowCards = events.Count(ev => ev.TypeOfEvent == TypeOfEvent.YellowCard || ev.TypeOfEvent == TypeOfEvent.YellowCardSecond);
 
+                if (player == null)
+                {
+                    MessageBox.Show("Player is null. Cannot show player info.", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                    return;
+                }
                 new PlayerInformation(
-                    player?.Name,
+                    player.Name,
                     player.ShirtNumber.ToString(),
                     player.Position.ToString(),
                     player.Captain.ToString().CapitalizeFirstLetter(),

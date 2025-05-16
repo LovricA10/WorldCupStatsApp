@@ -52,8 +52,8 @@ namespace WpfApp.Forms
 
         private void btnSettingsSave_OnClick(object sender, RoutedEventArgs e)
         {
-            const string title = "Settings";
-            const string message = "Confirm selected language and tournament type.";
+            string title =   Properties.Resources.settingsTitle;
+            string message = Properties.Resources.message;
 
             var confirmed = MessageBox.Show(message, title, MessageBoxButton.OKCancel, MessageBoxImage.Question);
             if (confirmed != MessageBoxResult.OK) return;

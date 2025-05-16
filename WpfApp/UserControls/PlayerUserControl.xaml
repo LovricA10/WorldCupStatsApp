@@ -5,8 +5,19 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:WpfApp.UserControls"
              mc:Ignorable="d" 
-             d:DesignHeight="30" d:DesignWidth="30">
-
+             d:DesignHeight="30" d:DesignWidth="30" Opacity="0">
+    <UserControl.Triggers>
+        <EventTrigger RoutedEvent="UserControl.Loaded">
+            <BeginStoryboard>
+                <Storyboard>
+                    <DoubleAnimation 
+                        Storyboard.TargetProperty="Opacity"
+                        From="0" To="1"
+                        Duration="0:0:0.3" />
+                </Storyboard>
+            </BeginStoryboard>
+        </EventTrigger>
+    </UserControl.Triggers>
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="1*" />
@@ -21,29 +32,37 @@
             BorderThickness="0"
             x:Name="BtnUserControl"
             Style="{StaticResource {x:Static ToolBar.ButtonStyleKey}}">
-            <StackPanel
-                x:Name="PnlPlayerUserControl">
-                <StackPanel.Resources>
-                    <Style TargetType="{x:Type Label}">
-                        <Setter Property="HorizontalAlignment" Value="Center" />
-                    </Style>
-                </StackPanel.Resources>
+            <Viewbox Stretch="Uniform">
+                <StackPanel
+                x:Name="PnlPlayerUserControl"
+                Width="100" Height="100">
+                    <StackPanel.Resources>
+                        <Style TargetType="{x:Type Label}">
+                            <Setter Property="HorizontalAlignment" Value="Center" />
+                            <Setter Property="Foreground" Value="White"/>
+                        </Style>
+                    </StackPanel.Resources>
 
-                <Label 
+                    <Label 
                     x:Name="LblPlayerName"
                     Content="{Binding PlayerName}" 
-                    />
+                    FontSize="9"/>
 
-                <Image 
+                    <Image 
                     HorizontalAlignment="Center"
                     Margin="20,0"
+                    Width="50"
+                    Height="50"
+                    Stretch="Uniform"
                     Source="{Binding PlayerImagePath}"
                     />
 
-                <Label
+                    <Label
                     x:Name="LblShirtNumber"
-                    Content="{Binding ShirtNumber}"/>
-            </StackPanel>
+                    Content="{Binding ShirtNumber}"
+                    FontSize="12"/>
+                </StackPanel>
+            </Viewbox>
         </Button>
     </Grid>
 </UserControl>

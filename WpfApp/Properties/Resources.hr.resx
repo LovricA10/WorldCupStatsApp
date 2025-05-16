@@ -126,11 +126,23 @@
   <data name="btnTeamInfo" xml:space="preserve">
     <value>Statistika tima</value>
   </data>
+  <data name="confirmCloseText" xml:space="preserve">
+    <value> Potvrdi zatvaranje aplikacije</value>
+  </data>
+  <data name="confirmCloseTItle" xml:space="preserve">
+    <value>Zatvori aplikaciju</value>
+  </data>
   <data name="croatian" xml:space="preserve">
     <value>Hrvatski</value>
   </data>
   <data name="english" xml:space="preserve">
     <value>Engleski</value>
+  </data>
+  <data name="ErrorMessage" xml:space="preserve">
+    <value>Došlo je do pogreške. Molimo pokušajte kasnije.</value>
+  </data>
+  <data name="ErrorTitle" xml:space="preserve">
+    <value>Pogreška</value>
   </data>
   <data name="female" xml:space="preserve">
     <value>Žensko</value>
@@ -146,6 +158,9 @@
   </data>
   <data name="medium" xml:space="preserve">
     <value>Srednja veličina</value>
+  </data>
+  <data name="message" xml:space="preserve">
+    <value>Potvrdite odabrani jezik i prvenstvo</value>
   </data>
   <data name="playerInfoTitle" xml:space="preserve">
     <value>Informacije o igraču</value>

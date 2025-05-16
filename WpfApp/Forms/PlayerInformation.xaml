@@ -16,8 +16,32 @@
             <Setter Property="TextWrapping" Value="Wrap" />
         </Style>
     </Window.Resources>
+    <Window.Triggers>
+        <EventTrigger RoutedEvent="Window.Loaded">
+            <BeginStoryboard>
+                <Storyboard>
+                    <!-- Slide from right -->
+                    <DoubleAnimation 
+                    Storyboard.TargetName="SlideTransform"
+                    Storyboard.TargetProperty="X"
+                    From="300" To="0" Duration="0:0:0.5">
+                        <DoubleAnimation.EasingFunction>
+                            <CubicEase EasingMode="EaseOut"/>
+                        </DoubleAnimation.EasingFunction>
+                    </DoubleAnimation>
 
-    <Grid Margin="30">
+                    <!-- Fade-in -->
+                    <DoubleAnimation 
+                    Storyboard.TargetProperty="Opacity"
+                    From="0" To="1" Duration="0:0:0.5"/>
+                </Storyboard>
+            </BeginStoryboard>
+        </EventTrigger>
+    </Window.Triggers>
+    <Grid RenderTransformOrigin="0.5,0.5" Margin="30">
+        <Grid.RenderTransform>
+            <TranslateTransform x:Name="SlideTransform" X="300"/>
+        </Grid.RenderTransform>
         <!--Columns and rows definition-->
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="1*" />
@@ -25,7 +49,7 @@
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition Height="5*" />
-            <!-- Za sliku -->
+            <!-- For image -->
             <RowDefinition Height="1.5*" />
             <!-- For PlayerName and ShirtNumber -->
             <RowDefinition Height="1.5*" />

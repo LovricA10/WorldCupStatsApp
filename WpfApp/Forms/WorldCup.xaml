@@ -69,26 +69,34 @@
 
         <!-- Menu -->
         <DockPanel Grid.Row="0" Grid.Column="0">
-            <Menu DockPanel.Dock="Top">
+            <Menu DockPanel.Dock="Top" HorizontalAlignment="Left" Width="60">
                 <MenuItem Header="{x:Static properties:Resources.settingsFormTitle}" Click="MenuItem_Click" />
             </Menu>
         </DockPanel>
 
         <!-- Home team -->
         <StackPanel Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="4" Style="{StaticResource ComboBoxStyle}">
-            <ComboBox x:Name="CbHomeTeam" SelectionChanged="CbHomeTeam_SelectionChanged"/>
+            <ComboBox x:Name="CbHomeTeam" Height="30" SelectionChanged="CbHomeTeam_SelectionChanged"/>
             <Button x:Name="BtnHomeTeamInformation" Content="{x:Static properties:Resources.btnTeamInfo}" Click="BtnHomeTeamInformation_Click"/>
         </StackPanel>
 
         <!-- Away team -->
         <StackPanel Grid.Row="1" Grid.Column="4" Grid.ColumnSpan="4" Style="{StaticResource ComboBoxStyle}">
-            <ComboBox x:Name="CbAwayTeam" SelectionChanged="CbAwayTeam_SelectionChanged"/>
+            <ComboBox x:Name="CbAwayTeam" Height="30" SelectionChanged="CbAwayTeam_SelectionChanged"/>
             <Button x:Name="BtnAwayTeamInformation" Content="{x:Static properties:Resources.btnTeamInfo}" Click="BtnAwayTeamInformation_Click"/>
         </StackPanel>
 
+        <Grid Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="8" IsHitTestVisible="False">
+            <TextBlock x:Name="TxtMatchResult" 
+               FontSize="20" FontWeight="Bold" 
+               HorizontalAlignment="Center" VerticalAlignment="Center"
+               TextAlignment="Center" 
+               Margin="0,55,0,0" />
+        </Grid>
+
         <!-- Loading spinner -->
-        <StackPanel Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="8" VerticalAlignment="Top">
-            <fa:ImageAwesome x:Name="LoadingSpinner" Icon="CircleOutlineNotch" Margin="0,10" Visibility="Hidden" Spin="False" SpinDuration="2" MaxHeight="48"/>
+        <StackPanel Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="8" Panel.ZIndex="1">
+            <fa:ImageAwesome x:Name="LoadingSpinner" Icon="CircleOutlineNotch" Margin="0 10 0 0" Visibility="Hidden" Spin="False" SpinDuration="2" MaxHeight="48"/>
         </StackPanel>
 
         <!-- Background image -->

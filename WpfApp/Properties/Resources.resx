@@ -126,11 +126,23 @@
   <data name="btnTeamInfo" xml:space="preserve">
     <value>Team information</value>
   </data>
+  <data name="confirmCloseText" xml:space="preserve">
+    <value> Confirm closing application</value>
+  </data>
+  <data name="confirmCloseTItle" xml:space="preserve">
+    <value>Close application</value>
+  </data>
   <data name="croatian" xml:space="preserve">
     <value>Croatian</value>
   </data>
   <data name="english" xml:space="preserve">
     <value>English</value>
+  </data>
+  <data name="ErrorMessage" xml:space="preserve">
+    <value>An error occurred. Please try again later.</value>
+  </data>
+  <data name="ErrorTitle" xml:space="preserve">
+    <value>Error</value>
   </data>
   <data name="female" xml:space="preserve">
     <value>Female</value>
@@ -146,6 +158,9 @@
   </data>
   <data name="medium" xml:space="preserve">
     <value>Medium</value>
+  </data>
+  <data name="message" xml:space="preserve">
+    <value>Confirm selected language and tournament type</value>
   </data>
   <data name="playerInfoTitle" xml:space="preserve">
     <value>Player information</value>

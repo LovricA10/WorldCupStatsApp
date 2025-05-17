@@ -313,7 +313,9 @@ namespace WpfApp.Forms
                     .Concat(awayEvents)
                     .Where(ev => ev.Player == playerName);
 
-                var goals = events.Count(ev => ev.TypeOfEvent == TypeOfEvent.Goal || ev.TypeOfEvent == TypeOfEvent.GoalOwn);
+               var goals = events.Count(ev => 
+               ev.TypeOfEvent == TypeOfEvent.Goal || ev.TypeOfEvent == TypeOfEvent.GoalOwn
+               || ev.TypeOfEvent == TypeOfEvent.GoalPenalty);
                var yellowCards = events.Count(ev => ev.TypeOfEvent == TypeOfEvent.YellowCard || ev.TypeOfEvent == TypeOfEvent.YellowCardSecond);
 
                 if (player == null)

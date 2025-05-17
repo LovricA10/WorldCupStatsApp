@@ -22,3 +22,7 @@ Milan BADELJ|C:\Users\lovri\OneDrive\Desktop\Hrv\Badelj.jpg
 Marko PJACA|C:\Users\lovri\OneDrive\Desktop\Hrv\Pjaca.png
 Josip PIVARIC|C:\Users\lovri\OneDrive\Desktop\Hrv\Pivaric.jpg
 Ivan RAKITIC|C:\Users\lovri\OneDrive\Desktop\Hrv\Rakitic.jpg
+Marcelo BROZOVIC|C:\Users\lovri\OneDrive\Desktop\Hrv\Brozovic.jpg
+Domagoj VIDA|C:\Users\lovri\OneDrive\Desktop\Hrv\Vida.jpg
+Luka MODRIC|C:\Users\lovri\OneDrive\Desktop\Hrv\Modric.jpg
+Ivan PERISIC|C:\Users\lovri\OneDrive\Desktop\Hrv\Perisic.jpg

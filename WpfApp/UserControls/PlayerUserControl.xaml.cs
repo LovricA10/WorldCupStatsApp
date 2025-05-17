@@ -30,7 +30,7 @@ namespace WpfApp.UserControls
         public string ShirtNumber { get; set; }
 
         public string PlayerImagePath { get; private set; }
-       
+
         public PlayerUserControl(string playerName, string shirtNumber)
         {
             InitializeComponent();
@@ -46,5 +46,25 @@ namespace WpfApp.UserControls
             DataContext = this;
         }
 
+        private void MenuItemLoadImage_Click(object sender, RoutedEventArgs e)
+        {
+            var openFileDialog = new Microsoft.Win32.OpenFileDialog
+            {
+                Filter = "Image files (*.png;*.jpg;*.jpeg)|*.png;*.jpg;*.jpeg",
+                Title = Properties.Resources.LoadImage
+            };
+
+            bool? result = openFileDialog.ShowDialog();
+
+            if (result == true)
+            {
+                string selectedImagePath = openFileDialog.FileName;
+                repository.MapPlayerToImage(PlayerName, selectedImagePath);
+
+                // Update property
+                PlayerImagePath = selectedImagePath;
+                imgPlayer.Source = new BitmapImage(new Uri(PlayerImagePath));
+            }
+        }
     }
 }

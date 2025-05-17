@@ -153,6 +153,9 @@
   <data name="language" xml:space="preserve">
     <value>Jezik</value>
   </data>
+  <data name="LoadImage" xml:space="preserve">
+    <value>Učitaj sliku...</value>
+  </data>
   <data name="male" xml:space="preserve">
     <value>Muško</value>
   </data>

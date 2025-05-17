@@ -4,6 +4,7 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:WpfApp.UserControls"
+             xmlns:resx="clr-namespace:WpfApp.Properties"
              mc:Ignorable="d" 
              d:DesignHeight="30" d:DesignWidth="30" Opacity="0">
     <UserControl.Triggers>
@@ -32,6 +33,11 @@
             BorderThickness="0"
             x:Name="BtnUserControl"
             Style="{StaticResource {x:Static ToolBar.ButtonStyleKey}}">
+            <Button.ContextMenu>
+                <ContextMenu>
+                    <MenuItem Header ="{x:Static resx:Resources.LoadImage}"  Click="MenuItemLoadImage_Click" />
+                </ContextMenu>
+            </Button.ContextMenu>
             <Viewbox Stretch="Uniform">
                 <StackPanel
                 x:Name="PnlPlayerUserControl"
@@ -48,7 +54,8 @@
                     Content="{Binding PlayerName}" 
                     FontSize="9"/>
 
-                    <Image 
+                    <Image
+                    x:Name="imgPlayer"
                     HorizontalAlignment="Center"
                     Margin="20,0"
                     Width="50"

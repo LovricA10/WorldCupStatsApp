@@ -169,6 +169,15 @@ namespace WpfApp.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Load image....
+        /// </summary>
+        public static string LoadImage {
+            get {
+                return ResourceManager.GetString("LoadImage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Male.
         /// </summary>
         public static string male {

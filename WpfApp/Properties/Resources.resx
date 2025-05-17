@@ -153,6 +153,9 @@
   <data name="language" xml:space="preserve">
     <value>Language</value>
   </data>
+  <data name="LoadImage" xml:space="preserve">
+    <value>Load image...</value>
+  </data>
   <data name="male" xml:space="preserve">
     <value>Male</value>
   </data>

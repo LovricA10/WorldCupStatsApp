@@ -15,7 +15,16 @@ namespace WinFormsApp
             if (string.IsNullOrWhiteSpace(cultureCode))
                 throw new ArgumentException("Language code must not be null or empty.", nameof(cultureCode));
 
-            var culture = new CultureInfo(cultureCode);
+            if (cultureCode.ToUpperInvariant() == "EN")
+            {
+                cultureCode = "";
+            }
+
+
+            //var culture = new CultureInfo(cultureCode);
+            var culture = string.IsNullOrEmpty(cultureCode)
+                 ? CultureInfo.InvariantCulture
+        :        new CultureInfo(cultureCode);
 
             // Apply culture to the current thread
             Thread.CurrentThread.CurrentUICulture = culture;

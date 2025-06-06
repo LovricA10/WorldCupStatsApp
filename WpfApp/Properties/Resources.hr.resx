@@ -135,6 +135,9 @@
   <data name="croatian" xml:space="preserve">
     <value>Hrvatski</value>
   </data>
+  <data name="dataSource" xml:space="preserve">
+    <value>Izvor podataka</value>
+  </data>
   <data name="english" xml:space="preserve">
     <value>Engleski</value>
   </data>

@@ -9,8 +9,43 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="assets\json\male\group_results.json" />
+    <None Remove="assets\json\male\matches.json" />
+    <None Remove="assets\json\male\results.json" />
+    <None Remove="assets\json\male\teams.json" />
+    <None Remove="assets\json\female\group_results.json" />
+    <None Remove="assets\json\female\matches.json" />
+    <None Remove="assets\json\female\results.json" />
+    <None Remove="assets\json\female\teams.json" />
     <None Remove="ImageSource\football_pitch.jpg" />
     <None Remove="ImageSource\player.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="assets\json\male\group_results.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="assets\json\male\matches.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="assets\json\male\results.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="assets\json\male\teams.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="assets\json\female\group_results.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="assets\json\female\matches.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="assets\json\female\results.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="assets\json\female\teams.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
 
   <ItemGroup>

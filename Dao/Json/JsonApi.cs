@@ -11,6 +11,7 @@ namespace Dao.Json
     {
         public async Task<T> GetDataAsync<T>(string endpoint)
         {
+            Debug.WriteLine($"[API] Calling endpoint: {endpoint}");
             var client = new RestClient();
             var request = new RestRequest(endpoint);
             var response = await client.ExecuteAsync(request);

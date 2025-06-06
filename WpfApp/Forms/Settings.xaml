@@ -6,7 +6,8 @@
         xmlns:local="clr-namespace:WpfApp.Forms"
         xmlns:properties="clr-namespace:WpfApp.Properties"
         mc:Ignorable="d"
-        Title="{x:Static properties:Resources.settingsTitle  }" Height="450" Width="800"
+        Title="{x:Static properties:Resources.settingsTitle}"
+        Height="550" Width="800"
         WindowStartupLocation="CenterScreen">
     <Grid>
         <Grid.ColumnDefinitions>
@@ -18,7 +19,7 @@
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition Height="3*"/>
-            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1.5*"/>
             <RowDefinition Height="1*"/>
         </Grid.RowDefinitions>
 
@@ -30,19 +31,10 @@
         Margin="10" Grid.ColumnSpan="2"
         Header="{x:Static properties:Resources.tournamentType }">
             <GroupBox.Content>
-            <StackPanel x:Name="PnlTournamentType" Margin="0 15 0 0">
-                <RadioButton 
-                GroupName="tournamentType"
-                IsChecked="True"
-                Tag="male"
-                Margin="5"
-                Content="{x:Static properties:Resources.male}" />
-                <RadioButton 
-                GroupName="tournamentType"
-                Tag="female"
-                Margin="5"
-                Content="{x:Static properties:Resources.female}" />
-            </StackPanel>
+                <StackPanel x:Name="PnlTournamentType" Margin="0 15 0 0">
+                    <RadioButton GroupName="tournamentType" IsChecked="True" Tag="male" Margin="5" Content="{x:Static properties:Resources.male}" />
+                    <RadioButton GroupName="tournamentType" Tag="female" Margin="5" Content="{x:Static properties:Resources.female}" />
+                </StackPanel>
             </GroupBox.Content>
         </GroupBox>
 
@@ -54,19 +46,10 @@
         Margin="10" Grid.ColumnSpan="2"
         Header="{x:Static properties:Resources.language}">
             <GroupBox.Content>
-            <StackPanel x:Name="PnlLanguage" Margin="0 15 0 0">
-                <RadioButton 
-                GroupName="language"
-                IsChecked="True"
-                Tag="EN"
-                Margin="5"
-                Content="{x:Static properties:Resources.english}" />
-                <RadioButton 
-                GroupName="language"
-                Tag="HR"
-                Margin="5"
-                Content="{x:Static properties:Resources.croatian}" />
-            </StackPanel>
+                <StackPanel x:Name="PnlLanguage" Margin="0 15 0 0">
+                    <RadioButton GroupName="language" IsChecked="True" Tag="EN" Margin="5" Content="{x:Static properties:Resources.english}" />
+                    <RadioButton GroupName="language" Tag="HR" Margin="5" Content="{x:Static properties:Resources.croatian}" />
+                </StackPanel>
             </GroupBox.Content>
         </GroupBox>
 
@@ -77,36 +60,37 @@
         Margin="10"
         Header="{x:Static properties:Resources.appSize}">
             <GroupBox.Content>
-            <StackPanel x:Name="PnlAppSize" Margin="0 15 0 0">
-                <RadioButton 
-                GroupName="appSize"
-                IsChecked="True"
-                Tag="small"
-                Margin="5"
-                Content="{x:Static properties:Resources.small}" />
-                <RadioButton 
-                GroupName="appSize"
-                Tag="medium"
-                Margin="5"
-                Content="{x:Static properties:Resources.medium}" />
-                <RadioButton 
-                GroupName="appSize"
-                Tag="fullscreen"
-                Margin="5"
-                Content="{x:Static properties:Resources.fullScreen}" />
-            </StackPanel>
+                <StackPanel x:Name="PnlAppSize" Margin="0 15 0 0">
+                    <RadioButton GroupName="appSize" IsChecked="True" Tag="small" Margin="5" Content="{x:Static properties:Resources.small}" />
+                    <RadioButton GroupName="appSize" Tag="medium" Margin="5" Content="{x:Static properties:Resources.medium}" />
+                    <RadioButton GroupName="appSize" Tag="fullscreen" Margin="5" Content="{x:Static properties:Resources.fullScreen}" />
+                </StackPanel>
             </GroupBox.Content>
         </GroupBox>
 
-        <!-- submit button -->
+        <!-- Data Source (API / JSON) -->
+        <GroupBox 
+        Grid.Column="1" 
+    Grid.Row="1" 
+    Grid.ColumnSpan="3"
+    Margin="10,0,10,10"
+    Header="{x:Static properties:Resources.dataSource}">
+            <GroupBox.Content>
+                <StackPanel x:Name="PnlDataSource" Margin="0 10 0 0">
+                    <RadioButton GroupName="dataSource" IsChecked="True" Tag="API" Margin="5" Content="API" />
+                    <RadioButton GroupName="dataSource" Tag="JSON" Margin="5" Content="JSON" />
+                </StackPanel>
+            </GroupBox.Content>
+        </GroupBox>
+
+        <!-- Submit button -->
         <Button 
         Grid.Column="2" 
-        Grid.Row="1" 
-        Margin="20,85,20,40"
+        Grid.Row="2" 
+        Margin="20,10,20,20"
         Width="150"
         HorizontalAlignment="Center"
         Click="btnSettingsSave_OnClick"
-        Content="{x:Static properties:Resources.btnSettingsSave}" Grid.RowSpan="2" Grid.ColumnSpan="2" />
-
+        Content="{x:Static properties:Resources.btnSettingsSave}" Grid.ColumnSpan="2" />
     </Grid>
 </Window>

@@ -5,19 +5,9 @@ using Dao.Repo;
 using Dao.Utilitly;
 using Newtonsoft.Json;
 using Syncfusion.WinForms.Core.Utils;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Diagnostics;
-using System.Drawing;
 using System.Drawing.Printing;
-using System.Linq;
-using System.Reflection.Emit;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 using WinFormsApp.UserControls;
 
 namespace WinFormsApp.Forms
@@ -32,7 +22,7 @@ namespace WinFormsApp.Forms
         private readonly IDictionary<string, int> playerYellowCards = new Dictionary<string, int>();
         private readonly IList<Control> draggableControls = new List<Control>();
 
-        private readonly IApi api = ApiFactory.GetApi();
+        private /*readonly*/ IApi api = ApiFactory.GetApi();
         private readonly IRepository repository = RepositoryFactory.GetRepository();
 
         public WorldCup()
@@ -68,8 +58,17 @@ namespace WinFormsApp.Forms
             {
                 using (var settingsForm = new Settings())
                 {
-                    settingsForm.ShowDialog();
+                    var result = settingsForm.ShowDialog();
+                    if (result == DialogResult.OK)
+                    {
+                        MessageBox.Show("Settings saved. Please restart the app manually to apply changes.", "Info");
+
+                    }
                 }
+                   
+                //{
+                //    settingsForm.ShowDialog();
+                //}
             }
             catch (Exception ex)
             {
@@ -80,27 +79,27 @@ namespace WinFormsApp.Forms
 
         private async void WorldCup_Activated(object sender, EventArgs e)
         {
-            // Attempt to load the last selected team from settings
+            api = ApiFactory.GetApi();
+
             if (isFormFirstTimeShown)
             {
                 try
                 {
-                    var selectedTeam = repository.GetCurrentTeam();
-                    if (selectedTeam != null)
-                    {
-                        await LoadPanelWithPlayersAsync(selectedTeam);
+                    await LoadComboBoxWithTeamsAsync();
 
-                        cbTeams.SelectedItem = cbTeams.Items
-                         .OfType<Team>()
-                         .FirstOrDefault(t => t.Country == selectedTeam);
+                    var selectedTeam = repository.GetCurrentTeam();
+                    var availableTeams = cbTeams.Items.OfType<Team>().ToList();
+                    var foundTeam = availableTeams.FirstOrDefault(t => t.Country == selectedTeam);
+
+                    if (!string.IsNullOrWhiteSpace(selectedTeam) && foundTeam != null)
+                    {
+                        cbTeams.SelectedItem = foundTeam;
+                        await LoadPanelWithPlayersAsync(selectedTeam);
                     }
                 }
                 catch (Exception ex)
                 {
-                    // Log or handle the exception as needed (if required)
                     Debug.WriteLine($"Failed to load selected team: {ex.Message}");
-
-                    // Notify the user about the error
                     MessageBox.Show("An error occurred while loading the selected team. Please try again later.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
                 finally
@@ -109,7 +108,6 @@ namespace WinFormsApp.Forms
                 }
             }
 
-            await LoadComboBoxWithTeamsAsync();
             InitializeCulture();
         }
 
@@ -118,14 +116,16 @@ namespace WinFormsApp.Forms
         {
             try
             {
-                var favoritePlayers = repository.GetFavoritePlayersList();
+                var favoritePlayers = repository.GetFavoritePlayersList()
+                                                .Select(p => p.Trim())
+                                                .ToHashSet(StringComparer.OrdinalIgnoreCase);
 
-                foreach (var player in favoritePlayers)
+                foreach (PlayerUserControl playerControl in flpAllPlayers.Controls.OfType<PlayerUserControl>().ToList())
                 {
-                    var playerControl = Controls.Find(player.Trim(), true).FirstOrDefault() as PlayerUserControl;
-                    if (playerControl != null)
+                    if (favoritePlayers.Contains(playerControl.NameText.Trim()))
                     {
                         playerControl.IsStarDisplayed = true;
+
                         flpAllPlayers.Controls.Remove(playerControl);
                         flpFavoritePlayers.Controls.Add(playerControl);
                     }
@@ -133,10 +133,10 @@ namespace WinFormsApp.Forms
             }
             catch (Exception ex)
             {
-                // Optionally log the exception or handle the error
                 Debug.WriteLine($"Error loading favorite players: {ex.Message}");
             }
         }
+
 
 
         private async Task LoadComboBoxWithTeamsAsync()
@@ -218,41 +218,40 @@ namespace WinFormsApp.Forms
 
         private async Task LoadPanelWithPlayersAsync(string teamInput)
         {
-            
             try
             {
-                // Reset 
                 playerGoals.Clear();
                 playerYellowCards.Clear();
                 flpRankedByAttendance.Controls.Clear();
 
                 string selectedCountry = teamInput;
-
                 if (string.IsNullOrEmpty(selectedCountry)) return;
+
+                flpAllPlayers.Controls.Clear();
+                flpFavoritePlayers.Controls.Clear();
+
                 flpAllPlayers.WrapContents = false;
                 flpFavoritePlayers.WrapContents = false;
-                //flpFavoritePlayers.AutoScroll = true;
                 flpAllPlayers.FlowDirection = FlowDirection.TopDown;
                 flpFavoritePlayers.FlowDirection = FlowDirection.TopDown;
                 flpAllPlayers.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
                 flpFavoritePlayers.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-
                 flpAllPlayers.AutoScrollMinSize = new Size(flpAllPlayers.Width, 1);
-                // show loading indicator
+
                 var loader = new BusyIndicator();
                 loader.Show(flpAllPlayers);
 
-
                 string genderStr = repository.GetStoredGender();
-
                 if (!Enum.TryParse<GenderType>(genderStr, true, out var gender))
                 {
                     MessageBox.Show("Invalid gender setting");
                     return;
                 }
+
                 string apiUrl = EndpointBuilder.BuildMatchesEndpoint(gender);
-                var allMatches = await api.GetDataAsync<IList<MatchDetail>>(apiUrl); 
-                var relevantMatch = allMatches?.FirstOrDefault(m => m.HomeTeamCountry == selectedCountry || m.AwayTeamCountry == selectedCountry);
+                var allMatches = await api.GetDataAsync<IList<MatchDetail>>(apiUrl);
+                var relevantMatch = allMatches?.FirstOrDefault(m =>
+                    m.HomeTeamCountry == selectedCountry || m.AwayTeamCountry == selectedCountry);
                 var isHome = relevantMatch?.HomeTeamCountry == selectedCountry;
                 var teamStats = isHome ? relevantMatch?.HomeTeamStatistics : relevantMatch?.AwayTeamStatistics;
 
@@ -267,9 +266,7 @@ namespace WinFormsApp.Forms
                     return;
                 }
 
-                // load players
-                flpAllPlayers.Controls.Clear();
-                allPlayers?.ForEach(player =>
+                foreach (var player in allPlayers)
                 {
                     var control = new PlayerUserControl
                     {
@@ -277,19 +274,24 @@ namespace WinFormsApp.Forms
                         NumberText = player.ShirtNumber.ToString(),
                         PositionText = player.Position.ToString(),
                         CaptainText = player.Captain ? Resources.Resources.yes : Resources.Resources.no,
-                        Name = player.Name
+                        Name = player.Name.Trim()
                     };
 
                     LoadPictureIfPreviouslySelected(control);
-
                     control.MouseDown += PlayerUserControl_MouseDown;
+
+                    // Dodaj u Controls kolekciju forme ako nije već dodano
+                    if (!this.Controls.Contains(control))
+                    {
+                        this.Controls.Add(control);
+                    }
+
                     flpAllPlayers.Controls.Add(control);
 
                     playerGoals[player.Name] = 0;
                     playerYellowCards[player.Name] = 0;
-                });
+                }
 
-                // number of goals and cards
                 var countryMatches = allMatches?
                     .Where(m => m.HomeTeamCountry == selectedCountry || m.AwayTeamCountry == selectedCountry)
                     .ToList();
@@ -315,7 +317,6 @@ namespace WinFormsApp.Forms
                     }
                 }
 
-                // rank matches by attendance
                 var rankedMatches = allMatches?
                     .Where(m => m.HomeTeamCountry == selectedCountry || m.AwayTeamCountry == selectedCountry)
                     .OrderByDescending(m => m.Attendance)
@@ -329,11 +330,9 @@ namespace WinFormsApp.Forms
                         AttendanceText = match.Attendance.ToString(),
                         HomeTeamName = match.HomeTeamCountry,
                         AwayTeamName = match.AwayTeamCountry
-
                     });
                 }
 
-                // load favorite
                 DisplayFavoritePlayers();
                 loader.Hide();
             }
@@ -443,7 +442,7 @@ namespace WinFormsApp.Forms
         private void SaveCurrentFavoritePlayers()
         => repository.SaveFavoritePlayers(flpFavoritePlayers.Controls
         .OfType<PlayerUserControl>()
-        .Select(p => p.Name));
+        .Select(p => p.Name.Trim()));
 
         private void EnableControlDrag(IEnumerable<Control> draggableControls) => draggableControls.ToList().ForEach(c => c.DoDragDrop(c.Name, DragDropEffects.Move));
 

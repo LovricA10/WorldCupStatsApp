@@ -63,8 +63,9 @@ namespace WpfApp.Forms
                 var selectedTournament = GetCheckedTag(PnlTournamentType);
                 var selectedLanguage = GetCheckedTag(PnlLanguage);
                 var selectedWindowSize = GetCheckedTag(PnlAppSize);
+                var selectedDataSource = GetCheckedTag(PnlDataSource);
 
-                repository.SaveTournamentSettings(selectedTournament, selectedLanguage);
+                repository.SaveTournamentSettings(selectedTournament, selectedLanguage, selectedDataSource);
                 repository.SaveWindowSizeSetting(selectedWindowSize);
 
                 OpenMainWindow();

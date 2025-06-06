@@ -33,8 +33,46 @@ namespace WinFormsApp.Forms
             {
                 string selectedTournamentType = GetCheckedTagFromGroupBox(gbGenderSelection);
                 string selectedLanguage = GetCheckedTagFromGroupBox(gbLanguage);
+                string selectedSource = GetCheckedTagFromGroupBox(gbSource);
 
-                _repository.SaveTournamentSettings(selectedTournamentType, selectedLanguage);
+                // DETEKCIJA IZVORA — DIJAGNOSTIČKI ISPIS
+                if (selectedSource == "JSON")
+                {
+                    string basePath = Path.Combine("assets", "json", selectedTournamentType);
+                    string[] files = { "teams.json", "matches.json", "results.json", "group_results.json" };
+                    StringBuilder report = new StringBuilder();
+                    report.AppendLine("[JSON IZVOR]");
+                    report.AppendLine($"Provjera datoteka u: {basePath}");
+                    report.AppendLine();
+
+                    foreach (var file in files)
+                    {
+                        string fullPath = Path.Combine(basePath, file);
+                        if (File.Exists(fullPath))
+                        {
+                            string preview = File.ReadAllText(fullPath);
+                            preview = preview.Substring(0, Math.Min(100, preview.Length));
+                            report.AppendLine($"✔ {file} — OK");
+                            report.AppendLine("Prvih 100 znakova:");
+                            report.AppendLine(preview);
+                            report.AppendLine();
+                        }
+                        else
+                        {
+                            report.AppendLine($"✘ {file} — NEDOSTAJE!");
+                        }
+                    }
+
+                    MessageBox.Show(report.ToString(), "Provjera JSON izvora");
+                }
+                else if (selectedSource == "API")
+                {
+                    MessageBox.Show("[API IZVOR]\nPodaci će biti dohvaćeni s udaljenog API-ja.", "Provjera API izvora");
+                }
+
+
+                _repository.SaveTournamentSettings(selectedTournamentType, selectedLanguage, selectedSource);
+                _repository.SetChosenTeamToSettings(string.Empty);
                 LanguageHelper.ApplyCulture(selectedLanguage, this, GetType());
 
                 NavigateAfterSave();

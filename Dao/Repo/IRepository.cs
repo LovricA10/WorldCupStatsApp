@@ -10,7 +10,7 @@ namespace Dao.Repo
 {
     public interface IRepository
     {
-        void SaveTournamentSettings(string tournamentCategory,  string language);
+        void SaveTournamentSettings(string tournamentCategory,  string language, string dataSource);
         void SaveWindowSizeSetting(string windowSize);
 
         // Method to save a player's picture path

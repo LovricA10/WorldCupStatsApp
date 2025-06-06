@@ -1,17 +1,17 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <root>
-  <!-- 
-    Microsoft ResX Schema 
-    
+  <!--
+    Microsoft ResX Schema
+
     Version 2.0
-    
-    The primary goals of this format is to allow a simple XML format 
-    that is mostly human readable. The generation and parsing of the 
-    various data types are done through the TypeConverter classes 
+
+    The primary goals of this format is to allow a simple XML format
+    that is mostly human readable. The generation and parsing of the
+    various data types are done through the TypeConverter classes
     associated with the data types.
-    
+
     Example:
-    
+
     ... ado.net/XML headers & schema ...
     <resheader name="resmimetype">text/microsoft-resx</resheader>
     <resheader name="version">2.0</resheader>
@@ -26,36 +26,36 @@
         <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
         <comment>This is a comment</comment>
     </data>
-                
-    There are any number of "resheader" rows that contain simple 
+
+    There are any number of "resheader" rows that contain simple
     name/value pairs.
-    
-    Each data row contains a name, and value. The row also contains a 
-    type or mimetype. Type corresponds to a .NET class that support 
-    text/value conversion through the TypeConverter architecture. 
-    Classes that don't support this are serialized and stored with the 
+
+    Each data row contains a name, and value. The row also contains a
+    type or mimetype. Type corresponds to a .NET class that support
+    text/value conversion through the TypeConverter architecture.
+    Classes that don't support this are serialized and stored with the
     mimetype set.
-    
-    The mimetype is used for serialized objects, and tells the 
-    ResXResourceReader how to depersist the object. This is currently not 
+
+    The mimetype is used for serialized objects, and tells the
+    ResXResourceReader how to depersist the object. This is currently not
     extensible. For a given mimetype the value must be set accordingly:
-    
-    Note - application/x-microsoft.net.object.binary.base64 is the format 
-    that the ResXResourceWriter will generate, however the reader can 
+
+    Note - application/x-microsoft.net.object.binary.base64 is the format
+    that the ResXResourceWriter will generate, however the reader can
     read any of the formats listed below.
-    
+
     mimetype: application/x-microsoft.net.object.binary.base64
-    value   : The object must be serialized with 
+    value   : The object must be serialized with
             : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
             : and then encoded with base64 encoding.
-    
+
     mimetype: application/x-microsoft.net.object.soap.base64
-    value   : The object must be serialized with 
+    value   : The object must be serialized with
             : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
             : and then encoded with base64 encoding.
 
     mimetype: application/x-microsoft.net.object.bytearray.base64
-    value   : The object must be serialized into a byte array 
+    value   : The object must be serialized into a byte array
             : using a System.ComponentModel.TypeConverter
             : and then encoded with base64 encoding.
     -->
@@ -117,17 +117,14 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="rbFemale.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="rbFemale.Location" type="System.Drawing.Point, System.Drawing">
-    <value>92, 93</value>
+    <value>90, 93</value>
   </data>
   <data name="rbFemale.Size" type="System.Drawing.Size, System.Drawing">
-    <value>78, 24</value>
+    <value>91, 24</value>
   </data>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="rbFemale.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
   </data>
@@ -146,14 +143,11 @@
   <data name="&gt;&gt;rbFemale.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="rbMale.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
   <data name="rbMale.Location" type="System.Drawing.Point, System.Drawing">
-    <value>92, 63</value>
+    <value>90, 63</value>
   </data>
   <data name="rbMale.Size" type="System.Drawing.Size, System.Drawing">
-    <value>63, 24</value>
+    <value>91, 24</value>
   </data>
   <data name="rbMale.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -174,16 +168,16 @@
     <value>1</value>
   </data>
   <data name="gbGenderSelection.Location" type="System.Drawing.Point, System.Drawing">
-    <value>89, 134</value>
+    <value>107, 134</value>
   </data>
   <data name="gbGenderSelection.Size" type="System.Drawing.Size, System.Drawing">
-    <value>300, 150</value>
+    <value>242, 150</value>
   </data>
   <data name="gbGenderSelection.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
   <data name="gbGenderSelection.Text" xml:space="preserve">
-    <value>Tournament type</value>
+    <value>Tournament</value>
   </data>
   <data name="&gt;&gt;gbGenderSelection.Name" xml:space="preserve">
     <value>gbGenderSelection</value>
@@ -195,16 +189,13 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;gbGenderSelection.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="rbEnglish.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
+    <value>3</value>
   </data>
   <data name="rbEnglish.Location" type="System.Drawing.Point, System.Drawing">
-    <value>92, 63</value>
+    <value>83, 63</value>
   </data>
   <data name="rbEnglish.Size" type="System.Drawing.Size, System.Drawing">
-    <value>77, 24</value>
+    <value>94, 24</value>
   </data>
   <data name="rbEnglish.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -224,20 +215,17 @@
   <data name="&gt;&gt;rbEnglish.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="rbCroatian.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
   <data name="rbCroatian.Location" type="System.Drawing.Point, System.Drawing">
-    <value>92, 93</value>
+    <value>83, 93</value>
   </data>
   <data name="rbCroatian.Size" type="System.Drawing.Size, System.Drawing">
-    <value>86, 24</value>
+    <value>94, 24</value>
   </data>
   <data name="rbCroatian.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
   </data>
   <data name="rbCroatian.Text" xml:space="preserve">
-    <value>Croatian</value>
+    <value>Croatia</value>
   </data>
   <data name="&gt;&gt;rbCroatian.Name" xml:space="preserve">
     <value>rbCroatian</value>
@@ -252,13 +240,13 @@
     <value>1</value>
   </data>
   <data name="gbLanguage.Location" type="System.Drawing.Point, System.Drawing">
-    <value>395, 134</value>
+    <value>355, 134</value>
   </data>
   <data name="gbLanguage.Size" type="System.Drawing.Size, System.Drawing">
-    <value>300, 150</value>
+    <value>242, 150</value>
   </data>
   <data name="gbLanguage.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
+    <value>0</value>
   </data>
   <data name="gbLanguage.Text" xml:space="preserve">
     <value>Language</value>
@@ -273,26 +261,26 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;gbLanguage.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>2</value>
   </data>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="btnSubmit.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Bottom, Left, Right</value>
+    <value>None</value>
   </data>
   <data name="btnSubmit.Font" type="System.Drawing.Font, System.Drawing">
     <value>Segoe UI, 13.8pt</value>
   </data>
   <data name="btnSubmit.Location" type="System.Drawing.Point, System.Drawing">
-    <value>89, 339</value>
+    <value>107, 341</value>
   </data>
   <data name="btnSubmit.Size" type="System.Drawing.Size, System.Drawing">
-    <value>611, 72</value>
+    <value>738, 72</value>
   </data>
   <data name="btnSubmit.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
   </data>
   <data name="btnSubmit.Text" xml:space="preserve">
-    <value>SUBMIT</value>
+    <value>Submit</value>
   </data>
   <data name="&gt;&gt;btnSubmit.Name" xml:space="preserve">
     <value>btnSubmit</value>
@@ -304,20 +292,88 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;btnSubmit.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="rbApi.Location" type="System.Drawing.Point, System.Drawing">
+    <value>69, 63</value>
+  </data>
+  <data name="rbApi.Size" type="System.Drawing.Size, System.Drawing">
+    <value>104, 24</value>
+  </data>
+  <data name="rbApi.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
-  <assembly alias="System.Private.CoreLib" name="System.Private.CoreLib, Culture=neutral, PublicKeyToken=7cec85d7bea7798e" />
-  <data name="$this.Language" type="System.Globalization.CultureInfo, System.Private.CoreLib">
-    <value>en</value>
+  <data name="rbApi.Text" xml:space="preserve">
+    <value>API</value>
   </data>
-  <data name="$this.Localizable" type="System.Boolean, mscorlib">
+  <data name="&gt;&gt;rbApi.Name" xml:space="preserve">
+    <value>rbApi</value>
+  </data>
+  <data name="&gt;&gt;rbApi.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;rbApi.Parent" xml:space="preserve">
+    <value>gbSource</value>
+  </data>
+  <data name="&gt;&gt;rbApi.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="rbJson.Location" type="System.Drawing.Point, System.Drawing">
+    <value>69, 93</value>
+  </data>
+  <data name="rbJson.Size" type="System.Drawing.Size, System.Drawing">
+    <value>104, 24</value>
+  </data>
+  <data name="rbJson.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="rbJson.Text" xml:space="preserve">
+    <value>JSON</value>
+  </data>
+  <data name="&gt;&gt;rbJson.Name" xml:space="preserve">
+    <value>rbJson</value>
+  </data>
+  <data name="&gt;&gt;rbJson.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;rbJson.Parent" xml:space="preserve">
+    <value>gbSource</value>
+  </data>
+  <data name="&gt;&gt;rbJson.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="gbSource.Location" type="System.Drawing.Point, System.Drawing">
+    <value>603, 134</value>
+  </data>
+  <data name="gbSource.Size" type="System.Drawing.Size, System.Drawing">
+    <value>242, 150</value>
+  </data>
+  <data name="gbSource.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="gbSource.Text" xml:space="preserve">
+    <value>Data source</value>
+  </data>
+  <data name="&gt;&gt;gbSource.Name" xml:space="preserve">
+    <value>gbSource</value>
+  </data>
+  <data name="&gt;&gt;gbSource.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;gbSource.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;gbSource.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
-  </data>
+  </metadata>
   <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
     <value>8, 20</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>800, 450</value>
+    <value>902, 450</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Settings</value>

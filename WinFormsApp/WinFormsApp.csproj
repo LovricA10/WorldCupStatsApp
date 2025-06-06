@@ -9,6 +9,44 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="assets\json\female\group_results.json" />
+    <None Remove="assets\json\female\matches.json" />
+    <None Remove="assets\json\female\results.json" />
+    <None Remove="assets\json\female\teams.json" />
+    <None Remove="assets\json\male\group_results.json" />
+    <None Remove="assets\json\male\matches.json" />
+    <None Remove="assets\json\male\results.json" />
+    <None Remove="assets\json\male\teams.json" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="assets\json\female\group_results.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="assets\json\female\matches.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="assets\json\female\results.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="assets\json\female\teams.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="assets\json\male\group_results.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="assets\json\male\matches.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="assets\json\male\results.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="assets\json\male\teams.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Extended.Wpf.Toolkit" Version="4.7.25104.5739" />
     <PackageReference Include="LoadingIndicator.WinForms" Version="1.2.0" />
     <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />

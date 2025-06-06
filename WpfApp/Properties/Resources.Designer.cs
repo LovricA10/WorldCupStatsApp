@@ -115,6 +115,15 @@ namespace WpfApp.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Data Source.
+        /// </summary>
+        public static string dataSource {
+            get {
+                return ResourceManager.GetString("dataSource", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to English.
         /// </summary>
         public static string english {

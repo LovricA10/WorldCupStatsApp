@@ -19,10 +19,10 @@ namespace Dao.Repo
         private const char Del = '|';
 
 
-        public void SaveTournamentSettings(string category, string lang)
+        public void SaveTournamentSettings(string category, string lang, string dataSource)
         {
             EnsureDirectoryExists();
-            File.WriteAllText(ConfigPath, $"{category}{Del}{lang}");
+            File.WriteAllText(ConfigPath, $"{category}{Del}{lang}{Del}{dataSource}");
         }
 
         public void SaveWindowSizeSetting(string size)
@@ -118,29 +118,58 @@ namespace Dao.Repo
 
         public void SaveFavoritePlayers(IEnumerable<string> favoritePlayerNames)
         {
+            var team = GetCurrentTeam();
+            if (string.IsNullOrWhiteSpace(team)) return;
+
             EnsureDirectoryExists();
+
+            var existingLines = new List<string>();
+            if (File.Exists(FavoritePlayersPath))
+            {
+                existingLines = File.ReadAllLines(FavoritePlayersPath)
+                                    .Where(line => !line.StartsWith($"{team}{Del}")) // izbaci stare za taj tim
+                                    .ToList();
+            }
+
+            var newLines = favoritePlayerNames.Select(name => $"{team}{Del}{name}");
+
+            File.WriteAllLines(FavoritePlayersPath, existingLines.Concat(newLines));
+
+            /*EnsureDirectoryExists();
             if (File.Exists(FavoritePlayersPath))
             {
                 File.Delete(FavoritePlayersPath);
             }
 
-            File.WriteAllLines(FavoritePlayersPath, favoritePlayerNames);
+            File.WriteAllLines(FavoritePlayersPath, favoritePlayerNames);*/
         }
         public IEnumerable<string> GetFavoritePlayersList()
         {
-            try
-            {
-                if (!File.Exists(FavoritePlayersPath))
-                {
-                    File.Create(FavoritePlayersPath).Dispose();
-                }
-                return File.ReadAllLines(FavoritePlayersPath);
-            }
-            catch (Exception)
-            {
+            var team = GetCurrentTeam();
+            if (string.IsNullOrWhiteSpace(team)) return Enumerable.Empty<string>();
 
+            if (!File.Exists(FavoritePlayersPath))
+            {
+                File.Create(FavoritePlayersPath).Dispose();
                 return Enumerable.Empty<string>();
             }
+
+            return File.ReadAllLines(FavoritePlayersPath)
+                       .Where(line => line.StartsWith($"{team}{Del}"))
+                       .Select(line => line.Split(Del)[1]);
+            /*  try
+              {
+                  if (!File.Exists(FavoritePlayersPath))
+                  {
+                      File.Create(FavoritePlayersPath).Dispose();
+                  }
+                  return File.ReadAllLines(FavoritePlayersPath);
+              }
+              catch (Exception)
+              {
+
+                  return Enumerable.Empty<string>();
+              }*/
         }
 
         private void EnsureDirectoryExists()
@@ -148,6 +177,11 @@ namespace Dao.Repo
             if (!Directory.Exists(BaseFolder))
                 Directory.CreateDirectory(BaseFolder);
 
+        }
+
+        public string GetDataSource()
+        {
+            return LoadAllSettings().Split(Del).ElementAtOrDefault(2)?.ToUpper() ?? "API";
         }
 
     }

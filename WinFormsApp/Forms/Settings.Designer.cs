@@ -36,8 +36,12 @@
             rbEnglish = new RadioButton();
             rbCroatian = new RadioButton();
             btnSubmit = new Button();
+            gbSource = new GroupBox();
+            rbApi = new RadioButton();
+            rbJson = new RadioButton();
             gbGenderSelection.SuspendLayout();
             gbLanguage.SuspendLayout();
+            gbSource.SuspendLayout();
             SuspendLayout();
             // 
             // gbGenderSelection
@@ -57,8 +61,8 @@
             // 
             // rbMale
             // 
-            resources.ApplyResources(rbMale, "rbMale");
             rbMale.Checked = true;
+            resources.ApplyResources(rbMale, "rbMale");
             rbMale.Name = "rbMale";
             rbMale.TabStop = true;
             rbMale.Tag = "male";
@@ -74,8 +78,8 @@
             // 
             // rbEnglish
             // 
-            resources.ApplyResources(rbEnglish, "rbEnglish");
             rbEnglish.Checked = true;
+            resources.ApplyResources(rbEnglish, "rbEnglish");
             rbEnglish.Name = "rbEnglish";
             rbEnglish.TabStop = true;
             rbEnglish.Tag = "EN";
@@ -97,18 +101,42 @@
             btnSubmit.UseVisualStyleBackColor = false;
             btnSubmit.Click += btnSubmit_Click;
             // 
+            // gbSource
+            // 
+            gbSource.Controls.Add(rbApi);
+            gbSource.Controls.Add(rbJson);
+            resources.ApplyResources(gbSource, "gbSource");
+            gbSource.Name = "gbSource";
+            gbSource.TabStop = false;
+            // 
+            // rbApi
+            // 
+            rbApi.Checked = true;
+            resources.ApplyResources(rbApi, "rbApi");
+            rbApi.Name = "rbApi";
+            rbApi.TabStop = true;
+            rbApi.Tag = "API";
+            rbApi.UseVisualStyleBackColor = true;
+            // 
+            // rbJson
+            // 
+            resources.ApplyResources(rbJson, "rbJson");
+            rbJson.Name = "rbJson";
+            rbJson.Tag = "JSON";
+            rbJson.UseVisualStyleBackColor = true;
+            // 
             // Settings
             // 
             resources.ApplyResources(this, "$this");
             AutoScaleMode = AutoScaleMode.Font;
+            Controls.Add(gbSource);
             Controls.Add(btnSubmit);
             Controls.Add(gbLanguage);
             Controls.Add(gbGenderSelection);
             Name = "Settings";
             gbGenderSelection.ResumeLayout(false);
-            gbGenderSelection.PerformLayout();
             gbLanguage.ResumeLayout(false);
-            gbLanguage.PerformLayout();
+            gbSource.ResumeLayout(false);
             ResumeLayout(false);
         }
 
@@ -121,5 +149,8 @@
         private RadioButton rbEnglish;
         private RadioButton rbCroatian;
         private Button btnSubmit;
+        private GroupBox gbSource;
+        private RadioButton rbApi;
+        private RadioButton rbJson;
     }
 }

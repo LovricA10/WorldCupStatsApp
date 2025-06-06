@@ -11,7 +11,6 @@ namespace Dao.Json
 
         public async Task<T> GetDataAsync<T>(string endpoint)
         {
-            Debug.WriteLine($"[LOCAL JSON] Loading: {endpoint}");
             string gender = new FileRepo().GetStoredGender(); // "male" or "female"
             string subfolder = gender;
 
@@ -40,7 +39,7 @@ namespace Dao.Json
             }
             if (endpoint.Contains("/teams/results"))
             {
-                return "results.json"; // koristiš results.json, ne teams-results.json
+                return "results.json";
             }
             if (endpoint.Contains("/teams"))
             {

@@ -24,14 +24,6 @@ namespace Dao.Json
                 return data ?? throw new Exception("Deserilization returned null");
 
 
-
-            //if (data == null)
-            //{
-            //    throw new Exception("Deserilization returned null");
-            //}
-
-
-
         }
     }
 }

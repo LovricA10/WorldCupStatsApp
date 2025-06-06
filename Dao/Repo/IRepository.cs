@@ -30,7 +30,9 @@ namespace Dao.Repo
 
         // Method to get the app's size setting
         string GetSavedWindowSize();
-        void SaveFavoritePlayers(IEnumerable<string> favoritePlayerNames);
-        IEnumerable<string> GetFavoritePlayersList();
+        //void SaveFavoritePlayers(IEnumerable<string> favoritePlayerNames);
+        //IEnumerable<string> GetFavoritePlayersList();
+        void SaveFavoritePlayers(IEnumerable<string> favoritePlayerNames, string teamCode);
+        IEnumerable<string> GetFavoritePlayersList(string teamCode);
     }
 }

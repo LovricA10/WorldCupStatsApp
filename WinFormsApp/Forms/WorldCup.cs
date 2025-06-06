@@ -111,21 +111,22 @@ namespace WinFormsApp.Forms
             InitializeCulture();
         }
 
-
         private void DisplayFavoritePlayers()
         {
             try
             {
-                var favoritePlayers = repository.GetFavoritePlayersList()
-                                                .Select(p => p.Trim())
-                                                .ToHashSet(StringComparer.OrdinalIgnoreCase);
+                var selectedTeam = cbTeams.SelectedItem as Team;
+                if (selectedTeam == null) return;
+
+                var teamCode = selectedTeam.Code;
+                var teamFavorites = repository.GetFavoritePlayersList(teamCode)
+                                              .ToHashSet(StringComparer.OrdinalIgnoreCase);
 
                 foreach (PlayerUserControl playerControl in flpAllPlayers.Controls.OfType<PlayerUserControl>().ToList())
                 {
-                    if (favoritePlayers.Contains(playerControl.NameText.Trim()))
+                    if (teamFavorites.Contains(playerControl.Name.Trim()))
                     {
                         playerControl.IsStarDisplayed = true;
-
                         flpAllPlayers.Controls.Remove(playerControl);
                         flpFavoritePlayers.Controls.Add(playerControl);
                     }
@@ -136,8 +137,6 @@ namespace WinFormsApp.Forms
                 Debug.WriteLine($"Error loading favorite players: {ex.Message}");
             }
         }
-
-
 
         private async Task LoadComboBoxWithTeamsAsync()
         {
@@ -386,15 +385,23 @@ namespace WinFormsApp.Forms
                 Text = Resources.Resources.removeFavPlayer,
                 Name = "removeFavoritePlayer"
             };
+
             removeItem.Click += (sender, e) =>
             {
                 playerControl.IsStarDisplayed = false;
                 flpAllPlayers.Controls.Add(playerControl);
-                SaveCurrentFavoritePlayers();
+
+                // Dohvati trenutno izabranu reprezentaciju
+                var selectedTeam = cbTeams.SelectedItem as Team;
+                if (selectedTeam != null)
+                {
+                    SaveCurrentFavoritePlayers();
+                }
             };
 
             contextMenuStrip.Items.Add(removeItem);
         }
+
 
         private void ShowPlayerContextMenu(PlayerUserControl playerControl)
         {
@@ -420,11 +427,17 @@ namespace WinFormsApp.Forms
                 playerControl.IsStarDisplayed = true;
                 playerControl.IsHighlighted = false;
                 flpFavoritePlayers.Controls.Add(playerControl);
-                SaveCurrentFavoritePlayers();
+
+                var selectedTeam = cbTeams.SelectedItem as Team;
+                if (selectedTeam != null)
+                {
+                    SaveCurrentFavoritePlayers();
+                }
             };
 
             contextMenuStrip.Items.Add(addToFavoritesItem);
         }
+
 
         private void LoadImage(PlayerUserControl playerControl)
         {
@@ -440,9 +453,17 @@ namespace WinFormsApp.Forms
         }
 
         private void SaveCurrentFavoritePlayers()
-        => repository.SaveFavoritePlayers(flpFavoritePlayers.Controls
-        .OfType<PlayerUserControl>()
-        .Select(p => p.Name.Trim()));
+        {
+            var favoriteNames = flpFavoritePlayers.Controls
+                                .OfType<PlayerUserControl>()
+                                .Select(c => c.Name.Trim());
+
+            var selectedTeam = cbTeams.SelectedItem as Team;
+            if (selectedTeam != null)
+            {
+                repository.SaveFavoritePlayers(favoriteNames, selectedTeam.Code);
+            }
+        }
 
         private void EnableControlDrag(IEnumerable<Control> draggableControls) => draggableControls.ToList().ForEach(c => c.DoDragDrop(c.Name, DragDropEffects.Move));
 
@@ -489,7 +510,11 @@ namespace WinFormsApp.Forms
                 .OfType<PlayerUserControl>()
                 .Select(c => c.Name);
 
-            repository.SaveFavoritePlayers(favoriteNames);
+            var selectedTeam = cbTeams.SelectedItem as Team;
+            if (selectedTeam != null)
+            {
+                repository.SaveFavoritePlayers(favoriteNames, selectedTeam.Code);
+            }
         }
 
         private void flpFavoritePlayers_DragEnter(object sender, DragEventArgs e)

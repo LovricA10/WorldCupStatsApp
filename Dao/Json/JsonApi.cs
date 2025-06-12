@@ -1,9 +1,7 @@
 ﻿using Dao.Api;
-using System.Threading.Tasks;
 using Newtonsoft.Json;
 using RestSharp;
 using System.Diagnostics;
-using Dao.Models;
 
 namespace Dao.Json
 {

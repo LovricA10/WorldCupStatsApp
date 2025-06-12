@@ -29,7 +29,6 @@
         </EventTrigger>
     </Window.Triggers>
     <Grid Margin="20">
-        <!--Columns and rows definition-->
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="1.2*" />
             <ColumnDefinition Width="1.3*" />

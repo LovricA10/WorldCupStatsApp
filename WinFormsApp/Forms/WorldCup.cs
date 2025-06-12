@@ -22,7 +22,7 @@ namespace WinFormsApp.Forms
         private readonly IDictionary<string, int> playerYellowCards = new Dictionary<string, int>();
         private readonly IList<Control> draggableControls = new List<Control>();
 
-        private /*readonly*/ IApi api = ApiFactory.GetApi();
+        private IApi api = ApiFactory.GetApi();
         private readonly IRepository repository = RepositoryFactory.GetRepository();
 
         public WorldCup()
@@ -65,10 +65,6 @@ namespace WinFormsApp.Forms
 
                     }
                 }
-                   
-                //{
-                //    settingsForm.ShowDialog();
-                //}
             }
             catch (Exception ex)
             {
@@ -145,23 +141,18 @@ namespace WinFormsApp.Forms
 
             try
             {
-                // Get gender and build the endpoint for teams
                 var teamGenderString = repository.GetStoredGender();
                 var teamGender = Enum.TryParse(teamGenderString, out GenderType gender) ? gender : GenderType.Male;
                 var endpoint = EndpointBuilder.BuildTeamsEndpoint(teamGender);
 
-                // Fetch the teams data from the API
                 var teams = await FetchTeamsAsync(endpoint);
 
-                // Add teams to ComboBox
                 AddTeamsToComboBox(teams);
 
-                // Reset ComboBox text after loading
                 cbTeams.Text = string.Empty;
             }
             catch (Exception ex) when (ex is IOException || ex is JsonReaderException || ex is ArgumentNullException)
             {
-                // Handle errors by showing an error notification
                 ShowErrorNotification();
             }
         }
@@ -170,12 +161,11 @@ namespace WinFormsApp.Forms
         =>
             MessageBox.Show(Resources.Resources.CouldNotRetrieveData, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
-        //private void AddTeamsToComboBox(IEnumerable<Team> teams) => teams.ToList().ForEach(team => cbTeams.Items.Add(team));
         private void AddTeamsToComboBox(IEnumerable<Team> teams)
         {
             foreach (var team in teams)
             {
-                // Proveri FIFA kod
+                // Check
                 Debug.WriteLine($"Team: {team.Country}, FIFA Code: {team.Code}");
 
                 cbTeams.Items.Add(team);
@@ -197,20 +187,15 @@ namespace WinFormsApp.Forms
 
             try
             {
-                // Reset both panels before loading new data
                 flpAllPlayers.Controls.Clear();
                 flpFavoritePlayers.Controls.Clear();
 
-                // Async loading of players for the selected team
                 await LoadPanelWithPlayersAsync(chosenTeam.Country);
-
-                // Persist selected team to user settings
                 var countryName = chosenTeam.Country;
                 repository.SetChosenTeamToSettings(countryName);
             }
             catch (Exception ex) when (ex is IOException || ex is ArgumentNullException)
             {
-                // Log and display error message to user if there's an issue
                 MessageBox.Show($"Error: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
@@ -279,7 +264,6 @@ namespace WinFormsApp.Forms
                     LoadPictureIfPreviouslySelected(control);
                     control.MouseDown += PlayerUserControl_MouseDown;
 
-                    // Dodaj u Controls kolekciju forme ako nije već dodano
                     if (!this.Controls.Contains(control))
                     {
                         this.Controls.Add(control);
@@ -390,8 +374,6 @@ namespace WinFormsApp.Forms
             {
                 playerControl.IsStarDisplayed = false;
                 flpAllPlayers.Controls.Add(playerControl);
-
-                // Dohvati trenutno izabranu reprezentaciju
                 var selectedTeam = cbTeams.SelectedItem as Team;
                 if (selectedTeam != null)
                 {
@@ -538,7 +520,6 @@ namespace WinFormsApp.Forms
         {
             flpRankedByGoals.Controls.Clear();
             flpRankedByYellowCards.Controls.Clear();
-            //flpAllPlayers.Controls.Clear();
             
         }
 
@@ -557,7 +538,6 @@ namespace WinFormsApp.Forms
                 flpRankedByYellowCards,
                 flpRankedByAttendance,
                 flpAllPlayers,
-                //flpFavoritePlayers
              };
 
             foreach (var panel in panels)

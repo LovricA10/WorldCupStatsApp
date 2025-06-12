@@ -4,31 +4,15 @@ using Dao.Models;
 using Dao.Repo;
 using Dao.Utilitly;
 using Dao.Utility;
-using System;
-using System.Collections.Generic;
 using System.Diagnostics;
 using System.Globalization;
-using System.Linq;
-using System.Numerics;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
 using WpfApp.UserControls;
 
 
 namespace WpfApp.Forms
 {
-    /// <summary>
-    /// Interaction logic for WorldCup.xaml
-    /// </summary>
     public partial class WorldCup : Window
     {
         private readonly IApi api = ApiFactory.GetApi();
@@ -288,7 +272,6 @@ namespace WpfApp.Forms
                 var viewbox = button.Content as Viewbox;
                 var panel = viewbox?.Child as StackPanel;
 
-                // Fallback if not Viewbox
                 panel ??= button.Content as StackPanel;
                 var label = panel?.Children.OfType<Label>().FirstOrDefault();
 

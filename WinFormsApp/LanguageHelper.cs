@@ -1,10 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
+﻿using System.ComponentModel;
 using System.Globalization;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace WinFormsApp
 {
@@ -19,18 +14,13 @@ namespace WinFormsApp
             {
                 cultureCode = "";
             }
-
-
-            //var culture = new CultureInfo(cultureCode);
             var culture = string.IsNullOrEmpty(cultureCode)
                  ? CultureInfo.InvariantCulture
         :        new CultureInfo(cultureCode);
 
-            // Apply culture to the current thread
             Thread.CurrentThread.CurrentUICulture = culture;
             Thread.CurrentThread.CurrentCulture = culture;
 
-            // Load resources
             var resources = new ComponentResourceManager(resourceType);
 
             if (rootControl is Form form)
@@ -41,10 +31,7 @@ namespace WinFormsApp
                     form.Text = formText;
                 }
 
-                // Recursively update all controls
                 UpdateControlTexts(rootControl, resources, culture);
-
-                // Handle MenuStrip items separately
                 if (form.MainMenuStrip != null)
                 {
                     foreach (ToolStripItem item in form.MainMenuStrip.Items)

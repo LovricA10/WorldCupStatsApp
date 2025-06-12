@@ -42,20 +42,15 @@
         <Grid.RenderTransform>
             <TranslateTransform x:Name="SlideTransform" X="300"/>
         </Grid.RenderTransform>
-        <!--Columns and rows definition-->
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="1*" />
             <ColumnDefinition Width="1*" />
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition Height="5*" />
-            <!-- For image -->
             <RowDefinition Height="1.5*" />
-            <!-- For PlayerName and ShirtNumber -->
             <RowDefinition Height="1.5*" />
-            <!-- For Position and Captain -->
             <RowDefinition Height="1.5*" />
-            <!-- For GoalsScored i YellowCards -->
         </Grid.RowDefinitions>
 
         <Image

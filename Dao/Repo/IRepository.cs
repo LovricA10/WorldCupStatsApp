@@ -1,12 +1,4 @@
-﻿using Dao.Models;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Threading.Tasks;
-
-namespace Dao.Repo
+﻿namespace Dao.Repo
 {
     public interface IRepository
     {
@@ -30,8 +22,6 @@ namespace Dao.Repo
 
         // Method to get the app's size setting
         string GetSavedWindowSize();
-        //void SaveFavoritePlayers(IEnumerable<string> favoritePlayerNames);
-        //IEnumerable<string> GetFavoritePlayersList();
         void SaveFavoritePlayers(IEnumerable<string> favoritePlayerNames, string teamCode);
         IEnumerable<string> GetFavoritePlayersList(string teamCode);
     }

@@ -15,6 +15,7 @@ namespace WpfApp.Forms
         public string Captain { get; set; }
         public string GoalsScored { get; set; }
         public string YellowCardsReceived { get; set; }
+
         public PlayerInformation(string playerName, string position, string shirtNumber, string captain, string goalsScored, string yellowCardsReceived)
         {
             InitializeComponent();

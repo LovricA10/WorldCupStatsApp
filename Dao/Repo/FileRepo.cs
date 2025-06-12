@@ -29,8 +29,28 @@
         public void MapPlayerToImage(string player, string imagePath)
         {
             EnsureDirectoryExists();
-            File.AppendAllText(ImageMapPath, $"{player}{Del}{imagePath}{Environment.NewLine}");
+
+            string fullBasePath = Path.GetFullPath(BaseFolder);
+            string fullImagePath = Path.GetFullPath(imagePath);
+
+            string relativePath = fullImagePath.StartsWith(fullBasePath)
+                ? fullImagePath.Substring(fullBasePath.Length).TrimStart(Path.DirectorySeparatorChar)
+                : imagePath;
+
+            string entry = $"{player}{Del}assets/{relativePath.Replace("\\", "/")}";
+
+            if (File.Exists(ImageMapPath))
+            {
+                string content = File.ReadAllText(ImageMapPath);
+                if (!content.EndsWith(Environment.NewLine))
+                {
+                    entry = Environment.NewLine + entry;
+                }
+            }
+
+            File.AppendAllText(ImageMapPath, entry + Environment.NewLine);
         }
+
         public void SetChosenTeamToSettings(string team)
         {
             if (!File.Exists(ConfigPath))

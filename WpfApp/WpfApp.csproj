@@ -9,6 +9,40 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="assets\Fra\giroud.jpg" />
+    <None Remove="assets\Fra\griezmann.jpg" />
+    <None Remove="assets\Fra\hernandez.jpg" />
+    <None Remove="assets\Fra\kante.jpg" />
+    <None Remove="assets\Fra\lloris.jpg" />
+    <None Remove="assets\Fra\matuidi.jpg" />
+    <None Remove="assets\Fra\mbappe.jpg" />
+    <None Remove="assets\Fra\pavard.jpg" />
+    <None Remove="assets\Fra\pogba.jpg" />
+    <None Remove="assets\Fra\umtiti.jpg" />
+    <None Remove="assets\Fra\varane.jpg" />
+    <None Remove="assets\Hrv\Badelj.jpg" />
+    <None Remove="assets\Hrv\Bradaric.jpg" />
+    <None Remove="assets\Hrv\Brozovic.jpg" />
+    <None Remove="assets\Hrv\Caleta-car.png" />
+    <None Remove="assets\Hrv\Corluka.jpg" />
+    <None Remove="assets\Hrv\Jedvaj.jpg" />
+    <None Remove="assets\Hrv\Kalinic-Lovre.jpg" />
+    <None Remove="assets\Hrv\Kalinic-Nikola.jpg" />
+    <None Remove="assets\Hrv\Kovacic.png" />
+    <None Remove="assets\Hrv\Kramaric.png" />
+    <None Remove="assets\Hrv\Livakovic.png" />
+    <None Remove="assets\Hrv\Lovren.jpg" />
+    <None Remove="assets\Hrv\Mandzukic.jpg" />
+    <None Remove="assets\Hrv\Modric.jpg" />
+    <None Remove="assets\Hrv\Perisic.jpg" />
+    <None Remove="assets\Hrv\Pivaric.jpg" />
+    <None Remove="assets\Hrv\Pjaca.png" />
+    <None Remove="assets\Hrv\Rakitic.jpg" />
+    <None Remove="assets\Hrv\Rebic.jpg" />
+    <None Remove="assets\Hrv\Strinic.jpg" />
+    <None Remove="assets\Hrv\Subasic.jpg" />
+    <None Remove="assets\Hrv\Vida.jpg" />
+    <None Remove="assets\Hrv\Vrsaljko.jpg" />
     <None Remove="assets\json\male\group_results.json" />
     <None Remove="assets\json\male\matches.json" />
     <None Remove="assets\json\male\results.json" />
@@ -22,6 +56,108 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Content Include="assets\Fra\giroud.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="assets\Fra\griezmann.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="assets\Fra\hernandez.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="assets\Fra\kante.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="assets\Fra\lloris.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="assets\Fra\matuidi.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="assets\Fra\mbappe.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="assets\Fra\pavard.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="assets\Fra\pogba.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="assets\Fra\umtiti.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="assets\Fra\varane.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="assets\Hrv\Badelj.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="assets\Hrv\Bradaric.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="assets\Hrv\Brozovic.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="assets\Hrv\Caleta-car.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="assets\Hrv\Corluka.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="assets\Hrv\Jedvaj.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="assets\Hrv\Kalinic-Lovre.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="assets\Hrv\Kalinic-Nikola.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="assets\Hrv\Kovacic.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="assets\Hrv\Kramaric.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="assets\Hrv\Livakovic.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="assets\Hrv\Lovren.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="assets\Hrv\Mandzukic.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="assets\Hrv\Modric.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="assets\Hrv\Perisic.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="assets\Hrv\Pivaric.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="assets\Hrv\Pjaca.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="assets\Hrv\Rakitic.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="assets\Hrv\Rebic.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="assets\Hrv\Strinic.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="assets\Hrv\Subasic.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="assets\Hrv\Vida.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="assets\Hrv\Vrsaljko.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="assets\json\male\group_results.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
@@ -58,9 +194,11 @@
 
   <ItemGroup>
     <Resource Include="ImageSource\football_pitch.jpg">
-      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
-    <Resource Include="ImageSource\player.png" />
+    <Resource Include="ImageSource\player.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
   </ItemGroup>
 
   <ItemGroup>

@@ -11,10 +11,10 @@ false
 TRACE;DEBUG;NET;NET8_0;NETCOREAPP
 C:\Users\lovri\OneDrive\Desktop\WorldCupStatsApp\WpfApp\App.xaml
 5970586481
-81647976140
+421629399199
 11-1899105530
 2031797894256
 Forms\PlayerInformation.xaml;Forms\Settings.xaml;Forms\TeamInformation.xaml;Forms\WorldCup.xaml;UserControls\PlayerUserControl.xaml;
 
-False
+True
 
